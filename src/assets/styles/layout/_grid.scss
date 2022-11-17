@@ -1,0 +1,31 @@
+.grid {
+    --gap: #{getMinMax(16px, 16px)} #{getMinMax(16px, 16px)};
+
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-gap: var(--gap);
+
+    &[class*="grid-col"] {
+        grid-template-columns: repeat(var(--col-adapt, auto-fit), minmax(min(100%, var(--column-width, 100%)), 1fr));
+    }
+
+    &-col-2 {
+        --column-width: 366px;
+        --gap: #{getMinMax(16px, 16px)} #{getMinMax(16px, 16px)};
+    }
+
+    &-col-4 {
+        --column-width: 276px;
+        --gap: #{getMinMax(24px, 24px)} #{getMinMax(24px, 48px)};
+    }
+
+    &-col-fill {
+        --col-adapt: auto-fill;
+    }
+
+    @include less-sm() {
+        &.actions {
+            --gap: 0;
+        }
+    }
+}

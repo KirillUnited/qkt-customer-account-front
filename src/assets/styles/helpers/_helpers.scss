@@ -1,0 +1,79 @@
+.has-img-fit {
+    position: relative;
+
+    & > img,
+    & > .img-bg {
+        @include o-fit-absolute();
+        z-index: -1;
+    }
+}
+
+.img-holder {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 10 6'%3E%3Cfilter id='b' color-interpolation-filters='sRGB'%3E%3CfeGaussianBlur stdDeviation='.5'/%3E%3CfeComponentTransfer%3E%3CfeFuncA type='discrete' tableValues='1 1'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Cimage filter='url(%23b)' x='0' y='0' height='100%25' width='100%25' xlink:href='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAGCAYAAAD68A/GAAAA70lEQVR4AQXBTUvCcADA4Z/7z9xcmbEpdSg6CBYGRUcr6WJvUESfqHN07Jt47hBdBV/AFg2FYTGd2DZzmJiz54ndnpUX51cldvcvSWoqufwGcVlgmlX01CpLmsbD4xMiZ2zeS8MQNRgQX1Gweg6/owGvLxUyxjq2+4VtO8haPIGKxKfdxfpzmUgKruMSxX4QiqDfs2i1A+RwMmM+hsr4nbSvcnNaZHnqE8yTNDpvROGU7FYSueX3MUcuqbUExYsd9jICY66yyOrUm22aHY/vmYec304jRIRuaJROjmg8V/G8IXflawoHhxx/1KjVu/wDycJbrJ7yuz0AAAAASUVORK5CYII='/%3E%3C/svg%3E");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.hidden-more-sm {
+    @include more-sm() {
+        display: none !important;
+    }
+}
+
+.hidden-less-sm {
+    @include less-sm() {
+        display: none !important;
+    }
+}
+
+.hidden-more-xs {
+    @include more-xs() {
+        display: none !important;
+    }
+}
+
+.hidden-less-xs {
+    @include less-xs() {
+        display: none !important;
+    }
+}
+
+.list-style-reset {
+    list-style: none;
+    padding: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.text-truncate {
+    @include truncate();
+}
+
+.text-line-through {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 19px;
+
+    &:after,
+    &:before{
+        display: block;
+        content: "";
+        flex: 1;
+        height: 1px;
+        background-color: var(--color-grey);
+    }
+}
+
+.text-clamp {
+    --lines: 3;
+    @include line-clamp(var(--lines));
+}
+
+.deactivate {
+    display: inline-block;
+    color: var(--color-text-body);
+    border-bottom: 1px solid #F1F5F9;
+    padding-bottom: 8px;
+}

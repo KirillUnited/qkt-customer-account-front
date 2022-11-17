@@ -1,0 +1,66 @@
+%container {
+    $margin-x: 20px;
+    --width: 100% - #{getMinMax($margin-x*2, 48px)};
+
+    display: flex;
+    flex-direction: column;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.content {
+    flex: 1 0 auto;
+}
+
+.container {
+    @extend %container;
+
+    width: Min(var(--width), #{getrem($base-container)});
+
+    &-sm {
+        @extend %container;
+
+        width: Min(var(--width), #{getrem($base-container-sm)});
+    }
+}
+
+.section {
+    position: relative;
+
+    &-header {
+        padding-top: getMinMax(25px, 32px);
+        padding-bottom: getMinMax(10px, 32px);
+    }
+
+    &-content {
+        padding-top: getMinMax(25px, 32px);
+        padding-bottom: getMinMax(25px, 32px);
+    }
+
+    @include less-sm() {
+        &-banner {
+            padding-top: getMinMax(10px, 10px);
+            padding-bottom: getMinMax(25px, 25px);
+        }
+    }
+
+    @include less-xs() {
+        &.has-slider {
+            .container {
+                width: 100%;
+            }
+        }
+    }
+}
+
+@include less-sm {
+    .container {
+        max-width: 100%;
+    }
+}

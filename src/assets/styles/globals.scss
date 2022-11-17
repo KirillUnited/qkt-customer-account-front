@@ -1,0 +1,17 @@
+:root {
+  --font-main: 'Heebo', sans-serif;
+  --body-bg-color: #FFFFFF;
+  --color-green: #5EB700;
+  --color-orange: #FF7C00;
+  --color-grey: #F0F0F4;
+  --color-disabled: #A5A5AA;
+  --color-text-body: #485868;
+  --color-error: #F03738;
+}
+
+@import "./utilities";
+@import "./base/reset";
+@import "./base/typography";
+@import "./helpers/helpers";
+@import "./layout/layout";
+@import "./layout/grid";

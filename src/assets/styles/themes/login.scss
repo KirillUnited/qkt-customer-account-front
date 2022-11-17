@@ -1,0 +1,156 @@
+@import "../utilities";
+
+%flex-col {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+}
+
+.inner {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 270px), 1fr));
+    align-items: center;
+    gap: 24px;
+
+    &-img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+.qkt-logo {
+    position: absolute;
+    top: 36px;
+    left: 40px;
+    z-index: 10;
+}
+
+.form {
+    $font-size: 16px;
+    @extend %flex-col;
+    --gap: 32px;
+
+    width: min(100%, 259px);
+    text-align: center;
+    margin: 0 auto;
+    padding-top: 120px;
+    padding-bottom: 120px;
+
+    &-legend {
+        margin-bottom: 0;
+
+        &>* {
+            text-transform: capitalize;
+        }
+
+        h1 {
+            font-weight: 700;
+            font-size: 38px;
+            line-height: 56px;
+            letter-spacing: -0.02em;
+            color: #161730;
+        }
+
+        h2 {
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 111%;
+        }
+    }
+
+    &-fieldset {
+        @extend %flex-col;
+        --gap: 16px;
+
+        text-align: left;
+    }
+
+    &-label {
+        color: var(--color-disabled);
+        font-family: var(--font-main);
+        font-style: normal;
+        font-weight: 500;
+        font-size: calc(12px/$font-size)*1em;
+        line-height: calc(14px/$font-size)*1em;
+    }
+
+    &-input {
+        position: relative;
+        font-size: $font-size;
+
+        &-icon {
+            position: absolute;
+            top: 50%;
+            right: calc(10px/$font-size)*1em;
+            transform: translate(0, -50%);
+            width: calc(20px/$font-size)*1em;
+            height: calc(20px/$font-size)*1em;
+            z-index: 10;
+        }
+
+        &-field {
+            @include input-field();
+            @include input-placeholder {
+                color: var(--color-text-body);
+            }
+            --min-height: 40px;
+            --border-radius: 0;
+            --border-color: var(--color-grey);
+
+            line-height: 18px;
+            padding: 8px 0;
+            border-top: none;
+            border-right: none;
+            border-left: none;
+
+            &:focus:invalid {
+                border-color: var(--color-error);
+
+                & ~ .error-msg {
+                    display: block;
+                }
+
+                & ~ .form-input-icon path {
+                    fill: var(--color-error);
+                }
+            }
+        }
+
+        .error-msg {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            transform: translateY(100%);
+            display: none;
+            color: var(--color-error);
+            font-family: inherit;
+            font-size: calc(12px / $font-size) * 1em;
+            margin-top: 12px;
+        }
+    }
+
+    &-group {
+        @extend %flex-col;
+        --gap: 8px;
+    }
+
+    textarea {
+        resize: vertical;
+    }
+
+    button {
+        min-height: 40px;
+    }
+
+    @include less-sm() {
+        &-group {
+            grid-template-columns: auto;
+
+            button,
+            input {
+                flex: 0 0 100%;
+            }
+        }
+    }
+}

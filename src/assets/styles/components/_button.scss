@@ -1,0 +1,57 @@
+@import "../utilities";
+
+a.btn,
+.btn {
+    $fontSize: getMinMax(14px, 14px);
+    $height: 48px;
+
+    @include button($fontSize, $height);
+
+    --border-radius: #{calc(8/14)*1em};
+    --border-color-invert: var(--color-green);
+    --font-weight: 500;
+
+    font-family: 'Inter', sans-serif;
+    background-clip: padding-box;
+    border-radius: var(--border-radius);
+    border: none;
+
+    &-primary {
+        --color: #F8FAFC;
+        --bg-color: var(--color-green);
+
+        &:hover,
+        &:focus {
+            --bg-color: #76C226;
+        }
+    }
+
+    &-secondary {
+        --color: rgba(255, 255, 255, 0.87);
+        --bg-color: var(--color-orange);
+    }
+
+    &-invert {
+        --color: var(--color-green);
+        --bg-color: #FFFFFF;
+
+        border: 1px solid var(--border-color-invert);
+
+        &:hover,
+        &:focus {
+            --color: #F8FAFC;
+            --bg-color: #76C226;
+        }
+    }
+
+    &[disabled] {
+        --color: #8E8E8E;
+        --bg-color: #CCCCCC;
+
+        pointer-events: none;
+
+        &:hover {
+            cursor: not-allowed;
+        }
+    }
+}

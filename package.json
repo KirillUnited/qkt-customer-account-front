@@ -1,0 +1,22 @@
+{
+  "name": "customer-account-markup",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "eleventy --serve",
+    "build": "npm run clear && eleventy",
+    "clear": "rimraf ./_site"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@11ty/eleventy": "^1.0.2",
+    "common-tags": "^1.8.2",
+    "rimraf": "2.7.1"
+  },
+  "dependencies": {
+    "eleventy-sass": "^2.1.3"
+  }
+}

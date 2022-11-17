@@ -1,0 +1,28 @@
+$grid-breakpoints: (
+    "xs": 576px,
+    "sm": 767px,
+    "md": 991px,
+    "lg": 1199px,
+    "xl": 1376px
+);
+$base: 14px;
+$base-container: 1440px;
+$base-container-sm: 787px;
+$base-viewport-mobile: 375px;
+$typography-variants: h1,
+h2,
+h3,
+h4;
+// === Desktop ===
+$h1-font-size: 24px !default;
+$h2-font-size: 20px !default;
+$h3-font-size: 16px !default;
+$h4-font-size: 16px !default;
+$text-font-size: 14px !default;
+// === Mobile ===
+$h1-font-size-sm: 24px !default;
+$h2-font-size-sm: 20px !default;
+$h3-font-size-sm: 16px !default;
+$h4-font-size-sm: 16px !default;
+$text-font-size-sm: 14px !default;
+$header-height: 93px;

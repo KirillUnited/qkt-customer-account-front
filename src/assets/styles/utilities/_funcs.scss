@@ -1,0 +1,30 @@
+// functions
+@function strip-unit($number) {
+    @if type-of($number)=='number'and not unitless($number) {
+        @return calc($number / calc(calc($number * 0) + 1));
+    }
+
+    @warn '#{ $number } is in wrong format';
+    @return $number;
+}
+
+@function getrem($size, $base: $base) {
+    $remSize: calc($size / $base);
+    @return #{$remSize}rem;
+}
+
+@function getvw($xs-size, $base-viewport-mobile: $base-viewport-mobile) {
+     //$xs-size: strip-unit($xs-size);
+     //$base-viewport-mobile: strip-unit($base-viewport-mobile);
+    @return $xs-size * calc(100vw / $base-viewport-mobile);
+}
+
+@function getvmin($xs-size, $base-viewport-mobile: $base-viewport-mobile) {
+    // $xs-size: strip-unit($xs-size);
+    // $base-viewport-mobile: strip-unit($base-viewport-mobile);
+    @return $xs-size * calc(100vmin / $base-viewport-mobile);
+}
+
+@function getMinMax($min, $max) {
+    @return Min(getvw($min), getrem($max));
+}

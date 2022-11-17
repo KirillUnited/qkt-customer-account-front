@@ -1,0 +1,82 @@
+@each $type in $typography-variants {
+
+    #{$type},
+    .vw-#{$type} {
+        font-family: var(--font-main);
+        color: var(--color-text-body);
+        font-weight: 500;
+        line-height: 116%;
+        margin-bottom: 0.4em;
+        text-transform: capitalize;
+        // Help prevent overflow of long words/names/URLs
+        // word-break: break-word; // See reset.css
+        // Optional, not supported for all languages:
+        // hyphens: auto; // See reset.css
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+// As of v0.3.0, `clamp` not well enough supported on mobile browsers for use
+// Due to build-in min/max Sass functions, requires `unquote()` to correctly
+// render as CSS min/max
+h1,
+.vw-h1 {
+    font-size: getrem($h1-font-size);
+    font-size: Min(getvw($h1-font-size-sm), getrem($h1-font-size));
+}
+
+h2,
+.vw-h2 {
+    font-size: getrem($h2-font-size);
+    font-size: Min(getvw($h2-font-size-sm), getrem($h2-font-size));
+}
+
+h3,
+.vw-h3 {
+    font-size: getrem($h3-font-size);
+    font-size: Min(getvw($h3-font-size-sm), getrem($h3-font-size));
+}
+
+h4,
+.vw-h4 {
+    font-size: getrem($h4-font-size);
+    font-size: Min(getvw($h4-font-size-sm), getrem($h4-font-size));
+}
+
+p,
+li,
+.vw-text {
+    font-size: getrem($text-font-size);
+    font-size: Min(getvw($text-font-size-sm), getrem($text-font-size));
+    font-weight: 400;
+    line-height: calc(20px / $text-font-size);
+    letter-spacing: 0.0015em;
+}
+
+p {
+    margin: 0 0 calc(20px / $text-font-size) * 1em;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+a {
+    font-family: 'Inter', sans-serif;
+    color: var(--color-green);
+}
+
+a,
+a:active,
+a:hover,
+a:visited,
+a:link {
+    text-decoration: none;
+}
+
+.section-desc {
+    font-size: Min(getvw(16px), getrem(16px));
+    font-weight: 400;
+}

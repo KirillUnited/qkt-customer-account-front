@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>{{title}} | Quicket Customer Account</title>
+
+    {% include "../_includes/head.html" %}
+    {% block head %}
+    <link rel="stylesheet" href="/assets/styles/index.css"/>
+    <link rel="stylesheet" href="/assets/styles/themes/account.css"/>
+    {% endblock %}
+</head>
+
+<body class="page-account">
+<div class="wrapper">
+    {% block header %}{% endblock %}
+
+    <main class="content">
+        <section class="section">
+            <div class="container-sm">
+                <div class="section-inner">
+                    {% if title %}
+                    <div class="section-header">
+                        <h1 class="section-title">{{title}}</h1>
+                        <p class="section-desc">{{description}}</p>
+                    </div>
+                    {% endif %}
+                    <div class="section-content">
+                        {{content | safe}}
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    {% block footer %}
+    <footer>
+        <div class="container-sm">
+            <p style="text-align: center"><a href="#" class="deactivate">Need to deactivate your account?</a></p>
+        </div>
+    </footer>
+    {% endblock %}
+</div>
+</body>
+
+</html>
+

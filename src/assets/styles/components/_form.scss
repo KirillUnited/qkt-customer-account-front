@@ -1,0 +1,121 @@
+@import "../utilities";
+
+.form {
+    $font-size: 16px;
+
+    &-fieldset {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 244px), 1fr));
+        gap: 24px;
+    }
+
+    &-input {
+        position: relative;
+
+        &-icon {
+            position: absolute;
+            top: 50%;
+            right: 13px;
+            transform: translate(0, -50%);
+            width: calc(16px/$font-size)*1em;
+            height: calc(16px/$font-size)*1em;
+            z-index: 10;
+        }
+
+        input {
+            display: block;
+            width: 100%;
+            max-width: 100%;
+            min-height: 44px;
+            color: var(--text-color-1);
+            font-family: 'Syne', sans-serif;
+            font-style: normal;
+            font-weight: 500;
+            font-size: $font-size;
+            line-height: calc(24px/$font-size)*1em;
+            padding: calc(10px / $font-size) * 1em calc(12px / $font-size) * 1em;
+            padding-right: 34px;
+            background-color: #fff;
+            transition: all 180ms ease-in-out;
+            border: 1px solid transparent;
+            border-radius: calc(99px / $font-size) * 1em;
+            margin-bottom: 0;
+
+            @include input-placeholder {
+                color: var(--text-color-2);
+            }
+
+            &:focus {
+                outline: 0;
+                outline-offset: 0;
+            }
+
+            &:focus:invalid {
+                border-color: var(--color-error);
+    
+                &~.error-msg {
+                    display: block;
+                }
+                &~.form-input-icon path {
+                    fill: var(--color-error);
+                }
+            }
+        }
+    
+        .error-msg {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            transform: translateY(100%);
+            display: none;
+            color: var(--color-error);
+            font-family: inherit;
+            font-size: calc(12px / $font-size) * 1em;
+            margin-top: 12px;
+        }
+    }
+
+    &-group {
+        width: 100%;
+        flex-wrap: wrap;
+        display: grid;
+        grid-template-columns: 1fr 148px;
+        gap: 8px;
+        margin-top: getMinMax(24px, 24px);
+
+        button {
+            flex: 0 0 148px;
+        }
+
+        input {
+            flex: 1;
+        }
+    }
+
+    &-img {
+        position: absolute;
+        top: -50px;
+        left: 50%;
+        margin: 0 auto;
+        transform: translateX(-50%);
+    }
+
+    textarea {
+        resize: vertical;
+    }
+
+    @include less-sm() {
+        &-group {
+            grid-template-columns: auto;
+
+            button,
+            input {
+                flex: 0 0 100%;
+            }
+        }
+        &-img {
+            top: -40px;
+            width: getvw(160px);
+        }
+    }
+}

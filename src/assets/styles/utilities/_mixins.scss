@@ -1,0 +1,382 @@
+@mixin less-md($max: map-get($grid-breakpoints, "md")) {
+    @media (max-width: $max) {
+        @content;
+    }
+}
+
+@mixin more-sm($max: map-get($grid-breakpoints, "sm")) {
+    @media (min-width: ($max + 1px)) {
+        @content;
+    }
+}
+
+@mixin less-sm($max: map-get($grid-breakpoints, "sm")) {
+    @media (max-width: $max) {
+        @content;
+    }
+}
+
+@mixin more-xs($max: map-get($grid-breakpoints, "xs")) {
+    @media (min-width: ($max + 1px)) {
+        @content;
+    }
+}
+
+@mixin less-xs($max: map-get($grid-breakpoints, "xs")) {
+    @media (max-width: $max) {
+        @content;
+    }
+}
+
+@mixin input-field($font-size: $base) {
+    --font-size: 16;
+    --color: var(--color-text-body);
+    --bg-color: #FFFFFF;
+    --border-radius: #{calc(8px/$font-size)*1em};
+    --border-color: #C2C9D1;
+    --min-height: 48px;
+
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    min-height: var(--min-height);
+    color: var(--color);
+    font-family: var(--font-main), sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: inherit;
+    line-height: calc(20px/$font-size)*1em;
+    padding: calc(5px / $font-size) * 1em calc(12px / $font-size) * 1em;
+    background-color: var(--bg-color);
+    transition: all 180ms ease-in-out;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+
+    &:focus {
+        outline: 0;
+        outline-offset: 0;
+    }
+}
+
+// placeholders
+@mixin input-placeholder {
+    &.placeholder {
+        @content;
+    }
+
+    &:-moz-placeholder {
+        @content;
+    }
+
+    &::-moz-placeholder {
+        @content;
+    }
+
+    &:-ms-input-placeholder {
+        @content;
+    }
+
+    &::-webkit-input-placeholder {
+        @content;
+    }
+}
+
+// усечение элемента применять к текстовым тегам типа "span" "p" и т.д.
+// пример: @include truncate(110px);
+@mixin truncate($truncation-boundary: 100%) {
+    max-width: $truncation-boundary;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+// Aspect Ratio Mixin
+@mixin aspect-ratio($width, $height) {
+    position: relative;
+
+    &:before {
+        display: block;
+        content: "";
+        width: 100%;
+        padding-top: ($height / $width) * 100%;
+    }
+
+    > .content {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+}
+
+@mixin get-aspect-ratio() {
+    --aspect-ratio: calc(var(--height) / var(--width));
+    position: relative;
+    height: 0;
+    padding-bottom: calc(var(--aspect-ratio, .5625) * 100%);
+}
+
+// /* mixin for multiline */
+@mixin multiLineEllipsis($lineHeight: 1.2em, $lineCount: 1, $bgColor: white) {
+    overflow: hidden;
+    position: relative;
+    line-height: $lineHeight;
+    max-height: $lineHeight * $lineCount;
+    text-align: justify;
+    margin-right: -1em;
+    padding-right: 1em;
+
+    &:before {
+        content: '...';
+        position: absolute;
+        right: 0;
+        bottom: 0;
+    }
+
+    &:after {
+        content: '';
+        position: absolute;
+        right: 0;
+        width: 1em;
+        height: 1em;
+        margin-top: 0.2em;
+        background: $bgColor;
+    }
+}
+
+// example:
+// .block-with-text {
+//     @include multiLineEllipsis($lineHeight: 1.2em, $lineCount: 3, $bgColor: white);
+// }
+
+// Font Size with rem
+@mixin fontsize($size: 24, $base: 16) {
+    font-size: $size + px;
+    font-size: ($size / $base) * 1rem;
+}
+
+// line clamp
+@mixin line-clamp($line) {
+    display: -webkit-box;
+    -webkit-line-clamp: $line;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+//button
+@mixin btn($padding: .375rem .75rem) {
+    display: inline-block;
+    vertical-align: middle;
+    width: auto;
+    white-space: nowrap;
+    user-select: none;
+    padding: $padding;
+}
+
+@mixin o-fit-absolute() {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 50%;
+}
+
+// example
+// .btn {
+//     display: inline-block;
+//     vertical-align: middle;
+//     width: auto;
+//     padding: $base-spacing;
+//     margin: 0 0 $base-spacing;
+//     background-color: $base-accent-color;
+//     color: $base-background-color;
+//     font-weight: bold;
+//     white-space: nowrap;
+//     transition: all $base-transition-duration $base-transition-timing;
+//     cursor: pointer;
+//     border-radius: $base-border-radius;
+//     box-shadow: $base-box-shadow;
+
+//     &:hover,
+//     &:focus {
+//         background-color: darken($base-accent-color, 10%);
+//         color: $base-background-color;
+//         box-shadow: $hover-box-shadow;
+//     }
+// }
+// .btn {
+//     display: inline-block;
+//     font-weight: 300;
+//     color: #222;
+//     text-align: center;
+//     vertical-align: middle;
+//     -webkit-user-select: none;
+//     -moz-user-select: none;
+//     -ms-user-select: none;
+//     user-select: none;
+//     background-color: transparent;
+//     border: 1px solid transparent;
+//     padding: 0.375rem 0.5rem;
+//     font-size: 0.9375rem;
+//     line-height: 1.5;
+//     border-radius: 0;
+//     -webkit-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+//     transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+//     transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+//     transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+// }
+
+// button, [type="button"], [type="reset"], [type="submit"] {
+//     -webkit-appearance: button;
+// }
+
+@mixin button($fontSize: 16px, $height: auto) {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 11ch;
+    min-height: $height;
+    padding: 0.25em 1em;
+    background-color: var(--bg-color, transparent);
+    color: var(--color, #000);
+    font-size: $fontSize;
+    font-weight: var(--font-weight, 700);
+    font-stretch: normal;
+    font-style: normal;
+    letter-spacing: 1px;
+    line-height: 1.1;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    appearance: none;
+    border-color: transparent;
+    transition: 180ms ease-in-out;
+    transition-property: color, background, border;
+
+    @media screen and (-ms-high-contrast: active) {
+        border: 2px solid currentColor;
+    }
+
+    &:focus {
+        outline-color: transparent;
+        outline-style: solid;
+    }
+
+    &-icon {
+        width: 1.5em;
+        height: 1.5em;
+        margin-right: 0.25em;
+
+        // stylelint-disable-next-line  selector-max-type
+        svg {
+            width: 100%;
+            height: 100%;
+            fill: currentColor;
+        }
+    }
+}
+
+@mixin tab($fontSize: 24px) {
+    --fontSize: #{$fontSize};
+    --minFontSize: 12px;
+    --fontFamily: 'CircularAirPro Light';
+    --fontFamilyActive: "Circular Std Book";
+    --color: #999999;
+    --colorActive: #333333;
+
+    display: flex;
+    align-items: center;
+    align-self: start;
+    justify-content: center;
+    max-width: 100%;
+    min-width: 5ch;
+    color: var(--color);
+    font-family: var(--fontFamily);
+    font-size: Max(var(--minFontSize), Min($fontSize, #{getvmin($fontSize)}));
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    letter-spacing: normal;
+    line-height: 1.1;
+    text-align: center;
+    text-decoration: none;
+    padding: 0.25em (20px / $fontSize * 1em);
+    transition: 180ms ease-in-out;
+    transition-property: background, border, font-weight;
+    cursor: pointer;
+    min-height: #{Min(Max(48px, getvmin(67px)), 67px)};
+    border-bottom: 2px solid transparent;
+
+    &.active,
+    &.current,
+    &:hover {
+        font-family: var(--fontFamilyActive);
+        font-weight: normal;
+        color: var(--colorActive);
+        text-decoration: none;
+        outline-color: transparent;
+        outline-style: solid;
+        border-bottom: 2px solid var(--colorPrimary);
+    }
+}
+
+@mixin tag($fontSize: 21px) {
+    --fontSize: #{$fontSize};
+    --minFontSize: 12px;
+    --fontFamily: 'CircularAirPro Light';
+    --fontFamilyActive: "Circular Std Med";
+    --color: #4d4d4d;
+    --colorActive: #4080ff;
+    --colorBg: #f5f5f5;
+
+    display: inline-flex;
+    align-items: center;
+    align-self: start;
+    justify-content: center;
+    min-width: 5ch;
+    min-height: Max((57px / $fontSize * 1em), Min(57px, #{getvw(57px)}));
+    padding: 0.25em (14px / $fontSize * 1em);
+    border-radius: 28px / $fontSize * 1em;
+    background-color: var(--colorBg);
+    font-family: var(--fontFamily);
+    font-size: Max(var(--minFontSize), Min($fontSize, #{getvw($fontSize)}));
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: var(--color);
+    text-decoration: none;
+    cursor: pointer;
+    transition: 180ms ease-in-out;
+    transition-property: background, border, color, font-weight;
+
+    &.active,
+    &.current,
+    &:hover,
+    &:focus {
+        --colorBg: #ebf1ff;
+
+        font-family: var(--fontFamilyActive);
+        font-weight: normal;
+        color: var(--colorPrimary);
+        text-decoration: none;
+        outline-color: transparent;
+        outline-style: solid;
+    }
+
+    &-icon {
+        width: 1.5em;
+        height: 1.5em;
+
+        // stylelint-disable-next-line  selector-max-type
+        svg {
+            width: 100%;
+            height: 100%;
+            fill: currentColor;
+        }
+    }
+}

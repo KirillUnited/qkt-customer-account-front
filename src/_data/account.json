@@ -1,0 +1,40 @@
+{
+  "actions": [
+    {
+      "img": "User.svg",
+      "name": "Personal Info.",
+      "desc": "Name, Surname, Email etc.",
+      "link": "/info"
+    },
+    {
+      "img": "Phone.svg",
+      "name": "Contact Info.",
+      "desc": "Name, Surname, Email etc.",
+      "link": ""
+    },
+    {
+      "img": "Email.svg",
+      "name": "Email Preferences",
+      "desc": "Name, Surname, Email etc.",
+      "link": ""
+    },
+    {
+      "img": "Lock.svg",
+      "name": "Password",
+      "desc": "Name, Surname, Email etc.",
+      "link": ""
+    },
+    {
+      "img": "bank-card.svg",
+      "name": "Payments & Payouts",
+      "desc": "Name, Surname, Email etc.",
+      "link": ""
+    },
+    {
+      "img": "node_multiple_outlined.svg",
+      "name": "API Keys",
+      "desc": "Name, Surname, Email etc.",
+      "link": ""
+    }
+  ]
+}
