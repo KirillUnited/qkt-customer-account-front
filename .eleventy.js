@@ -1,6 +1,7 @@
 const eleventySass = require("eleventy-sass");
 const Card = require("./src/_includes/components/Card");
 const Input = require("./src/_includes/components/Input");
+const Breadcrumbs = require("./src/_includes/components/Breadcrumbs");
 
 module.exports = function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy("src/assets/images/");
@@ -13,6 +14,7 @@ module.exports = function (eleventyConfig) {
     });
     eleventyConfig.addShortcode("Card", Card);
     eleventyConfig.addShortcode("Input", Input);
+    eleventyConfig.addShortcode("Breadcrumbs", Breadcrumbs);
 
     return {
         dir: {

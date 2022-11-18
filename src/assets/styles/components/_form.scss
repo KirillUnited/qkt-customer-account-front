@@ -23,8 +23,8 @@
         font-family: var(--font-main);
         font-style: normal;
         font-weight: 500;
-        font-size: calc(14px/$font-size)*1em;
-        line-height: calc(16px/$font-size)*1em;
+        font-size: calc(14px/$base)*1em;
+        line-height: calc(16px/$base)*1em;
     }
 
     &-input {

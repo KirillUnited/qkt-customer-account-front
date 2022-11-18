@@ -48,6 +48,10 @@
         padding-bottom: getMinMax(25px, 32px);
     }
 
+    &-title {
+        margin-bottom: getMinMax(4px, 32px);
+    }
+
     @include less-sm() {
         &-banner {
             padding-top: getMinMax(10px, 10px);

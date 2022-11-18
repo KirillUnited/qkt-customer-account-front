@@ -1,0 +1,23 @@
+.breadcrumbs {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 16px;
+
+    &-item {
+        > a {
+            font-family: inherit;
+            font-weight: inherit;
+            color: inherit;
+        }
+        &-active {
+            font-weight: 500;
+        }
+    }
+
+    &-divider {
+        width: 16px;
+        height: 16px;
+    }
+}
