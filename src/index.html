@@ -7,7 +7,7 @@ title: Customer Account
     <div class="container">
         <div class="section-inner">
             <div class="section-content">
-                <h1>{{title}}</h1>
+                <h1>{{ title }}</h1>
                 <ul>
                     <li>
                         <a href="https://aesthetic-lebkuchen-e8538c.netlify.app/login/signup">Sign Up</a>
@@ -16,7 +16,14 @@ title: Customer Account
                         <a href="https://aesthetic-lebkuchen-e8538c.netlify.app/login/signin">Sign In</a>
                     </li>
                     <li>
-                        <a href="./account">My Account</a>
+                        <a href="{{ account.path }}">{{ account.title }}</a>
+                        <ul>
+                            {% for action in account.actions %}
+                                <li>
+                                    <a href="{{ action.link }}">{{ action.name }}</a>
+                                </li>
+                            {% endfor %}
+                        </ul>
                     </li>
                 </ul>
             </div>
