@@ -1,6 +1,6 @@
 %container {
-    $margin-x: 20px;
-    --width: 100% - #{getMinMax($margin-x*2, 48px)};
+    --margin-x: #{getMinMax($base-container-margin-x-sm * 2, $base-container-margin-x * 2)};
+    --width: 100% - var(--margin-x);
 
     display: flex;
     flex-direction: column;
@@ -26,7 +26,12 @@
     &-sm {
         @extend %container;
 
-        width: Min(var(--width), #{getrem($base-container-sm)});
+        width: max-content;
+        padding: 0 getMinMax($base-container-margin-x-sm, $base-container-margin-x);
+
+        @include less-sm() {
+            width: 100%;
+        }
     }
 }
 

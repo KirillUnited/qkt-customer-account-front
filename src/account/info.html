@@ -1,0 +1,27 @@
+---
+layout: account.html
+title: Personal Information
+description: "Name, Surname, Email, etc."
+breadcrumbs: true
+---
+<form class="form" id="account_info" method="POST" action="">
+    <fieldset class="form-fieldset grid grid-col-2">
+        {% Input type="text", id="account_info_First_Name", label="First Name" %}
+        {% Input type="text", id="account_info_Last_Name", label="Last Name" %}
+        {% Input type="text", id="account_info_birth", label="Date of birth" %}
+        {% Input type="text", id="account_info_ID", label="ID / Passport number" %}
+        <div class="form-group">
+            <label class="form-label" for="account_info_Gender">Gender</label>
+            <div class="form-input">
+                <select class="form-input-field" type="text" id="account_info_Gender" name="account_info_Gender" autocomplete="account_info_Gender">
+                    <option disabled selected>Please Select</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+            </div>
+        </div>
+        {% Input type="text", id="account_info_Company", label="Company" %}
+    </fieldset>
+</form>
+
+

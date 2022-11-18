@@ -23,6 +23,17 @@
         --col-adapt: auto-fill;
     }
 
+    &.actions {
+        --width: 750px;
+        .container-sm & {
+            width: min(getvw(366px - ($base-container-margin-x-sm * 2)), var(--width));
+
+            @include less-sm() {
+                width: 100%;
+            }
+        }
+    }
+
     @include less-sm() {
         &.actions {
             --gap: 0;

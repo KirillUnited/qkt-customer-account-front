@@ -1,10 +1,12 @@
 {
+  "title": "My Account",
+  "path": "/account",
   "actions": [
     {
       "img": "User.svg",
       "name": "Personal Info.",
       "desc": "Name, Surname, Email etc.",
-      "link": "/info"
+      "link": "/account/info"
     },
     {
       "img": "Phone.svg",
