@@ -6,6 +6,10 @@
     gap: var(--gap);
 }
 
+body {
+    --body-bg-color: #ffffff;
+}
+
 .inner {
     position: relative;
     display: grid;

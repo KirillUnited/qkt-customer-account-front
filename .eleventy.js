@@ -1,16 +1,16 @@
 const eleventySass = require("eleventy-sass");
-// const Section = require("./src/components/Section");
+const Card = require("./src/_includes/components/Card");
 
 module.exports = function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy("src/assets/images/");
+    eleventyConfig.addWatchTarget("./src/");
     eleventyConfig.addPlugin(eleventySass, {
         sass: {
             style: "compressed",
             sourceMap: false
         }
     });
-    // eleventyConfig.addShortcode("Section", Section);
-    eleventyConfig.addWatchTarget("./src/");
+    eleventyConfig.addShortcode("Card", Card);
 
     return {
         dir: {
