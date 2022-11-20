@@ -33,7 +33,7 @@
             font-style: normal;
             font-weight: 400;
             font-size: 14px;
-            line-height: (21px/14px)*1em;
+            line-height: calc(21px/14px)*1em;
             display: flex;
             align-items: center;
             justify-content: center;

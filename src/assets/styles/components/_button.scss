@@ -7,6 +7,7 @@ a.btn,
 
     @include button($fontSize, $height);
 
+    --min-width: 27ch;
     --border-radius: #{calc(8/14)*1em};
     --border-color-invert: var(--color-green);
     --font-weight: 500;
@@ -45,8 +46,8 @@ a.btn,
     }
 
     &[disabled] {
-        --color: #8E8E8E;
-        --bg-color: #CCCCCC;
+        --color: #F8FAFC;
+        --bg-color: var(--color-disabled);
 
         pointer-events: none;
 

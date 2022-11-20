@@ -234,10 +234,12 @@
 // }
 
 @mixin button($fontSize: 16px, $height: auto) {
+    --min-width: 11ch;
+
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    min-width: 11ch;
+    min-width: var(--min-width);
     min-height: $height;
     padding: 0.25em 1em;
     background-color: var(--bg-color, transparent);

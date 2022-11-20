@@ -13,7 +13,8 @@ breadcrumbs: true
         <div class="form-group">
             <label class="form-label" for="account_info_Gender">Gender</label>
             <div class="form-input">
-                <select class="form-input-field" type="text" id="account_info_Gender" name="account_info_Gender" autocomplete="account_info_Gender">
+                <select class="form-input-field" type="text" id="account_info_Gender" name="account_info_Gender"
+                        autocomplete="account_info_Gender">
                     <option disabled selected>Please Select</option>
                     <option value="male">Male</option>
                     <option value="female">Female</option>
@@ -22,6 +23,11 @@ breadcrumbs: true
         </div>
         {% Input type="text", id="account_info_Company", label="Company" %}
     </fieldset>
+    <div class="form-footer">
+        <div class="container">
+            {% Button children="SAVE CHANGES", state="disabled", type="submit" %}
+        </div>
+    </div>
 </form>
 
 

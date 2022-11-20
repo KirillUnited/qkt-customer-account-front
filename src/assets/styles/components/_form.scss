@@ -2,13 +2,15 @@
     $font-size: 16px;
     --gap: 32px;
     --width: 524px;
+    --footer-min-height: 120px;
 
     width: min(100%, var(--width));
+    padding-bottom: var(--footer-min-height);
 
     .container-sm & {
         width: min(getvw($base-viewport-mobile - ($base-container-margin-x-sm * 2)), var(--width));
 
-        @include less-sm(){
+        @include less-sm() {
             width: 100%;
         }
     }
@@ -48,7 +50,6 @@
             }
 
 
-
             &:focus:invalid {
                 border-color: var(--color-error);
 
@@ -81,6 +82,21 @@
         gap: 8px;
     }
 
+    &-footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #FFFFFF;
+
+        .container {
+            min-height: var(--footer-min-height);
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-end;
+        }
+    }
+
     textarea {
         resize: vertical;
     }
@@ -93,6 +109,8 @@
     }
 
     @include less-sm() {
+        --footer-min-height: 75px;
+
         &-group {
             grid-template-columns: auto;
 
