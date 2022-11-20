@@ -9,7 +9,9 @@
 
 <body>
     <div class="wrapper">
-        {% block header %}{% endblock %}
+        {% block header %}
+            {% include "../_includes/header.html" %}
+        {% endblock %}
         <main class="content">{{content | safe}}</main>
         {% block footer %}{% endblock %}
     </div>
