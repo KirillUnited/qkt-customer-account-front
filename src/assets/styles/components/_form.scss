@@ -1,9 +1,12 @@
 .form {
     $font-size: 16px;
-    --gap: 32px;
+    --gap: 24px;
     --width: 524px;
     --footer-min-height: 120px;
 
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
     width: min(100%, var(--width));
     padding-bottom: var(--footer-min-height);
 
@@ -18,6 +21,11 @@
     &-fieldset {
         --column-width: 250px;
         --gap: 24px;
+
+        & + .form-fieldset {
+            border-top: 1px solid #D8D8D8;
+            padding-top: var(--gap);
+        }
     }
 
     &-label {
@@ -76,6 +84,53 @@
         }
     }
 
+    &-checkbox {
+        &-toggle {
+            display: flex;
+            align-items: center;
+            gap: var(--gap);
+            font-size: $font-size;
+
+            input {
+                display: none;
+            }
+
+            label {
+                position: relative;
+                display: block;
+                Width: 36px;
+                Height: 14px;
+                background-color: var(--color-grey);
+                border-radius: 50px;
+                cursor: pointer;
+
+                &::after {
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    right: 0;
+                    margin: auto;
+                    width: 20px;
+                    height: 20px;
+                    background-color: var(--color-disabled);
+                    content: "";
+                    border-radius: 100%;
+                    transition: background-color 200ms linear,
+                    transform 200ms ease-in-out 100ms;
+                }
+            }
+
+            input:checked ~ label {
+                background-color: rgba(94, 183, 0, 0.2);
+
+                &::after {
+                    background-color: var(--color-green);
+                    transform: translate3d(-16px, 0, 0);
+                }
+            }
+        }
+    }
+
     &-group {
         display: flex;
         flex-direction: column;
@@ -118,6 +173,17 @@
             input {
                 flex: 0 0 100%;
             }
+        }
+
+        &-footer {
+            button {
+                width: 100%;
+            }
+        }
+
+        .grid-col-fixed {
+            --col: 1;
+            grid-template-columns: 100%;
         }
     }
 }

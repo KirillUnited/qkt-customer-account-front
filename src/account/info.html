@@ -6,7 +6,7 @@ breadcrumbs: true
 ---
 <form class="form" id="account_info" method="POST" action="">
     <fieldset class="form-fieldset grid grid-col-2">
-        {% Input type="text", id="account_info_First_Name", label="First Name" %}
+        {% Input type="text", id="account_info_First_Name", label="First Name", rest={required: true} %}
         {% Input type="text", id="account_info_Last_Name", label="Last Name" %}
         {% Input type="text", id="account_info_birth", label="Date of birth" %}
         {% Input type="text", id="account_info_ID", label="ID / Passport number" %}

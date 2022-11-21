@@ -10,17 +10,27 @@
     }
 
     &-col-2 {
+        --col: 2;
         --column-width: 366px;
         --gap: #{getMinMax(16px, 16px)} #{getMinMax(16px, 16px)};
     }
 
+    &[class*="grid-col-fixed"] {
+        grid-template-columns: repeat(var(--col), 1fr);
+    }
+
     &-col-4 {
+        --col: 4;
         --column-width: 276px;
         --gap: #{getMinMax(24px, 24px)} #{getMinMax(24px, 48px)};
     }
 
     &-col-fill {
         --col-adapt: auto-fill;
+    }
+
+    &-col-span {
+        grid-column: span var(--col);
     }
 
     &.actions {

@@ -12,7 +12,7 @@
       "img": "Phone.svg",
       "name": "Contact Info.",
       "desc": "Name, Surname, Email etc.",
-      "link": ""
+      "link": "/account/contacts"
     },
     {
       "img": "Email.svg",

@@ -40,12 +40,12 @@
 
     &-header {
         padding-top: getMinMax(25px, 32px);
-        padding-bottom: getMinMax(10px, 32px);
+        padding-bottom: getMinMax(25px, 25px);
     }
 
     &-content {
-        padding-top: getMinMax(25px, 32px);
-        padding-bottom: getMinMax(25px, 32px);
+        padding-top: getMinMax(25px, 25px);
+        padding-bottom: getMinMax(25px, 25px);
     }
 
     &-title {

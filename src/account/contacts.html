@@ -1,0 +1,46 @@
+---
+layout: account.html
+title: Contact Information.
+description: "Name, Surname, Email, etc."
+breadcrumbs: true
+---
+<form class="form" id="account_info" method="POST" action="">
+    <fieldset class="form-fieldset grid grid-col-2">
+        {% Input type="email", id="account_contacts_Email", label="Email" %}
+        {% Input type="tel", id="account_contacts_Cellphone", label="Cellphone", rest={pattern: "[0-9]{3}-[0-9]{3}-[0-9]{4}"} %}
+        {% Input type="tel", id="account_contacts_Telephone", label="Telephone", rest={pattern: "[0-9]{3}-[0-9]{3}-[0-9]{4}"} %}
+    </fieldset>
+    <fieldset class="form-fieldset grid grid-col-2 grid-col-fixed">
+        <div class="form-group grid-col-span" >
+            <label class="form-label">Address</label>
+            <div class="form-checkbox-toggle">
+                <span>Street Address</span>
+                <input type="checkbox" id="account_contacts_Address" checked>
+                <label for="account_contacts_Address"></label>
+                <span>PO Box</span>
+            </div>
+        </div>
+        {% Input type="number", id="account_contacts_Number", label="Number" %}
+        {% Input type="text", id="account_contacts_Street", label="Street" %}
+        {% Input type="text", id="account_contacts_Suburb", label="Suburb" %}
+        {% Input type="text", id="account_contacts_City", label="City/Town" %}
+        {% Input type="text", id="account_contacts_PostalCode", label="Postal Code" %}
+        <div class="form-group">
+            <label class="form-label" for="account_contacts_Country">Country</label>
+            <div class="form-input">
+                <select class="form-input-field" type="text" id="account_contacts_Country" name="account_contacts_Country"
+                        autocomplete="account_contacts_Country">
+                    <option disabled selected>Please Select</option>
+                    <option value="South Africa">South Africa</option>
+                </select>
+            </div>
+        </div>
+    </fieldset>
+    <div class="form-footer">
+        <div class="container">
+            {% Button children="SAVE CHANGES", state="disabled", type="submit" %}
+        </div>
+    </div>
+</form>
+
+
