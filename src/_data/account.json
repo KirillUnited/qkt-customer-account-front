@@ -24,7 +24,7 @@
       "img": "Lock.svg",
       "name": "Password",
       "desc": "Name, Surname, Email etc.",
-      "link": ""
+      "link": "/account/password"
     },
     {
       "img": "bank-card.svg",
