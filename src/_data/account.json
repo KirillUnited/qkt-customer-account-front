@@ -18,7 +18,7 @@
       "img": "Email.svg",
       "name": "Email Preferences",
       "desc": "Name, Surname, Email etc.",
-      "link": ""
+      "link": "/account/email"
     },
     {
       "img": "Lock.svg",

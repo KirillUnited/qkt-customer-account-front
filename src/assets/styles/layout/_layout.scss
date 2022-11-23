@@ -52,6 +52,10 @@
         margin-bottom: getMinMax(4px, 32px);
     }
 
+    &-desc {
+        width: min(100%, getrem(335px));
+    }
+
     @include less-sm() {
         &-banner {
             padding-top: getMinMax(10px, 10px);

@@ -22,7 +22,7 @@
         --column-width: 250px;
         --gap: 24px;
 
-        & + .form-fieldset {
+        &+.form-fieldset {
             border-top: 1px solid #D8D8D8;
             padding-top: var(--gap);
         }
@@ -53,6 +53,7 @@
 
         &-field {
             @include input-field();
+
             @include input-placeholder {
                 color: var(--color-text-body);
             }
@@ -61,11 +62,11 @@
             &:focus:invalid {
                 border-color: var(--color-error);
 
-                & ~ .error-msg {
+                &~.error-msg {
                     display: block;
                 }
 
-                & ~ .form-input-icon path {
+                &~.form-input-icon path {
                     fill: var(--color-error);
                 }
             }
@@ -85,6 +86,20 @@
     }
 
     &-checkbox {
+        --font-size: 16px;
+        
+        display: flex;
+        gap: 16px;
+        align-items: flex-start;
+        font-family: var(--font-main);
+        font-style: normal;
+        font-weight: 400;
+        font-size: var(--font-size);
+        line-height: calc(18px/16px)*1em;
+        letter-spacing: 0.0015em;
+        color: var(--color-text-body);
+        cursor: pointer;
+
         &-toggle {
             display: flex;
             align-items: center;
@@ -116,16 +131,44 @@
                     content: "";
                     border-radius: 100%;
                     transition: background-color 200ms linear,
-                    transform 200ms ease-in-out 100ms;
+                        transform 200ms ease-in-out 100ms;
                 }
             }
 
-            input:checked ~ label {
+            input:checked~label {
                 background-color: rgba(94, 183, 0, 0.2);
 
                 &::after {
                     background-color: var(--color-green);
                     transform: translate3d(-16px, 0, 0);
+                }
+            }
+        }
+
+        * {
+            transition: all 0.1s linear;
+        }
+
+        svg {
+            flex: 0 0 calc(18px/16px)*1em;
+            width: calc(18px/16px)*1em;
+            height: calc(18px/16px)*1em;
+        }
+
+        input {
+            position: absolute;
+            width: 1em;
+            height: 1em;
+            opacity: 0.00001;
+
+            &:checked+svg {
+                .checkbox__background {
+                    fill: var(--color-green);
+                    stroke: var(--color-green);
+                }
+
+                .checkbox__checkmark {
+                    stroke: #FFFFFF;
                 }
             }
         }
