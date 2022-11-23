@@ -7,29 +7,7 @@ breadcrumbs: true
 
 <form class="form" id="account_email" method="POST" action="">
     <fieldset class="form-fieldset grid grid-col-2">
-        <div class="form-group">
-            <label class="form-checkbox">
-                <input type="checkbox" id="account_email_Newsletter" name="account_email_Newsletter">
-                <svg
-                    width="32" height="32" viewbox="-4 -4 39 39" aria-hidden="true" focusable="false">
-                    <!-- The background -->
-                    <rect
-                        class="checkbox__background"
-                        width="35"
-                        height="35"
-                        x="-2"
-                        y="-2"
-                        stroke="currentColor"
-                        fill="none"
-                        stroke-width="3"
-                        rx="6"
-                        ry="6"></rect>
-                    <!-- The checkmark-->
-                    <polyline class="checkbox__checkmark" points="4,14 12,23 28,5" stroke="transparent" stroke-width="4" fill="none"></polyline>
-                </svg>
-                <span>Quicket newsletter</span>
-            </label>
-        </div>
+        {% Checkbox id="account_email_Newsletter", label="Quicket newsletter" %}
         {% Checkbox id="account_contacts_Event", label="Event recommendations" %}
         {% Checkbox id="account_contacts_Invitations", label="Invitations from event organisers" %}
         {% Checkbox id="account_contacts_Sales", label="Daily sales updates on your events" %}
