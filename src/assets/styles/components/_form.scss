@@ -271,6 +271,8 @@
 
     @include less-sm() {
         box-shadow: none;
+        padding-top: 0;
+        padding-bottom: 0;
 
         .form-fieldset {
             flex-direction: column;
