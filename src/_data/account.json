@@ -36,7 +36,7 @@
       "img": "node_multiple_outlined.svg",
       "name": "API Keys",
       "desc": "Name, Surname, Email etc.",
-      "link": ""
+      "link": "/account/api"
     }
   ]
 }

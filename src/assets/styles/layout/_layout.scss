@@ -53,7 +53,11 @@
     }
 
     &-desc {
-        width: min(100%, getrem(335px));
+        a {
+            color: inherit;
+            text-decoration: underline;
+            font-weight: 500;
+        }
     }
 
     @include less-sm() {

@@ -1,16 +1,16 @@
 ---
 layout: account.html
 title: Email Preferences
-description: "Select which lists you would like to recieve email communications from:"
+description: "Select which lists you would like to recieve<br/> email communications from:"
 breadcrumbs: true
 ---
 
 <form class="form" id="account_email" method="POST" action="">
     <fieldset class="form-fieldset grid grid-col-2">
         {% Checkbox id="account_email_Newsletter", label="Quicket newsletter" %}
-        {% Checkbox id="account_contacts_Event", label="Event recommendations" %}
-        {% Checkbox id="account_contacts_Invitations", label="Invitations from event organisers" %}
-        {% Checkbox id="account_contacts_Sales", label="Daily sales updates on your events" %}
+        {% Checkbox id="account_email_Event", label="Event recommendations" %}
+        {% Checkbox id="account_email_Invitations", label="Invitations from event organisers" %}
+        {% Checkbox id="account_email_Sales", label="Daily sales updates on your events" %}
     </fieldset>
     <div class="form-footer">
         <div class="container">

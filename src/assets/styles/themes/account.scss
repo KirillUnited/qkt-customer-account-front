@@ -1,12 +1,14 @@
 @import "../utilities";
 
+body {
+    @include less-sm() {
+        --body-bg-color: #ffffff;
+    }
+}
+
 .page-account {
     footer {
         padding-bottom: 80px;
         padding-top: 80px;
-    }
-
-    @include less-sm(){
-        --body-bg-color: #ffffff;
     }
 }

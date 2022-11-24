@@ -1,0 +1,38 @@
+---
+layout: api.html
+title: API Keys
+description: 'In order to access the Quicket API you will need an API subscriber key. To get a subscriber key you <br class="hidden-less-sm"/> must
+first register on the Quicket Developer Portal at <a href="https://developer.quicket.co.za/" target="_blank">https://developer.quicket.co.za/</a>.'
+breadcrumbs: true
+---
+
+<section class="section section-api">
+    <div class="container">
+        <div class="section-inner">
+            {% if title %}
+                <div class="section-header">
+                    {% if breadcrumbs %}
+                        {% Breadcrumbs parent=account, current=title %}
+                    {% endif %}
+                    <h1 class="section-title">{{ title }}</h1>
+                    <p class="section-desc">{{ description | safe }}</p>
+                </div>
+            {% endif %}
+            <div class="section-content">
+                <form class="form form-api" id="account_api" method="GET" action="">
+                    <legend class="form-legend">For any authenticated calls you will need to add a "usertoken" header below.</legend>
+                    <fieldset class="form-fieldset">
+                        {% Input type="text", id="account_api_Token", children='<img alt="" src="/assets/images/icons/key.svg" width="20" height="20" class="form-input-icon">' %}
+                        {% Button children="GENERATE NEW TOKEN", state="primary", type="submit" %}
+                    </fieldset>
+                </form>
+                <p style="font-size: 16px;
+                        color: #94A3B8;text-align: center; margin-top: 80px">
+                    Please note that the Quicket API is in Beta and is subject to change. If you have any<br class="hidden-less-sm"/> queries or suggestions about the
+                    API please
+                    <a href="#" class="deactivate">contact us.</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</section>

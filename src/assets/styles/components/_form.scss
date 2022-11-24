@@ -87,7 +87,7 @@
 
     &-checkbox {
         --font-size: 16px;
-        
+
         display: flex;
         gap: 16px;
         align-items: flex-start;
@@ -226,6 +226,54 @@
 
         .grid-col-fixed {
             --col: 1;
+        }
+    }
+}
+
+.form-api {
+    --gap: 10px;
+    --width: 764px;
+    --footer-min-height: 0;
+
+    background-color: #FFFFFF;
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+    padding: 32px 16px;
+    margin-left: auto;
+    margin-right: auto;
+
+    .form-fieldset {
+        --gap: 16px;
+
+        display: flex;
+        gap: var(--gap);
+
+        &>* {
+            flex: 1;
+        }
+
+        input {
+            font-weight: 500;
+            background-color: var(--color-grey);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            padding-left: 40px;
+        }
+
+        button {
+            flex: 0 0 auto;
+        }
+
+        .form-input-icon {
+            right: auto;
+            left: getMinMax(14px, 14px);
+        }
+    }
+
+    @include less-sm() {
+        box-shadow: none;
+
+        .form-fieldset {
+            flex-direction: column;
         }
     }
 }
