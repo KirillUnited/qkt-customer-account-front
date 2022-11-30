@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>{{ title }} | Quicket Customer Account</title>
+        {% include "../_includes/head.html" %}
+        {% block head %}
+            <link rel="stylesheet" href="/assets/styles/index.css"/>
+        {% endblock %}
+    </head>
+    <body class="page-tabs">
+        <div class="wrapper">
+            {% include "../_includes/header.html" %}
+            <main class="content">
+                <section class="section">
+                    <div class="container">
+                        <div class="section-inner tabs">
+                            {{ content | safe }}
+                        </div>
+                    </div>
+                </section>
+            </main>
+            {% block footer %}
+                {% if footer %}
+                    {{footer|safe}}
+                {% endif %}
+            {% endblock %}
+        </div>
+    </body>
+</html>

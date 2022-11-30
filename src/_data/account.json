@@ -30,7 +30,57 @@
       "img": "bank-card.svg",
       "name": "Payments & Payouts",
       "desc": "Name, Surname, Email etc.",
-      "link": ""
+      "link": "/account/payments",
+      "tabs": [
+        {
+          "title": "payments",
+          "panel": {
+            "title": "My Payment Methods",
+            "desc": "Below are your saved payment cards. A card can be saved by purchasing tickets and selecting the \"Save<br class=\"hidden-less-sm\"/> my card for future use\" check box. Future purchases can then be made using your saved cards.",
+            "methods": [
+              {
+                "img": "visa.svg",
+                "title": "**** 7682",
+                "desc": "Exp date: 12/22"
+              },
+              {
+                "img": "visa.svg",
+                "title": "**** 7124",
+                "desc": "Exp date: 05/25"
+              },
+              {
+                "img": "mastercard.svg",
+                "title": "**** 5682",
+                "desc": "Exp date: 07/23"
+              }
+            ]
+          }
+        },
+        {
+          "title": "payouts",
+          "panel": {
+            "title": "My Accounts",
+            "desc": "Below are your saved bank accounts. To add an account, click the ‘Add Bank Account’ button on<br class=\"hidden-less-sm\"/> the right.",
+            "methods": [
+              {
+                "img": "bank-account-1.svg",
+                "title": "**** 7682",
+                "desc": "Name Surname"
+              },
+              {
+                "img": "bank-account-1.svg",
+                "title": "**** 7124",
+                "desc": "Name Surname"
+              },
+              {
+                "img": "bank-account-2.svg",
+                "title": "**** 5682",
+                "desc": "Name Surname"
+              }
+            ]
+          }
+        }
+      ]
     },
     {
       "img": "node_multiple_outlined.svg",

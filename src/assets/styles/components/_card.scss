@@ -17,8 +17,35 @@
         width: getMinMax(20px, 32px);
         height: getMinMax(20px, 32px);
     }
+
     &-body {
         flex: 1;
+    }
+}
+
+.card-account {
+    --flex-dir: row;
+
+    align-items: center;
+    padding: 24px;
+
+    &-del {
+        appearance: none;
+        border: none;
+        cursor: pointer;
+        background-color: transparent;
+    }
+
+    .card {
+        &-img {
+            flex: 0 0 40px;
+            height: auto;
+        }
+
+        &-title {
+            font-size: 16px;
+            font-weight: 700;
+        }
     }
 }
 
@@ -35,10 +62,16 @@
         border-left: none;
         box-shadow: none;
 
-        .card-title {
-            font-size: getMinMax(16px, 20px);
-            font-weight: 400;
-            margin-bottom: 0;
+        .card {
+            &-title {
+                font-size: getMinMax(16px, 20px);
+                font-weight: 400;
+                margin-bottom: 0;
+            }
+
+            &-desc {
+                display: none;
+            }
         }
     }
 }

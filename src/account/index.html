@@ -6,7 +6,7 @@ description: "Edit your profile details below."
 
 <div class="actions grid grid-col-2">
     {%- for card in account.actions -%}
-        {% Card card %}
+        {% Card link=card.link, img=card.img, title=card.name, desc=card.desc, type="card-minimal" %}
     {%- endfor -%}
 </div>
 
