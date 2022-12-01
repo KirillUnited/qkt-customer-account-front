@@ -6,6 +6,7 @@ const Button = require("./src/_includes/components/Button");
 
 module.exports = function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy("src/assets/images/");
+    eleventyConfig.addPassthroughCopy("src/assets/js/index.js");
     eleventyConfig.addWatchTarget("./src/");
     eleventyConfig.addPlugin(eleventySass, {
         sass: {
