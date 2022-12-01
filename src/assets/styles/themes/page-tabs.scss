@@ -1,0 +1,16 @@
+@import "../utilities";
+
+.page-tabs {
+    @include less-sm() {
+        .tabs {
+            &-content {
+                padding-left: getMinMax($base-container-margin-x-sm, $base-container-margin-x);
+                padding-right: getMinMax($base-container-margin-x-sm, $base-container-margin-x);
+            }
+
+            .container {
+                width: 100%;
+            }
+        }
+    }
+}

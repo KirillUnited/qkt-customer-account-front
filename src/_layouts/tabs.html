@@ -4,16 +4,17 @@
         <title>{{ title }} | Quicket Customer Account</title>
         {% include "../_includes/head.html" %}
         {% block head %}
-            <link rel="stylesheet" href="/assets/styles/index.css"/>
+        <link rel="stylesheet" href="/assets/styles/index.css"/>
+        <link rel="stylesheet" href="/assets/styles/themes/page-account.css"/>
         {% endblock %}
     </head>
     <body class="page-tabs">
         <div class="wrapper">
             {% include "../_includes/header.html" %}
             <main class="content">
-                <section class="section">
+                <section class="section tabs">
                     <div class="container">
-                        <div class="section-inner tabs">
+                        <div class="section-inner">
                             {{ content | safe }}
                         </div>
                     </div>
@@ -21,7 +22,7 @@
             </main>
             {% block footer %}
                 {% if footer %}
-                    {{footer|safe}}
+                    {{ footer|safe }}
                 {% endif %}
             {% endblock %}
         </div>

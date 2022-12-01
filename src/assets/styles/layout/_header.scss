@@ -102,7 +102,8 @@
         }
     }
 
-    @include less-sm(){
+    @include less-sm() {
+        border: none;
         &-inner {
             --min-height: 60px;
 

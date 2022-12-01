@@ -1,6 +1,6 @@
 .tabs {
     &-navbar {
-        padding-top: 40px;
+        padding-top: getMinMax(24px, 40px);
         padding-bottom: 5px;
     }
 
@@ -50,10 +50,33 @@
             --color: var(--color-orange);
         }
     }
+}
 
-    @include less-sm(){
+@include less-sm() {
+    .tabs {
+        &-content {
+            padding-left: getMinMax($base-container-margin-x-sm, $base-container-margin-x);
+            padding-right: getMinMax($base-container-margin-x-sm, $base-container-margin-x);
+        }
+
         &-item {
             max-width: 100%;
+        }
+
+        &-link {
+            text-transform: capitalize;
+        }
+
+        .container {
+            width: 100%;
+        }
+
+        .breadcrumbs {
+            display: none;
+        }
+
+        .section-content {
+            padding-top: 0;
         }
     }
 }

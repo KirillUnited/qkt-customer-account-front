@@ -12,6 +12,7 @@
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.05);
     border-radius: var(--border-radius);
     padding: 20px 16px;
+    overflow: hidden;
 
     &-img {
         width: getMinMax(20px, 32px);
@@ -26,8 +27,9 @@
 .card-account {
     --flex-dir: row;
 
+    min-height: 104px;
     align-items: center;
-    padding: 24px;
+    padding: getMinMax(16px, 24px);
 
     &-del {
         appearance: none;
@@ -46,11 +48,17 @@
             font-size: 16px;
             font-weight: 700;
         }
+
+        &-title,
+        &-desc,
+        &-body {
+            @include truncate();
+        }
     }
 }
 
-.card-minimal {
-    @include less-sm() {
+@include less-sm() {
+    .card-minimal {
         --flex-dir: row;
         --gap: 8px;
         --border-radius: 0;
@@ -73,5 +81,8 @@
                 display: none;
             }
         }
+    }
+    .card-account {
+        min-height: getMinMax(130px, 130px);
     }
 }
