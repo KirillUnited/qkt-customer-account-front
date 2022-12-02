@@ -24,7 +24,7 @@ title: 'Payments & Payouts'
                 <p class="section-desc">{{ tab.panel.desc | safe }}</p>
             </div>
             <div class="section-content">
-                {% if tab.panel.methods %}
+                {% if tab.panel.fake_methods %}
                     <div class="tabs-panel-grid grid grid-col-2 grid-col-fixed">
                         {%- for method in tab.panel.methods -%}
                             {% Card link=method.link, img=method.img, title=method.title, desc=method.desc, type="card-account" %}

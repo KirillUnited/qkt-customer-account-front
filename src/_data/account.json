@@ -53,7 +53,14 @@
                 "title": "**** 5682",
                 "desc": "Exp date: 07/23"
               }
-            ]
+            ],
+            "enableButton": false,
+            "placeholder": {
+              "img": "/assets/images/payments/placeholder-cards.png",
+              "title": "Save Cards at Checkout",
+              "desc": "A card can be saved by purchasing tickets and selecting the \"Save my card for future use\" check box. Future purchases can then be made using your saved cards.",
+              "footer": "Note that card details are not stored with Quicket, and are securely stored in a PCI-DSS Level 1 certified transaction platform and credit card storage vault, provided by Peach Payments. For more information see <a href=\"#\">http://peachpayments.com</a>."
+            }
           }
         },
         {
@@ -77,7 +84,14 @@
                 "title": "**** 5682",
                 "desc": "Name Surname"
               }
-            ]
+            ],
+            "enableButton": true,
+            "placeholder": {
+              "img": "/assets/images/payments/placeholder-accounts.png",
+              "title": "Add Bank Accounts",
+              "desc": "Bank Account details are relevant for the comission payments earned either through <a href=\"#\">referral</a> or <a href=\"#\">promoter network</a> links.",
+              "footer": null
+            }
           }
         }
       ]

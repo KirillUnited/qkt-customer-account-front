@@ -1,0 +1,19 @@
+{% macro contentholder(img, title, desc, button, footer) %}
+<div class="contentholder">
+    <div class="contentholder-main">
+        <div class="contentholder-inner">
+            <img src="{{img}}" alt="title" class="contentholder-img">
+            <h1 class="contentholder-title">{{title}}</h1>
+            <p class="contentholder-desc">{{desc|safe}}</p>
+            {% if button %}
+                {% Button children=title, state="primary", type="button" %}
+            {% endif %}
+        </div>
+    </div>
+    {% if footer %}
+    <div class="contentholder-footer">
+        <p>{{footer|safe}}</p>
+    </div>
+    {% endif %}
+</div>
+{% endmacro %}

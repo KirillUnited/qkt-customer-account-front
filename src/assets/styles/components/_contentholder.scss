@@ -1,0 +1,42 @@
+.contentholder {
+    display: flex;
+    flex-direction: column;
+    gap: getMinMax(20px, 40px);
+    text-align: center;
+
+    &-main {
+        display: grid;
+        place-items: center;
+        background-color: #FFFFFF;
+        padding: getMinMax(20px, 45px);
+    }
+
+    &-inner {
+        width: min(100%, 456px);
+    }
+
+    &-img {
+        max-width: getMinMax(210px, 236px);
+        margin: 0 auto 20px;
+    }
+
+    &-footer {
+        display: flex;
+        flex-wrap: wrap;
+        align-self: center;
+        width: min(100%, 697px);
+        color: #94A3B8;
+
+        a {
+            color: inherit;
+        }
+    }
+
+    a {
+        text-decoration: underline;
+    }
+
+    p {
+        font-size: 16px;
+    }
+}
