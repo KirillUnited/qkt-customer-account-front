@@ -7,8 +7,9 @@
     &-main {
         display: grid;
         place-items: center;
+        min-height: getMinMax(411px,454px);
         background-color: #FFFFFF;
-        padding: getMinMax(20px, 45px);
+        padding: getMinMax(20px, 30px);
     }
 
     &-inner {
