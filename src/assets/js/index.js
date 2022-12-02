@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const tablist = document.querySelector('[data-tablist]');
         const tabs = tablist.querySelectorAll('[data-tab]');
         const panels = document.querySelectorAll('[data-panel]');
-        const onTabClick = (e) => {
+        const handleClick = (e) => {
             const tab = e.target.closest('[data-tab]');
 
             if (tab) {
@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         setActivePanel(document.querySelector('[data-panel]'));
         setActiveTab(tablist.querySelector('[data-tab]'));
-        tablist.addEventListener('click', onTabClick);
+        tablist.addEventListener('click', handleClick);
 
         function setActivePanel(panel) {
             panels.forEach(item => item.hidden = true);

@@ -17,7 +17,7 @@ breadcrumbs: true
 </nav>
 <div class="tabs-content">
     {%- for tab in account.actions[4].tabs -%}
-        <div id="{{ tab.panel.title|replace(' ', '_') }}" class="tabs-panel" data-panel="{{ tab.panel.title|replace(' ', '_') }}" {{ hidden="true" if loop.index === 1 }}>
+        <div id="{{ tab.panel.title|replace(' ', '_') }}" class="tabs-panel" data-panel="{{ tab.panel.title|replace(' ', '_') }}">
             <div class="section-header">
                 {% if breadcrumbs %}
                     {% Breadcrumbs parent=account, current=title %}
