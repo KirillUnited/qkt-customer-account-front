@@ -1,0 +1,122 @@
+.modal {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: -1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.72);
+    opacity: 0;
+    transition: all 300ms;
+    pointer-events: none;
+
+    &-show {
+        opacity: 1;
+        pointer-events: auto;
+        z-index: 9999;
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+    .form {
+        --width: 100%;
+        --footer-min-height: 0;
+    }
+}
+
+.modal-dialog {
+    width: min(100%, getrem(596px));
+    position: relative;
+    margin: 0 getMinMax($base-container-margin-x-sm, $base-container-margin-x);
+    max-height: calc(100vh - #{$base-container-margin-x-sm});
+    display: flex;
+    flex-direction: column;
+    background: #FFFFFF;
+    border-radius: 8px;
+    overflow: hidden;
+
+    .modal-show & {
+        -webkit-animation-name: animatetop;
+        -webkit-animation-duration: 0.4s;
+        animation-name: slide-in;
+        animation-duration: 0.5s;
+    }
+}
+
+.modal-header,
+.modal-footer {
+    display: flex;
+    padding-left: getMinMax(16px, 32px);
+    padding-right: getMinMax(16px, 32px);
+}
+
+.modal-header {
+    flex-direction: column;
+    padding-top: getMinMax(24px, 24px);
+    padding-bottom: getMinMax(20px, 20px);
+}
+
+.modal-footer {
+    justify-content: space-between;
+    gap: getMinMax(16px, 16px);
+    padding-top: getMinMax(20px, 20px);
+    padding-bottom: getMinMax(24px, 24px);
+
+    .btn {
+        --min-width: min(calc(50% - 8px), 188px);
+    }
+}
+
+.modal-content {
+    padding: getMinMax(20px, 20px) getMinMax(16px, 32px);
+    overflow: auto;
+}
+
+.modal-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    font-size: 20px;
+    padding: getMinMax(14px, 14px) getMinMax(24px, 24px);
+}
+
+@include less-sm {
+    .modal {
+        overflow: auto;
+        align-items: flex-start;
+    }
+    .modal-content {
+        overflow: visible;
+    }
+    .modal-dialog {
+        max-height: none;
+        overflow-y: auto;
+        margin-top: getMinMax(24px, 24px);
+        margin-bottom: getMinMax(24px, 24px);
+    }
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slide-in {
+    from {
+        transform: translateY(-150px);
+    }
+    to {
+        transform: translateY(0);
+    }
+}

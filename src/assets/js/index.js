@@ -31,4 +31,31 @@ document.addEventListener('DOMContentLoaded', () => {
             tab.classList.add('tabs-link-active');
         }
     })();
+    const Modal = (function () {
+        const elements = document.querySelectorAll('[data-modal]');
+        const showButtons = document.querySelectorAll('[data-toggle="modal"]');
+        const handleClick = (e) => {
+            const closeButton = e.target.dataset.close;
+            if(closeButton) hide(e);
+        };
+
+        showButtons.forEach((btn) => btn.addEventListener('click', show));
+        elements.forEach(modal => modal.addEventListener('click', handleClick));
+
+        function show(e) {
+            e.preventDefault();
+            const target = document.querySelector(`[data-modal="${this.dataset.target}"]`);
+
+            if (!target) return;
+            target.classList.add('modal-show');
+        }
+
+        function hide(e) {
+            e.preventDefault();
+            const target = e.target.closest(`[data-modal]`);
+
+            if (!target) return;
+            target.classList.remove('modal-show');
+        }
+    })();
 });

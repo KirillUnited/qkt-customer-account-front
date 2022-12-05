@@ -17,11 +17,17 @@ title: 'Payments & Payouts'
 </nav>
 <div class="tabs-content">
     {%- for tab in account.actions[4].tabs -%}
-        <div id="{{ tab.panel.title|replace(' ', '_') }}" class="tabs-panel" data-panel="{{ tab.panel.title|replace(' ', '_') }}">
+        <div id="{{ tab.panel.title|replace(' ', '_') }}" class="tabs-panel" data-panel="{{ tab.panel.title|replace(' ', '_') }}" hidden="{{true if loop.index === 2 else false}}">
             <div class="section-header">
                 {% Breadcrumbs parent=account, current=title %}
                 <h1 class="section-title">{{ tab.panel.title }}</h1>
-                <p class="section-desc">{{ tab.panel.desc | safe }}</p>
+                <p class="section-desc">
+                    {{ tab.panel.desc | safe }}
+                    {% if tab.title === "payouts" %}
+                        {% Button children=tab.panel.placeholder.title, state="primary", type="button", rest={toggle: "modal", target: "account_payments_modal"} %}
+                        {% Modal id="account_payments_modal", title="Add Bank Account", desc="Please enter your bank details below.", content="" %}
+                    {% endif %}
+                </p>
             </div>
             <div class="section-content">
                 {% if tab.panel.methods %}

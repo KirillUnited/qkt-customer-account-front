@@ -6,6 +6,10 @@
 
     &-content {
         position: relative;
+
+        .section-desc {
+            margin-bottom: 0;
+        }
     }
 
     &-panel {
@@ -52,11 +56,35 @@
     }
 }
 
+@include more-sm() {
+    .tabs {
+        &-content {
+            .section-desc {
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-start;
+            }
+        }
+    }
+}
+
 @include less-sm() {
     .tabs {
         &-content {
             padding-left: getMinMax($base-container-margin-x-sm, $base-container-margin-x);
             padding-right: getMinMax($base-container-margin-x-sm, $base-container-margin-x);
+
+            .section-desc {
+                .btn {
+                    position: fixed;
+                    left: $base-container-margin-x-sm;
+                    right: $base-container-margin-x-sm;
+                    bottom: $base-container-margin-x-sm;
+                    margin-left: auto;
+                    margin-right: auto;
+                    z-index: 10;
+                }
+            }
         }
 
         &-item {
@@ -67,7 +95,7 @@
             text-transform: capitalize;
         }
 
-        .container {
+        & > .container {
             width: 100%;
         }
 
