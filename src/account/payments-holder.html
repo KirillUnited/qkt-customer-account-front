@@ -36,4 +36,6 @@ title: 'Payments & Payouts'
             </div>
         </div>
     {%- endfor -%}
+    {% Modal id="add_account_payments_modal", title="Add Bank Account", desc="Please enter your bank details below.", content="payments" %}
+    {% Modal id="del_account_payments_modal", title="Are you sure?", desc="Please note your card and all its associated payment data will be permanently deleted and rendered unrecoverable", content="confirmation" %}
 </div>
