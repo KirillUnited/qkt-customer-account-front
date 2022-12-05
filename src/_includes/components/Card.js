@@ -1,10 +1,10 @@
 const {html} = require("common-tags");
 
 function Card(props) {
-    const {link, img, title, desc, type} = props;
+    const {img, title, desc, type} = props;
 
     return html`
-        <a href="${link}" class="card ${type}">
+        <div class="card ${type}">
             <div class="card-img">
                 <img src="/assets/images/icons/${img}" alt="${title}">
             </div>
@@ -21,7 +21,7 @@ function Card(props) {
                 </svg>`
             }
             ${(type === "card-account") &&
-                `<button class="card-account-del">
+                `<button class="card-account-del" data-toggle="modal" data-target="del_account_payments_modal">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M4.5 5V22H19.5V5H4.5Z" stroke="#485868" stroke-width="2" stroke-linejoin="round"/>
                         <path d="M10 10V16.5" stroke="#485868" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -31,7 +31,7 @@ function Card(props) {
                     </svg>
                 </button>`
             }
-        </a>
+        </div>
     `;
 }
 

@@ -1,11 +1,15 @@
 const {html} = require("common-tags");
 const {Input, Checkbox} = require("./Input");
 
-const Modal = ({id, title, desc, header, content}) => {
-    const contentTemplate = content || getPaymentsTemplate();
+const Modal = ({id, title, desc, header, content=""}) => {
+    const contentTemplates = {
+        "payments": getPaymentsTemplate(),
+        "confirmation": null
+    };
+    const contentTemplate = contentTemplates[content];
 
     return html`
-        <div class="modal" data-modal='${id}' data-close="true">
+        <div class="modal ${(content === 'confirmation') && 'modal-confirm'}" data-modal='${id}' data-close="true">
             <div class="modal-dialog">
                 ${
         header
@@ -17,13 +21,14 @@ const Modal = ({id, title, desc, header, content}) => {
                             <p class="modal-desc">${desc}</p>
                         </div>`
     }
-                <div class="modal-content">                
+                ${contentTemplate &&
+    `<div class="modal-content">                
                     <form class="form" id="account_payments" method="POST" action="">
                         <fieldset class="form-fieldset grid grid-col-2 grid-col-fixed">                             
                             ${contentTemplate}
                         </fieldset>
                     </form>
-                </div>
+                </div>`}
                 <div class="modal-footer">
                     <button class='btn btn-invert' type="button" data-close="true">Cancel</button>
                     <button class='btn btn-primary' type="submit" data-close="true">Save</button>
@@ -54,24 +59,24 @@ function getPaymentsTemplate() {
                                 </div>
                              </div>
                             ${Input({
-                                type: "text",
-                                id: "account_payments_Holder_Name",
-                                label: "Account Holder Name",
-                                children: "",
-                                rest: {}
-                            })}                             
+        type: "text",
+        id: "account_payments_Holder_Name",
+        label: "Account Holder Name",
+        children: "",
+        rest: {}
+    })}                             
                             ${Input({
-                                type: "text",
-                                id: "account_payments_Account_Number",
-                                label: "Account Number",
-                                children: "",
-                                rest: {}
-                            })}
+        type: "text",
+        id: "account_payments_Account_Number",
+        label: "Account Number",
+        children: "",
+        rest: {}
+    })}
                             <div class="grid-col-span">
                             ${Checkbox({
-                                id: "Account_Default_Check",
-                                label: "Set this as my default account"
-                            })}
+        id: "Account_Default_Check",
+        label: "Set this as my default account"
+    })}
                             </div>
 `;
 }

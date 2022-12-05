@@ -24,8 +24,8 @@ title: 'Payments & Payouts'
                 <p class="section-desc">
                     {{ tab.panel.desc | safe }}
                     {% if tab.title === "payouts" %}
-                        {% Button children=tab.panel.placeholder.title, state="primary", type="button", rest={toggle: "modal", target: "account_payments_modal"} %}
-                        {% Modal id="account_payments_modal", title="Add Bank Account", desc="Please enter your bank details below.", content="" %}
+                        {% Button children=tab.panel.placeholder.title, state="primary", type="button", rest={toggle: "modal", target: "add_account_payments_modal"} %}
+                        {% Modal id="add_account_payments_modal", title="Add Bank Account", desc="Please enter your bank details below.", content="payments" %}
                     {% endif %}
                 </p>
             </div>
@@ -33,7 +33,7 @@ title: 'Payments & Payouts'
                 {% if tab.panel.methods %}
                     <div class="tabs-panel-grid grid grid-col-2 grid-col-fixed">
                         {%- for method in tab.panel.methods -%}
-                            {% Card link=method.link, img=method.img, title=method.title, desc=method.desc, type="card-account" %}
+                            {% Card img=method.img, title=method.title, desc=method.desc, type="card-account" %}
                         {%- endfor -%}
                     </div>
                 {% else %}
@@ -42,4 +42,6 @@ title: 'Payments & Payouts'
             </div>
         </div>
     {%- endfor -%}
+
+    {% Modal id="del_account_payments_modal", title="Are you sure?", desc="Please note your card and all its associated payment data will be permanently deleted and rendered unrecoverable", content="confirmation" %}
 </div>
