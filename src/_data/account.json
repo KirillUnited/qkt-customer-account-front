@@ -3,31 +3,31 @@
   "path": "/account",
   "actions": [
     {
-      "img": "User.svg",
+      "img": "icons/User.svg",
       "name": "Personal Info.",
       "desc": "Name, Surname, Email etc.",
       "link": "/account/info"
     },
     {
-      "img": "Phone.svg",
+      "img": "icons/Phone.svg",
       "name": "Contact Info.",
       "desc": "Name, Surname, Email etc.",
       "link": "/account/contacts"
     },
     {
-      "img": "Email.svg",
+      "img": "icons/Email.svg",
       "name": "Email Preferences",
       "desc": "Name, Surname, Email etc.",
       "link": "/account/email"
     },
     {
-      "img": "Lock.svg",
+      "img": "icons/Lock.svg",
       "name": "Password",
       "desc": "Name, Surname, Email etc.",
       "link": "/account/password"
     },
     {
-      "img": "bank-card.svg",
+      "img": "icons/bank-card.svg",
       "name": "Payments & Payouts",
       "desc": "Name, Surname, Email etc.",
       "link": "/account/payments",
@@ -39,17 +39,17 @@
             "desc": "Below are your saved payment cards. A card can be saved by purchasing tickets and selecting the \"Save<br class=\"hidden-less-sm\"/> my card for future use\" check box. Future purchases can then be made using your saved cards.",
             "methods": [
               {
-                "img": "visa.svg",
+                "img": "icons/visa.svg",
                 "title": "3455 9011 7682 7682 7682",
                 "desc": "Exp date: 12/22"
               },
               {
-                "img": "visa.svg",
+                "img": "icons/visa.svg",
                 "title": "**** 7124",
                 "desc": "Exp date: 05/25"
               },
               {
-                "img": "mastercard.svg",
+                "img": "icons/mastercard.svg",
                 "title": "**** 5682",
                 "desc": "Exp date: 07/23"
               }
@@ -70,17 +70,17 @@
             "desc": "Below are your saved bank accounts. To add an account, click the ‘Add Bank Account’ button on<br class=\"hidden-less-sm\"/> the right.",
             "methods": [
               {
-                "img": "bank-account-1.svg",
+                "img": "icons/bank-account-1.svg",
                 "title": "**** 7682",
                 "desc": "Long Name and Long Surname of the NameLong Name and Long Surname of the NameLong Name and Long Surname of the NameLong Name and Long Surname of the Name"
               },
               {
-                "img": "bank-account-1.svg",
+                "img": "icons/bank-account-1.svg",
                 "title": "**** 7124",
                 "desc": "Name Surname"
               },
               {
-                "img": "bank-account-2.svg",
+                "img": "icons/bank-account-2.svg",
                 "title": "**** 5682",
                 "desc": "Name Surname"
               }
@@ -97,7 +97,7 @@
       ]
     },
     {
-      "img": "node_multiple_outlined.svg",
+      "img": "icons/node_multiple_outlined.svg",
       "name": "API Keys",
       "desc": "Name, Surname, Email etc.",
       "link": "/account/api"

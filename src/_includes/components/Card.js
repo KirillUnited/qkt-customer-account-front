@@ -6,7 +6,7 @@ function Card(props) {
     return html`
         <div class="card ${type}">
             <div class="card-img">
-                <img src="/assets/images/icons/${img}" alt="${title}">
+                <img src="/assets/images/${img}" alt="${title}">
             </div>
             <div class="card-body">
                 <h2 class="card-title">${title}</h2>

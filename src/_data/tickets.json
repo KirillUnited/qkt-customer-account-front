@@ -1,0 +1,76 @@
+{
+  "title": "My Tickets",
+  "path": "/tickets",
+  "tabs": [
+    {
+      "title": "My Tickets",
+      "panel": {
+        "title": "My Tickets",
+        "desc": "Manage everything ticket related below. Tickets for events are only obtained<br class=\"hidden-less-sm\"/> once payment has been finalised.",
+        "tickets": [
+          {
+            "title": "Rocking The Daisies",
+            "img": "tickets/ticket-1.png",
+            "desc": "<strong>STARTS</strong>: Friday, 5 October 2018<br/><strong>ENDS</strong>: Sunday, 7 October 2018"
+          },
+          {
+            "title": "KFC Summer Kite Series",
+            "img": "tickets/ticket-2.png",
+            "desc": "<strong>STARTS</strong>: Friday, 5 October 2018<br/><strong>ENDS</strong>: Sunday, 7 October 2018"
+          },
+          {
+            "title": "Accreditation",
+            "img": "tickets/ticket-2.png",
+            "desc": "<strong>STARTS</strong>: Friday, 5 October 2018<br/><strong>ENDS</strong>: Sunday, 7 October 2018"
+          },
+          {
+            "title": "Novum X Secret Rave",
+            "img": "tickets/ticket-4.png",
+            "desc": "<strong>STARTS</strong>: Friday, 5 October 2018<br/><strong>ENDS</strong>: Sunday, 7 October 2018"
+          }
+        ],
+        "enableFilter": true
+      }
+    },
+    {
+      "title": "My Registrations",
+      "panel": {
+        "title": "My Registrations",
+        "desc": "Some events require registration before tickets are purchaseable. Below are events you have already registered for.",
+        "tickets": [
+          {
+            "title": "Rocking The Daisies",
+            "img": "tickets/regs-1.png",
+            "desc": "<strong>STARTS</strong>: Friday, 5 October 2018<br/><strong>ENDS</strong>: Sunday, 7 October 2018"
+          },
+          {
+            "title": "Jack Parrow at Aandklas",
+            "img": "tickets/regs-2.png",
+            "desc": "<strong>STARTS</strong>: Friday, 5 October 2018<br/><strong>ENDS</strong>: Sunday, 7 October 2018"
+          },
+          {
+            "title": "Ard Matthews",
+            "img": "tickets/regs-3.png",
+            "desc": "<strong>STARTS</strong>: Friday, 5 October 2018<br/><strong>ENDS</strong>: Sunday, 7 October 2018"
+          },
+          {
+            "title": "Jean Strauss Sunset Concert",
+            "img": "tickets/regs-4.png",
+            "desc": "<strong>STARTS</strong>: Friday, 5 October 2018<br/><strong>ENDS</strong>: Sunday, 7 October 2018"
+          },
+          {
+            "title": "Day Lite x Counter Club.",
+            "img": "tickets/regs-5.png",
+            "desc": "<strong>STARTS</strong>: Friday, 5 October 2018<br/><strong>ENDS</strong>: Sunday, 7 October 2018"
+          },
+          {
+            "title": "Desmond & The Tutus",
+            "img": "tickets/regs-6.png",
+            "desc": "<strong>STARTS</strong>: Friday, 5 October 2018<br/><strong>ENDS</strong>: Sunday, 7 October 2018"
+          }
+        ],
+        "enableFilter": true
+      }
+    }
+  ]
+}
