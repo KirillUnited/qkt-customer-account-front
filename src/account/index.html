@@ -10,5 +10,18 @@ description: "Edit your profile details below."
     {%- endfor -%}
 </div>
 
-<p style="text-align: center; margin-top: 80px"><a href="#" class="deactivate">Need to deactivate your account?</a></p>
+<p style="text-align: center; margin-top: 80px"><a href="#" class="deactivate" data-toggle="modal" data-target="del_account_modal">Need to deactivate your account?</a></p>
+
+{% Modal id="del_account_modal", title="", desc="", header="<h1>Delete My Account</h1>
+    <p>Please note your account and all its associated user data will be permanently deleted and rendered unrecoverable. This includes: </p>
+<ul>
+    <li>User account</li>
+    <li>Purchases</li>
+    <li>Ticket holder information</li>
+    <li>Subscriptions</li>
+    <li>Credit card tokens</li>
+    <li>Event reminders</li>
+    <li>Access to tickets and invoices from previous and upcoming events</li>
+</ul>", content="delete" %}
+
 

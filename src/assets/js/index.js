@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const Tabs = (function () {
         const tablist = document.querySelector('[data-tablist]');
+        if(!tablist) return;
         const tabs = tablist.querySelectorAll('[data-tab]');
         const panels = document.querySelectorAll('[data-panel]');
         const handleClick = (e) => {
@@ -33,6 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
     })();
     const Modal = (function () {
         const elements = document.querySelectorAll('[data-modal]');
+        if(elements.length === 0) return;
         const showButtons = document.querySelectorAll('[data-toggle="modal"]');
         const handleClick = (e) => {
             const closeButton = e.target.dataset.close;
@@ -51,7 +53,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         function hide(e) {
-            e.preventDefault();
             const target = e.target.closest(`[data-modal]`);
 
             if (!target) return;

@@ -3,7 +3,7 @@ const Card = require("./src/_includes/components/Card");
 const { Input, Checkbox } = require("./src/_includes/components/Input");
 const Breadcrumbs = require("./src/_includes/components/Breadcrumbs");
 const Button = require("./src/_includes/components/Button");
-const Modal = require("./src/_includes/components/Modal");
+const Modal = require("./src/_includes/components/modal/Modal");
 
 module.exports = function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy("src/assets/images/");

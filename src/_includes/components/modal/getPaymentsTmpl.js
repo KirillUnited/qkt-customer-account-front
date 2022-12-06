@@ -1,44 +1,7 @@
 const {html} = require("common-tags");
-const {Input, Checkbox} = require("./Input");
+const {Input, Checkbox} = require("../Input");
 
-const Modal = ({id, title, desc, header, content=""}) => {
-    const contentTemplates = {
-        "payments": getPaymentsTemplate(),
-        "confirmation": null
-    };
-    const contentTemplate = contentTemplates[content];
-
-    return html`
-        <div class="modal ${(content === 'confirmation') && 'modal-confirm'}" data-modal='${id}' data-close="true">
-            <div class="modal-dialog">
-                ${
-        header
-            ?
-            `<div class="modal-header">${header}</div>`
-            :
-            `<div class="modal-header">
-                            <h1 class="modal-title">${title}</h1>
-                            <p class="modal-desc">${desc}</p>
-                        </div>`
-    }
-                ${contentTemplate &&
-    `<div class="modal-content">                
-                    <form class="form" id="account_payments" method="POST" action="">
-                        <fieldset class="form-fieldset grid grid-col-2 grid-col-fixed">                             
-                            ${contentTemplate}
-                        </fieldset>
-                    </form>
-                </div>`}
-                <div class="modal-footer">
-                    <button class='btn btn-invert' type="button" data-close="true">Cancel</button>
-                    <button class='btn btn-primary' type="submit" data-close="true">Save</button>
-                </div>
-            </div>
-        </div>
-    `;
-};
-
-function getPaymentsTemplate() {
+function getPaymentsTmpl() {
     return html`<div class="form-group grid-col-span">
                                 <label class="form-label" for="Select_Bank_Branch">Select Bank Branch</label>
                                 <div class="form-input">
@@ -81,4 +44,4 @@ function getPaymentsTemplate() {
 `;
 }
 
-module.exports = Modal;
+module.exports = getPaymentsTmpl;
