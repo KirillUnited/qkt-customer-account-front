@@ -1,7 +1,7 @@
 const {html} = require("common-tags");
 
 function Card(props) {
-    const {img, title, desc, type} = props;
+    const {img, title, desc, type, tag, status} = props;
 
     return html`
         <div class="card ${type}">
@@ -11,6 +11,13 @@ function Card(props) {
             <div class="card-body">
                 <h2 class="card-title">${title}</h2>
                 <p class="card-desc">${desc}</p>
+                
+                ${(type === "card-ticket") &&
+                    `
+                     <div class="tag ${status && `tag-${status}`}">${tag}</div>
+                     <a href="" class="card-link">MANAGE BOOKING</a>
+                     `
+                }
             </div>
             ${(type === "card-minimal") &&
                 `<svg class="hidden-more-sm" width="24" height="24" viewBox="0 0 24 24" fill="none"

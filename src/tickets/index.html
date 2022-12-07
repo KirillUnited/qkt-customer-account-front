@@ -26,7 +26,7 @@ title: 'My Tickets'
         <div class="section-content">
             <div class="tabs-panel-grid grid grid-col-2 grid-col-fixed">
                 {%- for ticket in tab.panel.tickets -%}
-                    {% Card img=ticket.img, title=ticket.title, desc=ticket.desc, type="card-account" %}
+                    {% Card img=ticket.img, title=ticket.title, desc=ticket.desc, tag=ticket.tag, status=ticket.status, type="card-ticket" %}
                 {%- endfor -%}
             </div>
         </div>

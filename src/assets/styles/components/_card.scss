@@ -22,6 +22,35 @@
     &-body {
         flex: 1;
     }
+
+    &-title,
+    &-desc,
+    &-body {
+        @include truncate();
+    }
+
+    &-link {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 14px;
+
+        &:after{
+            display: block;
+            width: calc(16 / 14)*1em;
+            height: calc(16 / 14)*1em;
+            content: "";
+            background-image: url("data:image/svg+xml,%3Csvg width='16' height='17' viewBox='0 0 16 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2.5 8.5H13.5' stroke='%235EB700' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M9 4L13.5 8.5L9 13' stroke='%235EB700' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+        }
+    }
+
+    strong {
+        font-weight: 500;
+    }
 }
 
 .card-account {
@@ -48,11 +77,37 @@
             font-size: 16px;
             font-weight: 700;
         }
+    }
+}
 
-        &-title,
-        &-desc,
+.card-ticket {
+    --flex-dir: raw;
+    --gap: #{getMinMax(8px, 16px)};
+
+    padding: 16px;
+
+    .card {
+        &-img {
+            flex: 0 0 min(21%, 120px);
+            width: auto;
+            height: auto;
+        }
+
         &-body {
-            @include truncate();
+            display: grid;
+            grid-template-columns: 1fr auto;
+            grid-gap: 4px;
+
+            .tag {
+                grid-column: 2;
+                grid-row: 1;
+            }
+        }
+
+        &-link {
+            grid-column: 1/3;
+            grid-row: 3;
+            margin-left: auto;
         }
     }
 }
@@ -84,5 +139,28 @@
     }
     .card-account {
         min-height: getMinMax(130px, 130px);
+    }
+}
+
+@include less-xs() {
+    .card-ticket {
+        .card {
+            &-img {
+                display: none;
+            }
+
+            &-body {
+                display: flex;
+                flex-direction: column;
+
+                .tag {
+                    order: -1;
+                }
+            }
+
+            &-link {
+                margin-left: 0;
+            }
+        }
     }
 }
