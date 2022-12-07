@@ -22,7 +22,7 @@
         --column-width: 250px;
         --gap: 24px;
 
-        &+.form-fieldset {
+        & + .form-fieldset {
             border-top: 1px solid #D8D8D8;
             padding-top: var(--gap);
         }
@@ -62,11 +62,11 @@
             &:focus:invalid {
                 border-color: var(--color-error);
 
-                &~.error-msg {
+                & ~ .error-msg {
                     display: block;
                 }
 
-                &~.form-input-icon path {
+                & ~ .form-input-icon path {
                     fill: var(--color-error);
                 }
             }
@@ -131,11 +131,11 @@
                     content: "";
                     border-radius: 100%;
                     transition: background-color 200ms linear,
-                        transform 200ms ease-in-out 100ms;
+                    transform 200ms ease-in-out 100ms;
                 }
             }
 
-            input:checked~label {
+            input:checked ~ label {
                 background-color: rgba(94, 183, 0, 0.2);
 
                 &::after {
@@ -161,7 +161,7 @@
             height: 1em;
             opacity: 0.00001;
 
-            &:checked+svg {
+            &:checked + svg {
                 .checkbox__background {
                     fill: var(--color-green);
                     stroke: var(--color-green);
@@ -244,8 +244,12 @@
         display: flex;
         gap: var(--gap);
 
-        &>* {
+        & > * {
             flex: 1;
+        }
+
+        & > .has-input {
+            flex: 5;
         }
 
         input {
@@ -253,10 +257,6 @@
             background-color: var(--color-grey);
             border: 1px solid rgba(255, 255, 255, 0.5);
             padding-left: 40px;
-        }
-
-        button {
-            flex: 0 0 auto;
         }
 
         .form-input-icon {

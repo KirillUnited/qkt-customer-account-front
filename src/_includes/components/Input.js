@@ -1,12 +1,8 @@
-const { html } = require("common-tags");
+const {html} = require("common-tags");
 
-const Input = ({ type, id, label, children = "", rest = {} }) => {
-    const { pattern, required } = rest;
-
-    return html`
-        <div class="form-group">
-            ${label ? `<label class="form-label" for="${id}">${label}</label>` : ""
-        }
+const Input = ({type, id, label, children = "", rest = {}}) => {
+    const {pattern="", required="", disabled=""} = rest;
+    const formInput = `
             <div class="form-input">
                 <input
                     class="form-input-field"
@@ -16,14 +12,23 @@ const Input = ({ type, id, label, children = "", rest = {} }) => {
                     autoComplete="${id}"
                     ${pattern && `pattern="${rest.pattern}"`}
                     ${required && `required`}
+                    ${disabled && `disabled`}
                 />
                 ${children}
-            </div>
-        </div>
+            </div>`;
+
+    return html`
+            ${label ?
+        `<div class="form-group">
+                        <label class="form-label" for="${id}">${label}</label>
+                        ${formInput}
+                     </div>`
+        :
+        `${formInput}`}
 `
 };
 
-const Checkbox = ({ id, label }) => {
+const Checkbox = ({id, label}) => {
     return html`
         <div class="form-group">
             <label class="form-checkbox">
@@ -51,4 +56,18 @@ const Checkbox = ({ id, label }) => {
 `
 };
 
-module.exports = { Input, Checkbox };
+const Select = () => {
+    return html`
+                <div class="form-group grid-col-span">
+                   <label class="form-label" for="Account_Type">Account Type</label>
+                   <div class="form-input form-select">
+                       <select class="form-input-field" id="Account_Type" name="Account_Type">
+                           <option disabled selected>Please Select</option>
+                           <option value="Savings">Savings</option>
+                       </select>
+                   </div>
+                </div>
+    `
+};
+
+module.exports = {Input, Checkbox, Select};

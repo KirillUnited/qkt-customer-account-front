@@ -22,7 +22,12 @@ breadcrumbs: true
                 <form class="form form-api" id="account_api" method="GET" action="">
                     <legend class="form-legend">For any authenticated calls you will need to add a "usertoken" header below.</legend>
                     <fieldset class="form-fieldset">
-                        {% Input type="text", id="account_api_Token", children='<img alt="" src="/assets/images/icons/key.svg" width="20" height="20" class="form-input-icon">' %}
+                        <div class="has-input">
+                            {% Input type="text", id="account_api_Token", children='<img alt=""
+                                                                                        src="/assets/images/icons/key.svg"
+                                                                                        width="20" height="20"
+                                                                                        class="form-input-icon">', rest={disabled: true} %}
+                        </div>
                         {% Button children="GENERATE NEW TOKEN", state="primary", type="submit" %}
                     </fieldset>
                 </form>

@@ -1,0 +1,12 @@
+.filter {
+    &-form {
+        --width: 100%;
+        background-color: transparent;
+        box-shadow: none;
+        padding: 0 0 8px;
+
+        select {
+            color: #94A3B8;
+        }
+    }
+}
