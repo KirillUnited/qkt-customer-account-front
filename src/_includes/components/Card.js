@@ -1,4 +1,5 @@
 const {html} = require("common-tags");
+const Tag = require("./Tag");
 
 function Card(props) {
     const {img, title, desc, type, tag, status} = props;
@@ -14,7 +15,7 @@ function Card(props) {
                 
                 ${(type === "card-ticket") &&
                     `
-                     <div class="tag ${status && `tag-${status}`}">${tag}</div>
+                     ${Tag(tag, status)}
                      <a href="" class="card-link">MANAGE BOOKING</a>
                      `
                 }

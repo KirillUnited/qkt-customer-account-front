@@ -4,6 +4,7 @@ const { Input, Checkbox } = require("./src/_includes/components/Input");
 const Breadcrumbs = require("./src/_includes/components/Breadcrumbs");
 const Button = require("./src/_includes/components/Button");
 const Modal = require("./src/_includes/components/modal/Modal");
+const Tag = require("./src/_includes/components/Tag");
 
 module.exports = function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy("src/assets/images/");
@@ -21,6 +22,7 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addShortcode("Breadcrumbs", Breadcrumbs);
     eleventyConfig.addShortcode("Button", Button);
     eleventyConfig.addShortcode("Modal", Modal);
+    eleventyConfig.addShortcode("Tag", Tag);
 
     return {
         dir: {
