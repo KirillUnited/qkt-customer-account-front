@@ -3,8 +3,6 @@ layout: tabs.html
 title: 'My Tickets'
 ---
 
-{% import "../_includes/macros/filter.html" as macros %}
-
 <nav class="tabs-navbar">
     <ul class="tabs-list list-style-reset" data-tablist>
         {%- for tab in tickets.tabs -%}
@@ -27,7 +25,8 @@ title: 'My Tickets'
                 {{ tab.panel.desc | safe }}
             </p>
         </div>
-        {{ macros.filter() }}
+        {% set filter=tab.panel.title|replace(' ', '_') %}
+        {% include "../_includes/filter.html" %}
         <div class="section-content">
             <div class="tabs-panel-grid grid grid-col-2 grid-col-fixed">
                 {%- for ticket in tab.panel.tickets -%}

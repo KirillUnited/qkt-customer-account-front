@@ -1,0 +1,25 @@
+<div class="filter">
+    <form class="filter-form form form-api" id="{{filter}}_filter" method="GET" action="">
+        <fieldset class="form-fieldset">
+            <div class="has-input">
+                {%
+                Input type="search", id="filter_search", children='<img alt="" src="/assets/images/icons/Search.svg"
+                                                                        width="20" height="20"
+                                                                        class="form-input-icon">',
+                rest={placeholder: "Search"}
+                %}
+            </div>
+            <div class="hidden-less-sm">
+                {%
+                Input id="filter_type"
+                %}
+            </div>
+            <div class="hidden-less-sm">
+                {%
+                Input id="filter_sort"
+                %}
+            </div>
+            <div class="hidden-more-sm">{% include "filter-modal.html" %}</div>
+        </fieldset>
+    </form>
+</div>

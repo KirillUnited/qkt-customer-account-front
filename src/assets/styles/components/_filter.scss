@@ -3,10 +3,39 @@
         --width: 100%;
         background-color: transparent;
         box-shadow: none;
-        padding: 0 0 8px;
+        padding: 0;
+
+        & > .form-fieldset {
+            flex-direction: row;
+        }
 
         select {
             color: #94A3B8;
         }
+    }
+
+    &-btn {
+        @include input-field();
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &-modal {
+        .modal {
+            &-header {
+                text-align: center;
+                padding-bottom: getMinMax(10px, 20px);
+            }
+
+            &-content {
+                padding-top: getMinMax(10px, 20px);
+            }
+        }
+    }
+
+    @include less-sm() {
+        padding-top: 12px;
+        padding-bottom: 12px;
     }
 }

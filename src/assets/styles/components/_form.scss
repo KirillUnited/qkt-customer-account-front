@@ -251,11 +251,11 @@
         & > .has-input {
             flex: 5;
         }
+    }
 
-        .form-input-icon {
-            right: auto;
-            left: getMinMax(14px, 14px);
-        }
+    .form-input-icon {
+        right: auto;
+        left: getMinMax(14px, 14px);
     }
 
     input {

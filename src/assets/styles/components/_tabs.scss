@@ -103,8 +103,12 @@
             display: none;
         }
 
+        .section-header {
+            padding-bottom: getMinMax(12px, 12px);
+        }
+
         .section-content {
-            padding-top: 0;
+            padding-top: getMinMax(12px, 12px);
         }
     }
 }
