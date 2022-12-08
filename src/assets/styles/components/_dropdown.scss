@@ -3,13 +3,6 @@
     --btn-width: 24px;
     position: relative;
 
-    &:hover,
-    &:focus {
-        .dropdown-menu {
-            display: block;
-        }
-    }
-
     &-toggle {
         width: var(--btn-width);
         height: var(--btn-height);
@@ -27,7 +20,12 @@
         box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.05);
         border-radius: 8px;
         padding: 16px 20px;
+
+        &.dropdown-show {
+            display: block;
+        }
     }
+
     &-item {
         display: flex;
         gap: 10px;

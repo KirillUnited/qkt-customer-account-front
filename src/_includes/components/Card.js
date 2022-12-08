@@ -22,7 +22,7 @@ function Card(props) {
                 ${options&&`
                     
     <div class="dropdown">
-    <div class="dropdown-toggle">
+    <div class="dropdown-toggle" data-toggle="dropdown" data-target="options_${title.replace(" ", "_")}">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
                 d="M6 13.5C6.82843 13.5 7.5 12.8284 7.5 12C7.5 11.1716 6.82843 10.5 6 10.5C5.17157 10.5 4.5 11.1716 4.5 12C4.5 12.8284 5.17157 13.5 6 13.5Z"
@@ -44,7 +44,7 @@ function Card(props) {
                 stroke="black" stroke-opacity="0.85" stroke-width="0.5" />
         </svg>
     </div>
-    <div class="dropdown-menu">
+    <div class="dropdown-menu" data-dropdown="options_${title.replace(" ", "_")}">
         <a href="#" class="dropdown-item">
             <svg class="dropdown-icon" width="20" height="21" viewBox="0 0 20 21" fill="none"
                 xmlns="http://www.w3.org/2000/svg">
