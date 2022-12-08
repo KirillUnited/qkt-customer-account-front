@@ -1,7 +1,7 @@
 const {html} = require("common-tags");
 
 const Input = ({type, id, label, children = "", rest = {}}) => {
-    const {pattern="", required="", disabled=""} = rest;
+    const {placeholder = "", pattern = "", required = "", disabled = ""} = rest;
     const formInput = `
             <div class="form-input">
                 <input
@@ -9,22 +9,33 @@ const Input = ({type, id, label, children = "", rest = {}}) => {
                     type="${type}"
                     id="${id}"
                     name="${id}"
-                    autoComplete="${id}"
+                    ${placeholder && `placeholder="${placeholder}"`}
                     ${pattern && `pattern="${rest.pattern}"`}
                     ${required && `required`}
                     ${disabled && `disabled`}
                 />
                 ${children}
             </div>`;
+    const formSelect = `
+            <div class="form-input form-select">
+                       <select class="form-input-field" id="${id}" name="${id}">
+                           <option disabled selected>Please Select</option>
+                           <option value="Today">Today</option>
+                           <option value="This Weekend">This Weekend</option>
+                           <option value="Next 7 Days">Next 7 Days</option>
+                           <option value="Next 30 Days">All Dates</option>
+                       </select>
+                   </div>
+`;
 
     return html`
             ${label ?
         `<div class="form-group">
                         <label class="form-label" for="${id}">${label}</label>
-                        ${formInput}
+                        ${type ? formInput : formSelect}
                      </div>`
         :
-        `${formInput}`}
+        `${type ? formInput : formSelect}`}
 `
 };
 
@@ -56,18 +67,4 @@ const Checkbox = ({id, label}) => {
 `
 };
 
-const Select = () => {
-    return html`
-                <div class="form-group grid-col-span">
-                   <label class="form-label" for="Account_Type">Account Type</label>
-                   <div class="form-input form-select">
-                       <select class="form-input-field" id="Account_Type" name="Account_Type">
-                           <option disabled selected>Please Select</option>
-                           <option value="Savings">Savings</option>
-                       </select>
-                   </div>
-                </div>
-    `
-};
-
-module.exports = {Input, Checkbox, Select};
+module.exports = {Input, Checkbox};
