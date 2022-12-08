@@ -5,6 +5,8 @@ const Breadcrumbs = require("./src/_includes/components/Breadcrumbs");
 const Button = require("./src/_includes/components/Button");
 const Modal = require("./src/_includes/components/modal/Modal");
 const Tag = require("./src/_includes/components/Tag");
+const {EleventyRenderPlugin} = require("@11ty/eleventy");
+const eleventyVue = require("@11ty/eleventy-plugin-vue");
 
 module.exports = function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy("src/assets/images/");
@@ -16,6 +18,8 @@ module.exports = function (eleventyConfig) {
             sourceMap: false
         }
     });
+    eleventyConfig.addPlugin(EleventyRenderPlugin);
+    eleventyConfig.addPlugin(eleventyVue);
     eleventyConfig.addShortcode("Card", Card);
     eleventyConfig.addShortcode("Input", Input);
     eleventyConfig.addShortcode("Checkbox", Checkbox);
@@ -33,6 +37,6 @@ module.exports = function (eleventyConfig) {
         dataTemplateEngine: "njk",
         markdownTemplateEngine: "njk",
         htmlTemplateEngine: "njk",
-        templateFormats: ["html", "md", "njk"]
+        templateFormats: ["html", "md", "njk", "vue"]
     }
 };

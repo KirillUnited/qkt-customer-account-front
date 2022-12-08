@@ -20,7 +20,7 @@ const Input = ({type, id, label, children = "", rest = {}}) => {
     const formSelect = `
             <div class="form-input form-select">
                        <select class="form-input-field" id="${id}" name="${id}">
-                           <option disabled selected>${placeholder? placeholder : 'Please Select'}</option>
+                           <option disabled selected>${placeholder ? placeholder : 'Please Select'}</option>
                            <option value="Today">Today</option>
                            <option value="This Weekend">This Weekend</option>
                            <option value="Next 7 Days">Next 7 Days</option>

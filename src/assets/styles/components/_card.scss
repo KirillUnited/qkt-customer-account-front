@@ -3,6 +3,7 @@
     --gap: 34px;
     --border-radius: 8px;
 
+    position: relative;
     display: flex;
     flex-direction: var(--flex-dir);
     gap: var(--gap);
@@ -36,7 +37,7 @@
         gap: 10px;
         font-size: 14px;
 
-        &:after{
+        &:after {
             display: block;
             width: calc(16 / 14)*1em;
             height: calc(16 / 14)*1em;
@@ -114,6 +115,12 @@
             margin-left: auto;
         }
     }
+    .dropdown {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        z-index: 1;
+    }
 }
 
 @include less-sm() {
@@ -141,12 +148,11 @@
             }
         }
     }
+
     .card-account {
         min-height: getMinMax(130px, 130px);
     }
-}
 
-@include less-xs() {
     .card-ticket {
         .card {
             &-img {

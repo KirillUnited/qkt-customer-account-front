@@ -11,10 +11,6 @@
         & > .form-fieldset {
             flex-direction: row;
         }
-
-        select {
-            color: #94A3B8;
-        }
     }
 
     &-btn {
@@ -35,5 +31,9 @@
                 padding-top: getMinMax(10px, 20px);
             }
         }
+    }
+
+    input {
+        font-weight: 400;
     }
 }

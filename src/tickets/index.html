@@ -38,13 +38,12 @@ title: 'My Tickets'
                 {%- endfor -%}
             </div>
             {% elseif tab.panel.contentDisplay==="table"%}
-            <div class="tabs-panel-table table">
-                {%- for item in tab.panel.content -%}
-                {{item}}
-                {%- endfor -%}
+            <div class="tabs-panel-table">
+                {% set data = tab.panel.content %}
+                {% include "../_includes/table.html" %}
             </div>
             {% else %}
-                {{tab.panel.content|safe}}
+            {{tab.panel.content|safe}}
             {% endif %}
         </div>
     </div>

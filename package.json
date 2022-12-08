@@ -13,6 +13,7 @@
   "license": "ISC",
   "devDependencies": {
     "@11ty/eleventy": "^1.0.2",
+    "@11ty/eleventy-plugin-vue": "^0.7.4",
     "common-tags": "^1.8.2",
     "rimraf": "2.7.1"
   },

@@ -99,8 +99,45 @@
       "panel": {
         "title": "My Subscriptions",
         "desc": "Below is a list of organisers and membership options you have subscribed to.",
-        "content": [1, 2],
-        "enableFilter": true,
+        "content": [
+          {
+            "Organiser": "Guy Hawkins",
+            "Membership": "Free Styler",
+            "Date Subscribed": "08 April 2021",
+            "Price": "Free",
+            "Status": "Valid",
+            "Next Billing Date": "08 April 2021",
+            "Actions": "Cancel"
+          },
+          {
+            "Organiser": "Guy Hawkins 2",
+            "Membership": "Free Styler for everyday",
+            "Date Subscribed": "23 April 2019",
+            "Price": "Free",
+            "Status": "Valid",
+            "Next Billing Date": "08 April 2021",
+            "Actions": "Cancel"
+          },
+          {
+            "Organiser": "Guy Hawkins",
+            "Membership": "Free Styler",
+            "Date Subscribed": "08 April 2021",
+            "Price": "Free",
+            "Status": "Valid",
+            "Next Billing Date": "08 April 2021",
+            "Actions": "Cancel"
+          },
+          {
+            "Organiser": "Guy Hawkins 2",
+            "Membership": "Free Styler for everyday",
+            "Date Subscribed": "23 April 2019",
+            "Price": "Free",
+            "Status": "Valid",
+            "Next Billing Date": "08 April 2021",
+            "Actions": "Cancel"
+          }
+        ],
+        "enableFilter": false,
         "contentDisplay": "table"
       }
     }
