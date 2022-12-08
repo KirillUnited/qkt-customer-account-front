@@ -1,7 +1,7 @@
 const {html} = require("common-tags");
 
 const Input = ({type, id, label, children = "", rest = {}}) => {
-    const {placeholder = "", pattern = "", required = "", disabled = ""} = rest;
+    const {placeholder = "", pattern = "", required = "", disabled = "", value = ""} = rest;
     const formInput = `
             <div class="form-input">
                 <input
@@ -9,6 +9,7 @@ const Input = ({type, id, label, children = "", rest = {}}) => {
                     type="${type}"
                     id="${id}"
                     name="${id}"
+                    ${value && `value="${value}"`}
                     ${placeholder && `placeholder="${placeholder}"`}
                     ${pattern && `pattern="${rest.pattern}"`}
                     ${required && `required`}

@@ -252,17 +252,17 @@
             flex: 5;
         }
 
-        input {
-            font-weight: 500;
-            background-color: var(--color-grey);
-            border: 1px solid rgba(255, 255, 255, 0.5);
-            padding-left: 40px;
-        }
-
         .form-input-icon {
             right: auto;
             left: getMinMax(14px, 14px);
         }
+    }
+
+    input {
+        font-weight: 500;
+        background-color: var(--color-grey);
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        padding-left: 40px;
     }
 
     @include less-sm() {
