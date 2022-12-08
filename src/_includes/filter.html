@@ -11,12 +11,14 @@
             </div>
             <div class="hidden-less-sm">
                 {%
-                Input id="filter_type"
+                Input id="filter_type",
+                rest={placeholder: "Type"}
                 %}
             </div>
             <div class="hidden-less-sm">
                 {%
-                Input id="filter_sort"
+                Input id="filter_sort",
+                rest={placeholder: "Sort"}
                 %}
             </div>
             <div class="hidden-more-sm">{% include "filter-modal.html" %}</div>

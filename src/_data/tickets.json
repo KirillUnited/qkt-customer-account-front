@@ -7,7 +7,7 @@
       "panel": {
         "title": "My Tickets",
         "desc": "Manage everything ticket related below. Tickets for events are only obtained<br class=\"hidden-less-sm\"/> once payment has been finalised.",
-        "tickets": [
+        "content": [
           {
             "title": "Rocking The Daisies",
             "img": "tickets/ticket-1.png",
@@ -37,7 +37,8 @@
             "status": "default"
           }
         ],
-        "enableFilter": true
+        "enableFilter": true,
+        "contentDisplay": "grid"
       }
     },
     {
@@ -45,7 +46,7 @@
       "panel": {
         "title": "My Registrations",
         "desc": "Some events require registration before tickets are purchaseable. Below are events you have <br class=\"hidden-less-sm\"/>already registered for.",
-        "tickets": [
+        "content": [
           {
             "title": "Rocking The Daisies",
             "img": "tickets/regs-1.png",
@@ -89,7 +90,18 @@
             "status": ""
           }
         ],
-        "enableFilter": true
+        "enableFilter": true,
+        "contentDisplay": "grid"
+      }
+    },
+    {
+      "title": "My Subscriptions",
+      "panel": {
+        "title": "My Subscriptions",
+        "desc": "Below is a list of organisers and membership options you have subscribed to.",
+        "content": [1, 2],
+        "enableFilter": true,
+        "contentDisplay": "table"
       }
     }
   ]

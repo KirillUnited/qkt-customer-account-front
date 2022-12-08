@@ -54,6 +54,14 @@
             --color: var(--color-orange);
         }
     }
+
+    .section-header {
+        padding-bottom: getMinMax(12px, 13px);
+    }
+
+    .section-content {
+        padding-top: getMinMax(12px, 13px);
+    }
 }
 
 @include more-sm() {
@@ -101,14 +109,6 @@
 
         .breadcrumbs {
             display: none;
-        }
-
-        .section-header {
-            padding-bottom: getMinMax(12px, 12px);
-        }
-
-        .section-content {
-            padding-top: getMinMax(12px, 12px);
         }
     }
 }

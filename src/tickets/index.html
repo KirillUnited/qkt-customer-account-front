@@ -25,15 +25,27 @@ title: 'My Tickets'
                 {{ tab.panel.desc | safe }}
             </p>
         </div>
+        {% if tab.panel.enableFilter %}
         {% set filter=tab.panel.title|replace(' ', '_') %}
         {% include "../_includes/filter.html" %}
+        {% endif %}
         <div class="section-content">
+            {% if tab.panel.contentDisplay==="grid" %}
             <div class="tabs-panel-grid grid grid-col-2 grid-col-fixed">
-                {%- for ticket in tab.panel.tickets -%}
-                {% Card img=ticket.img, title=ticket.title, desc=ticket.desc, tag=ticket.tag, status=ticket.status,
+                {%- for item in tab.panel.content -%}
+                {% Card img=item.img, title=item.title, desc=item.desc, tag=item.tag, status=item.status,
                 type="card-ticket" %}
                 {%- endfor -%}
             </div>
+            {% elseif tab.panel.contentDisplay==="table"%}
+            <div class="tabs-panel-table table">
+                {%- for item in tab.panel.content -%}
+                {{item}}
+                {%- endfor -%}
+            </div>
+            {% else %}
+                {{tab.panel.content|safe}}
+            {% endif %}
         </div>
     </div>
     {%- endfor -%}

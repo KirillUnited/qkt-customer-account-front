@@ -1,4 +1,7 @@
 .filter {
+    padding-top: getMinMax(12px, 13px);
+    padding-bottom: getMinMax(12px, 13px);
+
     &-form {
         --width: 100%;
         background-color: transparent;
@@ -32,10 +35,5 @@
                 padding-top: getMinMax(10px, 20px);
             }
         }
-    }
-
-    @include less-sm() {
-        padding-top: 12px;
-        padding-bottom: 12px;
     }
 }
