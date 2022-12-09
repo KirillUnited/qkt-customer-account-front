@@ -51,6 +51,9 @@
     transition: all 180ms ease-in-out;
     border: 1px solid var(--border-color);
     border-radius: var(--border-radius);
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
 
     &:focus {
         outline: 0;
