@@ -12,7 +12,8 @@ breadcrumbs: true
         {% Input type="tel", id="Edit_Registration_Cellphone", label="Cellphone", rest={pattern:
         "[0-9]{3}-[0-9]{3}-[0-9]{4}",
         placeholder: "Cellphone" } %}
-        {% Input type="text", id="Edit_Registration_Telephone", label="ID / Passport number", rest={placeholder: "Western Cape"} %}
+        {% Input type="text", id="Edit_Registration_Telephone", label="ID / Passport number", rest={placeholder:
+        "Western Cape"} %}
         <div class="grid-col-span">
             <div class="grid" style="align-items: center;">
                 <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -38,17 +39,76 @@ breadcrumbs: true
         %}
     </fieldset>
     <fieldset class="form-fieldset grid grid-col-2 grid-col-fixed">
-        <div class="form-group grid-col-span" >
+        <div class="form-group grid-col-span">
             <label class="form-checkbox-toggle">
                 <span>Will this be your first time at Daisies</span>
                 <input type="checkbox" id="account_contacts_Address" checked>
                 <label for="account_contacts_Address"></label>
             </label>
         </div>
+        <div class="form-group grid-col-span">
+            <div class="form-label">How did you find out about us</div>
+            {% Checkbox type="radio", id="Edit_Registration_SocialMedia", name="Edit_Registration_SocialMedia", label="Social Media", status="checked" %}
+            {% Checkbox type="radio", id="Edit_Registration_Word", name="Edit_Registration_SocialMedia", label="Word of Mouth" %}
+            {% Checkbox type="radio", id="Edit_Registration_News", name="Edit_Registration_SocialMedia", label="News Media" %}
+            {% Checkbox type="radio", id="Edit_Registration_NA", name="Edit_Registration_SocialMedia", label="NA" %}
+            {% Checkbox type="radio", id="Edit_Registration_Other", name="Edit_Registration_SocialMedia", label="Other" %}
+        </div>
+    </fieldset>
+    <fieldset class="form-fieldset grid grid-col-2 grid-col-fixed">
+        <div class="form-group grid-col-span">
+            <div class="form-label">How did you find out about us</div>
+            {% Checkbox type="radio", id="Edit_Registration_myself", name="Edit_Registration_For", label="Only for myself", status="checked" %}
+            {% Checkbox type="radio", id="Edit_Registration_someone", name="Edit_Registration_For", label="Only for someone else" %}
+            {% Checkbox type="radio", id="Edit_Registration_myselfSomeone", name="Edit_Registration_For", label="For myself and someone else" %}
+        </div>
+    </fieldset>
+    <fieldset class="form-fieldset grid grid-col-2 grid-col-fixed">
+        {%
+        Input id="Edit_Registration_TicketQuantity", label="Ticket Quantity"
+        %}
+        {%
+        Input id="Edit_Registration_travelling", label="Will you be travelling alone?"
+        %}
+        {%
+        Input id="Edit_Registration_DietaryRequirements", label="Dietary Requirements"
+        %}
+        {%
+        Input id="Edit_Registration_FavouriteGenre", label="Favourite genre?"
+        %}
+    </fieldset>
+    <fieldset class="form-fieldset grid grid-col-2 grid-col-fixed">
+        {% Input type="text", id="Edit_Registration_EmergencyPerson", label="Emergency Person", rest={placeholder: "Emergency Person"} %}
+        {% Input type="text", id="Edit_Registration_EmergencyContactNumber", label="Emergency Contact Number", rest={placeholder: "Emergency Contact Number"} %}
+    </fieldset>
+    <fieldset class="form-fieldset grid grid-col-2 grid-col-fixed">
+        <div class="form-group grid-col-span">
+            <div class="form-label">Which social media platform do you use the most?</div>
+            {% Checkbox type="radio", id="Edit_Registration_Facebook", name="Edit_Registration_Media", label="Facebook", status="checked" %}
+            {% Checkbox type="radio", id="Edit_Registration_Instagram", name="Edit_Registration_Media", label="Instagram" %}
+            {% Checkbox type="radio", id="Edit_Registration_Twitter", name="Edit_Registration_Media", label="Twitter" %}
+            {% Checkbox type="radio", id="Edit_Registration_Snapchat", name="Edit_Registration_Media", label="Snapchat" %}
+        </div>
+    </fieldset>
+    <fieldset class="form-fieldset grid grid-col-2 grid-col-fixed">
+        {%
+        Input id="Edit_Registration_WillCamping", label="Will you be camping?"
+        %}
+        {%
+        Input id="Edit_Registration_InterestedGlamping", label="Interested in glamping?"
+        %}
+        <div class="form-group grid-col-span">
+            <div class="form-label">Where will you be camping?</div>
+            {% Checkbox type="radio", id="Edit_Registration_None", name="Edit_Registration_CampingPlace", label="None", status="checked" %}
+            {% Checkbox type="radio", id="Edit_Registration_GeneralCamping", name="Edit_Registration_CampingPlace", label="General Camping" %}
+            {% Checkbox type="radio", id="Edit_Registration_PriorityCamp", name="Edit_Registration_CampingPlace", label="Priority Camp (new)" %}
+            {% Checkbox type="radio", id="Edit_Registration_LadiesCamp", name="Edit_Registration_CampingPlace", label="Ladies Camp (new)" %}
+            {% Checkbox type="radio", id="Edit_Registration_Daisyland", name="Edit_Registration_CampingPlace", label="Daisyland (glamping)" %}
+        </div>
     </fieldset>
     <div class="form-footer">
         <div class="container">
-            {% Button children="CANCEL", state="invert", type="button" %}
+            <div class="hidden-less-sm">{% Button children="CANCEL", state="invert", type="button" %}</div>
             {% Button children="SAVE REGISTRATION", state="disabled", type="submit" %}
         </div>
     </div>
