@@ -7,6 +7,12 @@
         width: var(--btn-width);
         height: var(--btn-height);
         cursor: pointer;
+        border: none;
+        background-color: transparent;
+        padding: 0;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
     }
 
     &-menu {
