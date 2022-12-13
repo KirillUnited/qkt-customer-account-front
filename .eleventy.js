@@ -7,6 +7,7 @@ const Modal = require("./src/_includes/components/modal/Modal");
 const Tag = require("./src/_includes/components/Tag");
 const {EleventyRenderPlugin} = require("@11ty/eleventy");
 const eleventyVue = require("@11ty/eleventy-plugin-vue");
+const Dropdown = require("./src/_includes/components/Dropdown");
 
 module.exports = function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy("src/assets/images/");
@@ -27,6 +28,7 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addShortcode("Button", Button);
     eleventyConfig.addShortcode("Modal", Modal);
     eleventyConfig.addShortcode("Tag", Tag);
+    eleventyConfig.addShortcode("Dropdown", Dropdown);
 
     return {
         dir: {
