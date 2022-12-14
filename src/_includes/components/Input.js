@@ -40,12 +40,11 @@ const Input = ({type, id, label, children = "", rest = {}}) => {
 `
 };
 
-const Checkbox = ({id, label}) => {
+const Checkbox = ({type="checkbox", id, name=id, label, status=""}) => {
     return html`
-        <div class="form-group">
-            <label class="form-checkbox">
-                <input type="checkbox" id="${id}" name="${id}">
-                <svg
+            <label class="form-${type}">
+                <input type="${type}" id="${id}" name="${name}" value="" ${status}>
+                ${(type==="checkbox") && `<svg
                     width="32" height="32" viewbox="-4 -4 39 39" aria-hidden="true" focusable="false">
                     <!-- The background -->
                     <rect
@@ -61,10 +60,9 @@ const Checkbox = ({id, label}) => {
                         ry="6"></rect>
                     <!-- The checkmark-->
                     <polyline class="checkbox__checkmark" points="4,14 12,23 28,5" stroke="transparent" stroke-width="4" fill="none"></polyline>
-                </svg>
+                </svg>`}
                 <span>${label}</span>
             </label>
-        </div>
 `
 };
 
