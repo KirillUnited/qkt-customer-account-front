@@ -20,11 +20,13 @@
         <section class="section section-hero">
             <div class="container">
                 <div class="section-inner">
-                    <div class="section-hero-banner has-img-fit">
-                        {% Picture src="/assets/images/tickets/"+ticket_details.image,
-                            srcSet="/assets/images/tickets/"+ticket_details.imageMobile,
-                            className="img-bg has-img-fit",
-                            text=ticket_details.title %}
+                    <div class="section-hero-banner has-img-fit img-holder">
+                        {% if ticket_details.image %}
+                            {% Picture src="/assets/images/tickets/"+ticket_details.image,
+                                srcSet="/assets/images/tickets/"+ticket_details.imageMobile,
+                                className="img-bg has-img-fit",
+                                text=ticket_details.title %}
+                        {% endif %}
                     </div>
                 </div>
             </div>
