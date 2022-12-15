@@ -13,7 +13,32 @@ module.exports = {
     actions: [
         {
             title: "Edit Ticket Details",
-            icon: "",
+            icon: "icons/pencil.svg",
+            link: "/"
+        },
+        {
+            title: "View Invoice",
+            icon: "icons/edit-one.svg",
+            link: "/"
+        },
+        {
+            title: "Edit Invoice",
+            icon: "icons/edit-one-1.svg",
+            link: "/"
+        },
+        {
+            title: "Transfer Tickets",
+            icon: "icons/Refresh.svg",
+            link: "/"
+        },
+        {
+            title: "Request A Refund",
+            icon: "icons/close-one.svg",
+            link: "/"
+        },
+        {
+            title: "List Ticket For Resale",
+            icon: "icons/paper-money-two.svg",
             link: "/"
         }
     ]

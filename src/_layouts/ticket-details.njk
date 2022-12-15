@@ -27,7 +27,7 @@
         <section class="section">
             <div class="container-sm">
                 <div class="section-inner">
-                    <div class="section-header">
+                    <div class="section-header block-bordered">
                         {% if breadcrumbs %}
                             {% Breadcrumbs parent=account, current=title %}
                         {% endif %}
@@ -42,11 +42,11 @@
                         {% endif %}
                     </div>
 
-                    <div class="section-content">
+                    <div class="section-content block-bordered">
                         {{ content | safe }}
                     </div>
 
-                    <div class="section-content section-footer">
+                    <div class="section-content section-footer block-bordered">
                         <div class="section-title vw-h1">Have Questions?</div>
                         <p class="vw-text-bold">Contact the organiser about the event:</p>
                         <div class="actions grid grid-col-2">
