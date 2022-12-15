@@ -2,18 +2,27 @@
     --flex-dir: column;
     --gap: 34px;
     --border-radius: 8px;
+    --text-color: var(--color-text-body);
+    --bg-color: #FFFFFF;
 
     position: relative;
     display: flex;
     flex-direction: var(--flex-dir);
     gap: var(--gap);
-    color: var(--color-text-body);
-    background-color: #FFFFFF;
+    color: var(--text-color);
+    background-color: var(--bg-color);
     border: 1px solid var(--color-grey);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
     border-radius: var(--border-radius);
     padding: 20px 16px;
     overflow: hidden;
+    transition: 180ms ease-in-out;
+    transition-property: color, background, border;
+
+    &:hover {
+        --text-color: var(--color-green);
+        --bg-color: rgba(94, 183, 0, 0.2);
+    }
 
     &-img {
         width: getMinMax(20px, 32px);
@@ -32,6 +41,12 @@
     &-desc,
     &-body {
         @include truncate();
+    }
+
+    &-title {
+        color: var(--text-color);
+        transition: 180ms ease-in-out;
+        transition-property: color, background, border;
     }
 
     &-link {
