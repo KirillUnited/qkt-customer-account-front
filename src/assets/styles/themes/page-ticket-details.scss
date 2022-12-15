@@ -1,0 +1,24 @@
+@import "../utilities";
+
+.page-ticket-details {
+    @include more-sm() {
+        .card-minimal {
+            --flex-dir: row;
+            --gap: 30px;
+            padding-top: 30px;
+            padding-bottom: 30px;
+
+            .card {
+                &-img {
+                    width: getMinMax(20px, 24px);
+                    height: getMinMax(20px, 24px);
+                }
+
+                &-title {
+                    font-weight: 400;
+                    letter-spacing: 0.0015em;
+                }
+            }
+        }
+    }
+}

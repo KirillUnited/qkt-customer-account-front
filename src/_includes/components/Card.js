@@ -12,7 +12,7 @@ function Card(props) {
             </div>
             <div class="card-body">
                 <h2 class="card-title">${title}</h2>
-                <p class="card-desc">${desc}</p>
+                ${desc && `<p class="card-desc">${desc}</p>`}
                 
                 ${(type === "card-ticket") &&
                     `
