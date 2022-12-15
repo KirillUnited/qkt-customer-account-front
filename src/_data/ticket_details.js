@@ -2,6 +2,7 @@ module.exports = {
     path: "/pages/ticket-details",
     title: "Rocking The Daisies",
     image: "ticket-details-banner.png",
+    imageMobile: "ticket-details-banner-mobile.png",
     tag: "UPCOMING",
     status: "primary",
     desc: {
