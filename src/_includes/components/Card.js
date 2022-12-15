@@ -4,7 +4,6 @@ const Dropdown = require("./Dropdown");
 
 function Card(props) {
     const {img, title, desc, type, tag, status, options=""} = props;
-
     return html`
         <div class="card ${type}">
             <div class="card-img">
@@ -16,7 +15,7 @@ function Card(props) {
                 
                 ${(type === "card-ticket") &&
                     `
-                     ${Tag(tag, status)}
+                     ${Tag(props)}
                      <a href="" class="card-link">MANAGE BOOKING</a>
                      `
                 }

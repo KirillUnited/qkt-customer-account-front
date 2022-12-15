@@ -1,6 +1,24 @@
 @import "../utilities";
 
 .page-ticket-details {
+    .section {
+        &-header {
+            .tag {
+                margin-bottom: 16px;
+            }
+        }
+
+        &-desc {
+            &-item {
+                font-size: getMinMax(16px, 16px);
+
+                &:not(:last-child) {
+                    margin-bottom: calc(8px/16px)*1em;
+                }
+            }
+        }
+    }
+
     @include more-sm() {
         .card-minimal {
             --flex-dir: row;
@@ -19,6 +37,11 @@
                     letter-spacing: 0.0015em;
                 }
             }
+        }
+    }
+    @include less-sm() {
+        [class*="section-"] {
+            border-top: none;
         }
     }
 }

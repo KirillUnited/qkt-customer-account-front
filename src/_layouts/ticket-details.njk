@@ -36,8 +36,9 @@
                 <div class="section-inner">
                     <div class="section-header block-bordered">
                         {% if breadcrumbs %}
-                            {% Breadcrumbs parent=account, current=title %}
+                            {% Breadcrumbs parent=account, current=title if breadcrumbs %}
                         {% endif %}
+                        {% Tag tag=ticket_details.tag, status=ticket_details.status %}
                         <h1 class="section-title">{{ ticket_details.title }}</h1>
                         {% if ticket_details.desc %}
                             <div class="section-desc">
