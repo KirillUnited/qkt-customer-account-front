@@ -1,6 +1,6 @@
 {
   "title": "My Account",
-  "path": "/account",
+  "path": "/pages/account",
   "actions": [
     {
       "img": "icons/User.svg",

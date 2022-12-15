@@ -39,6 +39,6 @@ module.exports = function (eleventyConfig) {
         dataTemplateEngine: "njk",
         markdownTemplateEngine: "njk",
         htmlTemplateEngine: "njk",
-        templateFormats: ["html", "md", "njk", "vue"]
+        templateFormats: ["html", "md", "njk"]
     }
 };

@@ -1,6 +1,6 @@
 {
   "title": "My Tickets",
-  "path": "/tickets",
+  "path": "/pages/tickets",
   "tabs": [
     {
       "title": "My Tickets",

@@ -10,10 +10,10 @@ breadcrumbs: true
         {% Input type="text", id="Edit_Registration_FirstName", label="First Name", rest={placeholder: "First Name"} %}
         {% Input type="text", id="Edit_Registration_Surname", label="Surname", rest={placeholder: "Surname"} %}
         {% Input type="tel", id="Edit_Registration_Cellphone", label="Cellphone", rest={pattern:
-        "[0-9]{3}-[0-9]{3}-[0-9]{4}",
-        placeholder: "Cellphone" } %}
+            "[0-9]{3}-[0-9]{3}-[0-9]{4}",
+            placeholder: "Cellphone" } %}
         {% Input type="text", id="Edit_Registration_Telephone", label="ID / Passport number", rest={placeholder:
-        "Western Cape"} %}
+            "Western Cape"} %}
         <div class="grid-col-span">
             <div class="grid" style="align-items: center;">
                 <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -31,12 +31,8 @@ breadcrumbs: true
                 <p>If updated here, all tickets for this event with this ID / Passport number will also be updated.</p>
             </div>
         </div>
-        {%
-        Input id="Edit_Registration_Gender", label="Gender"
-        %}
-        {%
-        Input id="Edit_Registration_Province", label="Province"
-        %}
+        {% Input id="Edit_Registration_Gender", label="Gender" %}
+        {% Input id="Edit_Registration_Province", label="Province" %}
     </fieldset>
     <fieldset class="form-fieldset grid grid-col-2 grid-col-fixed">
         <div class="form-group grid-col-span">
@@ -64,18 +60,10 @@ breadcrumbs: true
         </div>
     </fieldset>
     <fieldset class="form-fieldset grid grid-col-2 grid-col-fixed">
-        {%
-        Input id="Edit_Registration_TicketQuantity", label="Ticket Quantity"
-        %}
-        {%
-        Input id="Edit_Registration_travelling", label="Will you be travelling alone?"
-        %}
-        {%
-        Input id="Edit_Registration_DietaryRequirements", label="Dietary Requirements"
-        %}
-        {%
-        Input id="Edit_Registration_FavouriteGenre", label="Favourite genre?"
-        %}
+        {% Input id="Edit_Registration_TicketQuantity", label="Ticket Quantity" %}
+        {% Input id="Edit_Registration_travelling", label="Will you be travelling alone?" %}
+        {% Input id="Edit_Registration_DietaryRequirements", label="Dietary Requirements" %}
+        {% Input id="Edit_Registration_FavouriteGenre", label="Favourite genre?" %}
     </fieldset>
     <fieldset class="form-fieldset grid grid-col-2 grid-col-fixed">
         {% Input type="text", id="Edit_Registration_EmergencyPerson", label="Emergency Person", rest={placeholder: "Emergency Person"} %}
@@ -91,12 +79,8 @@ breadcrumbs: true
         </div>
     </fieldset>
     <fieldset class="form-fieldset grid grid-col-2 grid-col-fixed">
-        {%
-        Input id="Edit_Registration_WillCamping", label="Will you be camping?"
-        %}
-        {%
-        Input id="Edit_Registration_InterestedGlamping", label="Interested in glamping?"
-        %}
+        {% Input id="Edit_Registration_WillCamping", label="Will you be camping?" %}
+        {% Input id="Edit_Registration_InterestedGlamping", label="Interested in glamping?" %}
         <div class="form-group grid-col-span">
             <div class="form-label">Where will you be camping?</div>
             {% Checkbox type="radio", id="Edit_Registration_None", name="Edit_Registration_CampingPlace", label="None", status="checked" %}
