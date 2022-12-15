@@ -1,6 +1,12 @@
 @import "../utilities";
 
 .page-ticket-details {
+    --footer-min-height: 120px;
+
+    .content {
+        padding-bottom: var(--footer-min-height);
+    }
+
     .section {
         &-header {
             .tag {
@@ -40,6 +46,7 @@
         }
     }
     @include less-sm() {
+        --footer-min-height: 75px;
         [class*="section-"] {
             border-top: none;
         }

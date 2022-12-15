@@ -82,7 +82,8 @@
 
         &-footer {
             button {
-                width: 100%;
+                --min-width: 160px;
+                flex: 1;
             }
         }
     }
