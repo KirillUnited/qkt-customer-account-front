@@ -6,31 +6,31 @@
       "img": "icons/User.svg",
       "name": "Personal Info.",
       "desc": "Name, Surname, Email etc.",
-      "link": "/account/info"
+      "link": "/pages/account/info"
     },
     {
       "img": "icons/Phone.svg",
       "name": "Contact Info.",
       "desc": "Name, Surname, Email etc.",
-      "link": "/account/contacts"
+      "link": "/pages/account/contacts"
     },
     {
       "img": "icons/Email.svg",
       "name": "Email Preferences",
       "desc": "Name, Surname, Email etc.",
-      "link": "/account/email"
+      "link": "/pages/account/email"
     },
     {
       "img": "icons/Lock.svg",
       "name": "Password",
       "desc": "Name, Surname, Email etc.",
-      "link": "/account/password"
+      "link": "/pages/account/password"
     },
     {
       "img": "icons/bank-card.svg",
       "name": "Payments & Payouts",
       "desc": "Name, Surname, Email etc.",
-      "link": "/account/payments",
+      "link": "/pages/account/payments",
       "tabs": [
         {
           "title": "payments",
@@ -100,7 +100,7 @@
       "img": "icons/node_multiple_outlined.svg",
       "name": "API Keys",
       "desc": "Name, Surname, Email etc.",
-      "link": "/account/api"
+      "link": "/pages/account/api"
     }
   ]
 }
