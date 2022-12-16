@@ -1,0 +1,51 @@
+---
+layout: tabs.html
+title: 'My Tickets'
+---
+
+<nav class="tabs-navbar">
+    <ul class="tabs-list list-style-reset" data-tablist>
+        {%- for tab in tickets.tabs -%}
+            <li class="tabs-item">
+                <a href="#" class="tabs-link {{ 'tabs-link-active' if loop.index === 1 }}"
+                   data-tab="{{ tab.panel.title|replace(' ', '_') }}">
+                    <span class="text-truncate">{{ tab.title }}</span>
+                </a>
+            </li>
+        {%- endfor -%}
+    </ul>
+</nav>
+<div class="tabs-content">
+    {%- for tab in tickets.tabs -%}
+        <div id="{{ tab.panel.title|replace(' ', '_') }}" class="tabs-panel"
+             data-panel="{{ tab.panel.title|replace(' ', '_') }}" hidden="{{ true if loop.index === 2 else false }}">
+            <div class="section-header">
+                <h1 class="section-title">{{ tab.panel.title }}</h1>
+                <p class="section-desc">
+                    {{ tab.panel.desc | safe }}
+                </p>
+            </div>
+            {% if tab.panel.enableFilter %}
+                {% set filter=tab.panel.title|replace(' ', '_') %}
+                {% include "../../_includes/filter.njk" %}
+            {% endif %}
+            <div class="section-content">
+                {% if tab.panel.contentDisplay==="grid" %}
+                    <div class="tabs-panel-grid grid grid-col-2 grid-col-fixed">
+                        {%- for item in tab.panel.content -%}
+                            {% Card img=item.img, title=item.title, desc=item.desc, tag=item.tag, status=item.status,
+                                type="card-ticket" %}
+                        {%- endfor -%}
+                    </div>
+                {% elseif tab.panel.contentDisplay==="table" %}
+                    <div class="tabs-panel-table">
+                        {% set data = tab.panel.content %}
+                        {% include "../../_includes/table.html" %}
+                    </div>
+                {% else %}
+                    {{ tab.panel.content|safe }}
+                {% endif %}
+            </div>
+        </div>
+    {%- endfor -%}
+</div>

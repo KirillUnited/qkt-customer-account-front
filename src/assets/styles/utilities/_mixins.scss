@@ -168,14 +168,14 @@
 }
 
 //button
-@mixin btn($padding: .375rem .75rem) {
-    display: inline-block;
-    vertical-align: middle;
-    width: auto;
-    white-space: nowrap;
-    user-select: none;
-    padding: $padding;
-}
+// @mixin btn($padding: .375rem .75rem) {
+//     display: inline-block;
+//     vertical-align: middle;
+//     width: auto;
+//     white-space: nowrap;
+//     user-select: none;
+//     padding: $padding;
+// }
 
 @mixin o-fit-absolute() {
     position: absolute;
