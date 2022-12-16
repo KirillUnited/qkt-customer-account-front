@@ -4,7 +4,7 @@
     & > img,
     & > .img-bg {
         @include o-fit-absolute();
-        z-index: -1;
+        //z-index: -1;
     }
 }
 
@@ -57,7 +57,7 @@
     gap: 19px;
 
     &:after,
-    &:before{
+    &:before {
         display: block;
         content: "";
         flex: 1;
@@ -76,4 +76,10 @@
     color: var(--color-text-body);
     border-bottom: 1px solid #F1F5F9;
     padding-bottom: 8px;
+}
+
+.block-bordered {
+    & + .block-bordered {
+        border-top: 1px solid #D8D8D8;
+    }
 }

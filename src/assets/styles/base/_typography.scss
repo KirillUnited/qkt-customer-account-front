@@ -55,6 +55,10 @@ li,
     letter-spacing: 0.0015em;
 }
 
+.vw-text-bold {
+    font-weight: 500;
+}
+
 p {
     margin: 0 0 calc(20px / $text-font-size) * 1em;
 

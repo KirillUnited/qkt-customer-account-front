@@ -1,0 +1,13 @@
+---
+layout: ticket-details.njk
+title: "Ticket/Booking Details"
+---
+
+<div class="section-title vw-h1">Actions</div>
+<div class="actions grid grid-col-2">
+    {%- for item in ticket_details.actions -%}
+        <a href="{{ item.link }}">
+            {% Card img=item.icon, title=item.title, type="card-minimal" %}
+        </a>
+    {% endfor %}
+</div>

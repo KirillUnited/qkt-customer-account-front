@@ -60,18 +60,11 @@
         }
     }
 
-    @include less-sm() {
+    &-hero {
         &-banner {
-            padding-top: getMinMax(10px, 10px);
-            padding-bottom: getMinMax(25px, 25px);
-        }
-    }
-
-    @include less-xs() {
-        &.has-slider {
-            .container {
-                width: 100%;
-            }
+            @include get-aspect-ratio();
+            --height: 430;
+            --width: 1440;
         }
     }
 }
