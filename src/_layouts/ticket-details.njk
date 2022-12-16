@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% include "../_includes/head.html" %}
+    {% block head %}
+        <link rel="stylesheet" href="/assets/styles/index.css"/>
+        <link rel="stylesheet" href="/assets/styles/themes/page-account.css"/>
+        <link rel="stylesheet" href="/assets/styles/themes/page-ticket-details.css"/>
+    {% endblock %}
+</head>
+
+<body class="page-account page-ticket-details">
+<div class="wrapper">
+    {% block header %}
+        {% include "../_includes/header.html" %}
+    {% endblock %}
+
+    <main class="content">
+        <section class="section section-hero">
+            <div class="container">
+                <div class="section-inner">
+                    <div class="section-hero-banner has-img-fit img-holder">
+                        {% if ticket_details.image %}
+                            {% Picture src="/assets/images/tickets/"+ticket_details.image,
+                                srcSet="/assets/images/tickets/"+ticket_details.imageMobile,
+                                className="img-bg has-img-fit",
+                                text=ticket_details.title %}
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section">
+            <div class="container-sm">
+                <div class="section-inner">
+                    <div class="section-header block-bordered">
+                        {% if breadcrumbs %}
+                            {% Breadcrumbs parent=account, current=title if breadcrumbs %}
+                        {% endif %}
+                        {% Tag tag=ticket_details.tag, status=ticket_details.status %}
+                        <h1 class="section-title">{{ ticket_details.title }}</h1>
+                        {% if ticket_details.desc %}
+                            <div class="section-desc">
+                                {%- for key, value in ticket_details.desc -%}
+                                    <p class="section-desc-item">
+                                        <span class="vw-text-bold">{{ key }}:</span> {{ value }}</p>
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+                    </div>
+
+                    <div class="section-content block-bordered">
+                        {{ content | safe }}
+                    </div>
+
+                    <div class="section-content section-footer block-bordered">
+                        <div class="section-title vw-h1">Have Questions?</div>
+                        <p class="vw-text-bold">Contact the organiser about the event:</p>
+                        <div class="actions grid grid-col-2">
+                            <a href=""
+                               title="Send Message">{% Card img="icons/sms.svg", title="Send Message", type="card-minimal" %}</a>
+                            <a href=""
+                               title="Visitor Help Center">{% Card img="icons/Question.svg", title="Visitor Help Center", type="card-minimal" %}</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="form-footer">
+            <div class="container">
+                {% Button children="VIEW TICKET DETAILS", state="invert", type="button" %}
+                {% Button children="VIEW TICKET PDF", state="primary", type="button" %}
+            </div>
+        </div>
+    </main>
+
+    {% block footer %}
+    {% endblock %}
+</div>
+
+{% include "../_includes/scripts.html" %}
+{% block scripts %}{% endblock %}
+</body>
+
+</html>
+

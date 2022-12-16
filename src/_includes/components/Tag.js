@@ -1,11 +1,9 @@
 const {html} = require("common-tags");
 
-function Tag(title="", status="") {
-    if (!title) return;
-
+function Tag(props) {
     return html`
-<div class="tag ${status && `tag-${status}`}">${title}</div>
-`;
+        <div class="tag ${props.status && `tag-${props.status}`}">${props.tag}</div>
+    `;
 }
 
 module.exports = Tag;
