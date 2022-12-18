@@ -6,16 +6,29 @@ title: "Ticket/Booking Details"
 <div class="section-title vw-h1">Actions</div>
 <div class="actions grid grid-col-2">
     {%- for item in ticket_details.actions -%}
-        {% if item.type === "toggle_modal" %}
-            <a href="#" data-toggle="modal" data-target="{{ item.link }}">
-                {% Card img=item.icon, title=item.title, type="card-minimal" %}
-            </a>
-        {% else %}
-            <a href="{{ item.link }}">
-                {% Card img=item.icon, title=item.title, type="card-minimal" %}
-            </a>
-        {% endif %}
+        <a href="{{ item.link }}" {{ item.attrs | safe }}>
+            {% Card img=item.icon, title=item.title, type="card-minimal" %}
+        </a>
     {% endfor %}
 </div>
 
-{% Modal id="edit_invoice", title="Edit Invoice" %}
+{% Modal id="edit_invoice", title="Edit Invoice", content='
+<div class="form-group grid-col-span">
+    <label class="form-label" for="edit_invoice_BillingLine1">Billing line 1</label>
+    <div class="form-input">
+        <input class="form-input-field" type="text" id="edit_invoice_BillingLine1" name="edit_invoice_BillingLine1">
+    </div>
+</div>
+<div class="form-group grid-col-span">
+    <label class="form-label" for="edit_invoice_BillingLine2">Billing line 2</label>
+    <div class="form-input">
+        <input class="form-input-field" type="text" id="edit_invoice_BillingLine2" name="edit_invoice_BillingLine2">
+    </div>
+</div>
+<div class="form-group grid-col-span">
+    <label class="form-label" for="edit_invoice_BillingLine3">Billing line 3</label>
+    <div class="form-input">
+        <input class="form-input-field" type="text" id="edit_invoice_BillingLine3" name="edit_invoice_BillingLine3">
+    </div>
+</div>
+' %}
