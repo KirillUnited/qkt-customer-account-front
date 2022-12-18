@@ -25,7 +25,8 @@ module.exports = {
         {
             title: "Edit Invoice",
             icon: "icons/edit-one-1.svg",
-            link: "/"
+            link: "edit_invoice",
+            type: "toggle_modal"
         },
         {
             title: "Transfer Tickets",

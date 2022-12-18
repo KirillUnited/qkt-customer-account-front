@@ -6,8 +6,16 @@ title: "Ticket/Booking Details"
 <div class="section-title vw-h1">Actions</div>
 <div class="actions grid grid-col-2">
     {%- for item in ticket_details.actions -%}
-        <a href="{{ item.link }}">
-            {% Card img=item.icon, title=item.title, type="card-minimal" %}
-        </a>
+        {% if item.type === "toggle_modal" %}
+            <a href="#" data-toggle="modal" data-target="{{ item.link }}">
+                {% Card img=item.icon, title=item.title, type="card-minimal" %}
+            </a>
+        {% else %}
+            <a href="{{ item.link }}">
+                {% Card img=item.icon, title=item.title, type="card-minimal" %}
+            </a>
+        {% endif %}
     {% endfor %}
 </div>
+
+{% Modal id="edit_invoice", title="Edit Invoice" %}
