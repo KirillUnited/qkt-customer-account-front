@@ -1,0 +1,27 @@
+---
+layout: account.html
+title: Edit Ticket Details
+description: ""
+breadcrumbs: true
+---
+<form class="form" id="account_info" method="POST" action="">
+    <legend>
+        <h2>Ticket Details</h2>
+        <p class="section-desc">Ticket 1 - Phase 1- General Camping Three (General Camping 3)</p>
+    </legend>
+    <fieldset class="form-fieldset grid grid-col-2">
+        {% Input type="text", id="account_info_First_Name", label="First Name", rest={required: true} %}
+        {% Input type="text", id="account_info_Last_Name", label="Last Name" %}
+        {% Input type="email", id="account_info_Email", label="Email" %}
+        {% Input type="tel", id="account_info_Cellphone", label="Cellphone" %}
+        {% Input type="text", id="account_info_ID", label="ID / Passport number" %}
+        {% Input id="account_info_Country", label="Country" %}
+    </fieldset>
+    <div class="form-footer">
+        <div class="container">
+            {% Button children="SAVE CHANGES", state="disabled", type="submit" %}
+        </div>
+    </div>
+</form>
+
+
