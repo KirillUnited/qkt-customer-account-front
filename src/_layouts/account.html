@@ -23,7 +23,9 @@
                                 {% Breadcrumbs parent=account, current=title %}
                             {% endif %}
                             <h1 class="section-title">{{title}}</h1>
-                            <p class="section-desc">{{description | safe}}</p>
+                            {% if description %}
+                                <p class="section-desc">{{description | safe}}</p>
+                            {% endif %}
                         </div>
                     {% endif %}
                     <div class="section-content">

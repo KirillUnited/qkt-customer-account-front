@@ -15,7 +15,7 @@ module.exports = {
         {
             title: "Edit Ticket Details",
             icon: "icons/pencil.svg",
-            link: "/"
+            link: "/pages/ticket-details/edit-ticket"
         },
         {
             title: "View Invoice",

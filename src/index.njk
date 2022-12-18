@@ -36,6 +36,13 @@ title: Customer Account
                     </li>
                     <li>
                         <a href="{{ ticket_details.path }}">Ticket/Booking Details</a>
+                        <ul>
+                            {% for action in ticket_details.actions %}
+                                <li>
+                                    <a href="{{ action.link }}">{{ action.title }}</a>
+                                </li>
+                            {% endfor %}
+                        </ul>
                     </li>
                 </ul>
             </div>
