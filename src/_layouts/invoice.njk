@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% include "../_includes/head.html" %}
+    {% block head %}
+        <link rel="stylesheet" href="/assets/styles/themes/page-account.css"/>
+        <link rel="stylesheet" href="/assets/styles/themes/page-invoice.css"/>
+    {% endblock %}
+</head>
+
+<body class="page-account page-invoice">
+<div class="wrapper">
+    {% block header %}
+        {% include "../_includes/header.html" %}
+    {% endblock %}
+
+    <main class="content">
+        <section class="section invoice">
+            <div class="container-sm">
+                <div class="section-inner invoice-inner">
+                    <div class="section-header invoice-header">
+                        {% if breadcrumbs %}
+                            {% Breadcrumbs parent=account, current=title if breadcrumbs %}
+                        {% endif %}
+                        <h2>Munyhub Online Ticketing Services (Pty) Ltd. t/a
+                            Quicket</h2>
+                        <p class="vw-text-bold">5th Floor</p>
+                        <p class="vw-text-bold">186 Loop Street</p>
+                        <p class="vw-text-bold">Cape Town, 8000</p>
+                        <p class="vw-text-bold">South Africa</p>
+                        <p class="vw-text-bold">Date: 26 May 2022</p>
+                        <p class="vw-text-bold">Invoice no. 7723390</p>
+                    </div>
+                    <div class="section-content block-bordered invoice-content">
+                        <h2 class="vw-h1">Tax Invoice</h2>
+                        <p>TO: jodiyotikul@gmail.com</p>
+                        <p class="text-truncate">REF07723390</p>
+                    </div>
+
+                    {{ content | safe }}
+
+                    <div class="section-content section-footer block-bordered invoice-footer">
+                        <h2 class="section-title invoice-title">
+                            <span>TOTAL</span>
+                            <span class="text-truncate">R600</span>
+                        </h2>
+                        <h2 class="section-title invoice-title">
+                            <span>PAID</span>
+                            <span class="text-truncate">R600</span>
+                        </h2>
+                        <h2 class="section-title invoice-title">
+                            <span>OUTSTANDING</span>
+                            <span class="text-truncate">0</span>
+                        </h2>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    {% block footer %}
+    {% endblock %}
+</div>
+
+{% block scripts %}{% endblock %}
+</body>
+
+</html>
+
