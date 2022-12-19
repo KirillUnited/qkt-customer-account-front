@@ -2,17 +2,16 @@ const {html} = require("common-tags");
 const getPaymentsTemplate = require("./getPaymentsTmpl");
 const getDelAccountTemplate = require("./getDelAccountTmpl");
 
-const Modal = ({id, title, desc="", header, content=[]}) => {
+const Modal = ({id, title, desc="", header, content="", className=""}) => {
     const contentTemplates = {
         "payments": getPaymentsTemplate(),
-        "confirmation": null,
         "delete": getDelAccountTemplate(),
         "default": content
     };
     const contentTemplate = (contentTemplates[content] || contentTemplates["default"]);
 
     return html`
-        <div class="modal ${(content === 'confirmation') && 'modal-confirm'}" data-modal='${id}' data-close="true">
+        <div class="modal ${className}" data-modal='${id}' data-close="true">
             <div class="modal-dialog">
                 ${
                     header
