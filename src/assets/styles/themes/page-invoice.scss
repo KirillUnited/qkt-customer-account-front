@@ -1,0 +1,40 @@
+@import "../utilities";
+
+.invoice {
+    &-inner {
+        $width: 826px;
+        --width: min(90vw, #{$width});
+    }
+
+    &-header {
+        text-align: right;
+    }
+
+    &-title {
+        display: flex;
+        //flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 8px;
+        margin-bottom: 0.4em;
+    }
+
+    h1,
+    .vw-h1 {
+        font-weight: 700;
+    }
+
+    p {
+        font-size: Min(getvw($h4-font-size-sm), getrem($h4-font-size));
+        margin-bottom: 0.5em;
+
+        &:last-child{
+            margin-bottom: 0;
+        }
+    }
+
+    @include more-sm() {
+        &-inner {
+            width: var(--width);
+        }
+    }
+}
