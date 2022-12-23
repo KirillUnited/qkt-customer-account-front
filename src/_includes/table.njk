@@ -1,0 +1,22 @@
+<div class="table">
+    <div class="table-head grid grid-col">
+        {% for key, value in data[0] %}
+            <div class="table-cell">{{ key }}</div>
+        {% endfor %}
+    </div>
+    <div class="table-body">
+        {% for item in data %}
+            <div class="table-row grid grid-col">
+                {% for key, value in item %}
+                    {% if key === "Organiser" %}
+                        <div class="table-cell">
+                            <a href="#" style='color: inherit; text-decoration: underline;'>{{ value }}</a>
+                        </div>
+                    {% else %}
+                        <div class="table-cell">{{ value|safe }}</div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        {% endfor %}
+    </div>
+</div>

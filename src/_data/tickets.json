@@ -38,7 +38,8 @@
           }
         ],
         "enableFilter": true,
-        "contentDisplay": "grid"
+        "contentDisplay": "grid",
+        "linkTitle": "MANAGE BOOKING"
       }
     },
     {
@@ -91,7 +92,8 @@
           }
         ],
         "enableFilter": true,
-        "contentDisplay": "grid"
+        "contentDisplay": "grid",
+        "linkTitle": "MANAGE REGISTRATION"
       }
     },
     {
@@ -99,6 +101,10 @@
       "panel": {
         "title": "My Subscriptions",
         "desc": "Below is a list of organisers and membership options you have subscribed to.",
+        "enableFilter": false,
+        "contentDisplay": "table",
+        "tableType": "table-grid",
+        "linkTitle": "VIEW ORGANISER",
         "content": [
           {
             "Organiser": "Guy Hawkins",
@@ -107,7 +113,7 @@
             "Price": "Free",
             "Status": "Valid",
             "Next Billing Date": "08 April 2021",
-            "Actions": "Cancel"
+            "Actions": "<a href=\"#\">Cancel</a>"
           },
           {
             "Organiser": "Guy Hawkins 2",
@@ -116,7 +122,7 @@
             "Price": "Free",
             "Status": "Valid",
             "Next Billing Date": "08 April 2021",
-            "Actions": "Cancel"
+            "Actions": "<a href=\"#\">Cancel</a>"
           },
           {
             "Organiser": "Guy Hawkins 3",
@@ -125,7 +131,7 @@
             "Price": "Free",
             "Status": "Valid",
             "Next Billing Date": "08 April 2021",
-            "Actions": "Cancel"
+            "Actions": "<a href=\"#\">Cancel</a>"
           },
           {
             "Organiser": "Guy Hawkins 4",
@@ -134,11 +140,34 @@
             "Price": "Free",
             "Status": "Valid",
             "Next Billing Date": "08 April 2021",
-            "Actions": "Cancel"
+            "Actions": "<a href=\"#\">Cancel</a>"
           }
         ],
-        "enableFilter": false,
-        "contentDisplay": "table"
+        "contentGrid": [
+          {
+            "title": "Guy Hawkins",
+            "desc": "<strong style=\"text-transform: uppercase;\">Membership: </strong>Free Styler<br/><strong style=\"text-transform: uppercase;\">Price: </strong>Free<br/><strong style=\"text-transform: uppercase;\">Next Billing Date: </strong>08 April 2021",
+            "tag": "Valid",
+            "status": "primary"
+          },
+          {
+            "title": "Guy Hawkins 2",
+            "desc": "<strong style=\"text-transform: uppercase;\">Membership: </strong>Free Styler<br/><strong style=\"text-transform: uppercase;\">Price: </strong>Free<br/><strong style=\"text-transform: uppercase;\">Next Billing Date: </strong>08 April 2021",
+            "tag": "Valid",
+            "status": "primary"
+          },{
+            "title": "Guy Hawkins 3",
+            "desc": "<strong style=\"text-transform: uppercase;\">Membership: </strong>Free Styler<br/><strong style=\"text-transform: uppercase;\">Price: </strong>Free<br/><strong style=\"text-transform: uppercase;\">Next Billing Date: </strong>08 April 2021",
+            "tag": "Valid",
+            "status": "primary"
+          },
+          {
+            "title": "Guy Hawkins 4",
+            "desc": "<strong style=\"text-transform: uppercase;\">Membership: </strong>Free Styler<br/><strong style=\"text-transform: uppercase;\">Price: </strong>Free<br/><strong style=\"text-transform: uppercase;\">Next Billing Date: </strong>08 April 2021",
+            "tag": "Valid",
+            "status": "primary"
+          }
+        ]
       }
     }
   ]
