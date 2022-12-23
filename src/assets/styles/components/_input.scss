@@ -55,7 +55,7 @@
         font-family: var(--font-main);
         font-style: normal;
         font-weight: 400;
-        font-size: $font-size;
+        font-size: getMinMax(16px,$font-size);
         line-height: calc(18px/$font-size)*1em;
         letter-spacing: 0.0015em;
         color: var(--color-text-body);
@@ -103,11 +103,13 @@
             }
 
             label {
+                --bg-color: var(--color-grey);
+                --bg-color-a: var(--color-disabled);
                 position: relative;
                 display: block;
                 Width: 36px;
                 Height: 14px;
-                background-color: var(--color-grey);
+                background-color: var(--bg-color);
                 border-radius: 50px;
                 cursor: pointer;
 
@@ -119,7 +121,7 @@
                     margin: auto;
                     width: 20px;
                     height: 20px;
-                    background-color: var(--color-disabled);
+                    background-color: var(--bg-color-a);
                     content: "";
                     border-radius: 100%;
                     transition: background-color 200ms linear,
@@ -128,10 +130,10 @@
             }
 
             input:checked~label {
-                background-color: rgba(94, 183, 0, 0.2);
+                --bg-color: rgba(94, 183, 0, 0.2);
+                --bg-color-a: var(--color-green);
 
                 &::after {
-                    background-color: var(--color-green);
                     transform: translate3d(-16px, 0, 0);
                 }
             }
@@ -139,40 +141,17 @@
     }
 
     &-radio {
+        --font-size-unit: 16;
         --border-color: var(--color-text-body);
         --bg-color: transparent;
-
-        line-height: calc(20px/$font-size)*1em;
+        --border-color-active: var(--color-green);
+        --bg-color-active: var(--color-green);
+        --size: 20;
+        line-height: calc(calc(var(--size)/var(--font-size-unit))*1em);
 
         input[type="radio"] {
-            position: relative;
-            flex: 0 0 calc(20px/$font-size)*1em;
-            width: calc(20px/$font-size)*1em;
-            height: calc(20px/$font-size)*1em;
-            border: 1px solid var(--border-color);
-            border-radius: 50%;
-            margin: 0;
-            -webkit-appearance: none;
-            -moz-appearance: none;
-            outline: none;
-
-            &:after {
-                content: '';
-                display: block;
-                left: 50%;
-                top: 50%;
-                position: absolute;
-                transform: translate(-50%, -50%);
-                width: calc(12px/$font-size)*1em;
-                height: calc(12px/$font-size)*1em;
-                border-radius: 50%;
-                background-color: var(--bg-color);
-            }
-
-            &:checked {
-                --border-color: var(--color-green);
-                --bg-color: var(--color-green);
-            }
+            @include input-radio(var(--font-size-unit));
+            flex: 0 0 calc(calc(var(--size)/var(--font-size-unit))*1em);
         }
     }
 

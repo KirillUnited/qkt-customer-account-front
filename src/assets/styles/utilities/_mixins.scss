@@ -84,8 +84,38 @@
     }
 }
 
-// усечение элемента применять к текстовым тегам типа "span" "p" и т.д.
-// пример: @include truncate(110px);
+@mixin input-radio($font-size: 16) {
+    position: relative;
+    width: calc(calc(var(--size, 20)/$font-size)*1em);
+    height: calc(calc(var(--size, 20)/$font-size)*1em);
+    border: 1px solid var(--border-color, currentColor);
+    border-radius: 50%;
+    margin: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    outline: none;
+
+    &:after {
+        content: '';
+        display: block;
+        left: 50%;
+        top: 50%;
+        position: absolute;
+        transform: translate(-50%, -50%);
+        width: calc(calc(12/$font-size)*1em);
+        height: calc(calc(12/$font-size)*1em);
+        border-radius: 50%;
+        background-color: var(--bg-color);
+    }
+
+    &:checked {
+        --border-color: var(--border-color-active);
+        --bg-color: var(--bg-color-active, currentColor);
+    }
+}
+
+// truncate text tags like "span" "p" and etc.
+// example: @include truncate(110px);
 @mixin truncate($truncation-boundary: 100%) {
     max-width: $truncation-boundary;
     white-space: nowrap;
