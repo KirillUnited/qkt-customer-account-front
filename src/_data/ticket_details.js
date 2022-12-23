@@ -31,7 +31,7 @@ module.exports = {
         {
             title: "Transfer Tickets",
             icon: "icons/Refresh.svg",
-            link: "/"
+            link: "/pages/ticket-details/transfer-tickets"
         },
         {
             title: "Request A Refund",

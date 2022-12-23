@@ -1,0 +1,34 @@
+---
+layout: account.html
+title: Transfer Tickets
+description: ""
+breadcrumbs: true
+---
+<form class="form" id="Transfer_Tickets" method="POST" action="" style="--width: 551px">
+    <legend>
+        <p class="section-desc">Below you can transfer tickets to another person. Please enter in the email address of
+            the person recieving the tickets and then select which tickets your want to transfer.</p>
+        <p class="section-desc">Please note: This action cannot be reversed. Please make sure you want to transfer the
+            tickets before proceeding and that you have the <strong>correct email address</strong>.</p>
+    </legend>
+    <fieldset class="form-fieldset grid grid-col-2 grid-col-fixed">
+        {% Input type="email", id="Transfer_Tickets_EmailAddress", label="Email Address", rest={placeholder:"Email"} %}
+        {% Input type="email", id="Transfer_Tickets_EmailAddressRetype", label="Re-type email address", rest={placeholder:"Email"} %}
+        <div class="form-group grid-col-span">
+            <label class="form-label">Tickets to transfertform do you use the most?</label>
+            {% Checkbox id="Transfer_Tickets_QTK18164282", label="QTK18164282 (Jodi Yotikul) (Seat: General Camping 3)" %}
+            {% Checkbox id="Transfer_Tickets_QTK18164282", label="QTK18164282 (Jodi Yotikul) (Seat: General Camping 3)" %}
+        </div>
+        <div class="form-group grid-col-span">
+            <label class="form-label">Tickets to transfertform do you use the most?</label>
+            {% Checkbox id="Transfer_Tickets_Confirm", label="I confirm that I want to transfer the tickets above to the email address I entered. I understand that this cannot be undone." %}
+        </div>
+    </fieldset>
+    <div class="form-footer">
+        <div class="container">
+            {% Button children="TRANSFER", state="primary", type="submit" %}
+        </div>
+    </div>
+</form>
+
+
