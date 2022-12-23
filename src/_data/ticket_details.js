@@ -41,7 +41,103 @@ module.exports = {
         {
             title: "List Ticket For Resale",
             icon: "icons/paper-money-two.svg",
-            link: "/"
+            link: "/pages/ticket-details/list-ticket-for-resale",
+            "tabs": [
+                {
+                    "title": "Available FOR RESALE",
+                    "panel": {
+                        "title": "Put Your Tickets Up For Resale",
+                        "desc": "View payments below. Payment will happen every month only for revenue<br class=\"hidden-less-sm\"/> generated for events which have successfully finished.",
+                        "content": [
+                            {
+                                "Organiser": "Guy Hawkins",
+                                "Membership": "Free Styler",
+                                "Date Subscribed": "08 April 2021",
+                                "Price": "Free",
+                                "Status": "Valid",
+                                "Next Billing Date": "08 April 2021",
+                                "Actions": "Cancel"
+                            },
+                            {
+                                "Organiser": "Guy Hawkins 2",
+                                "Membership": "Free Styler for everyday",
+                                "Date Subscribed": "23 April 2019",
+                                "Price": "Free",
+                                "Status": "Valid",
+                                "Next Billing Date": "08 April 2021",
+                                "Actions": "Cancel"
+                            },
+                            {
+                                "Organiser": "Guy Hawkins 3",
+                                "Membership": "Free Styler",
+                                "Date Subscribed": "08 April 2021",
+                                "Price": "Free",
+                                "Status": "Valid",
+                                "Next Billing Date": "08 April 2021",
+                                "Actions": "Cancel"
+                            },
+                            {
+                                "Organiser": "Guy Hawkins 4",
+                                "Membership": "Free Styler for everyday",
+                                "Date Subscribed": "23 April 2019",
+                                "Price": "Free",
+                                "Status": "Valid",
+                                "Next Billing Date": "08 April 2021",
+                                "Actions": "Cancel"
+                            }
+                        ],
+                        "enableFilter": false,
+                        "contentDisplay": "table"
+                    }
+                },
+                {
+                    "title": "CURRENTLY LISTED",
+                    "panel": {
+                        "title": "Your Currently Listed Tickets",
+                        "desc": "You will receive a ticket once your ticket is sold.",
+                        "content": [
+                            {
+                                "Organiser": "Guy Hawkins",
+                                "Membership": "Free Styler",
+                                "Date Subscribed": "08 April 2021",
+                                "Price": "Free",
+                                "Status": "Valid",
+                                "Next Billing Date": "08 April 2021",
+                                "Actions": "Cancel"
+                            },
+                            {
+                                "Organiser": "Guy Hawkins 2",
+                                "Membership": "Free Styler for everyday",
+                                "Date Subscribed": "23 April 2019",
+                                "Price": "Free",
+                                "Status": "Valid",
+                                "Next Billing Date": "08 April 2021",
+                                "Actions": "Cancel"
+                            },
+                            {
+                                "Organiser": "Guy Hawkins 3",
+                                "Membership": "Free Styler",
+                                "Date Subscribed": "08 April 2021",
+                                "Price": "Free",
+                                "Status": "Valid",
+                                "Next Billing Date": "08 April 2021",
+                                "Actions": "Cancel"
+                            },
+                            {
+                                "Organiser": "Guy Hawkins 4",
+                                "Membership": "Free Styler for everyday",
+                                "Date Subscribed": "23 April 2019",
+                                "Price": "Free",
+                                "Status": "Valid",
+                                "Next Billing Date": "08 April 2021",
+                                "Actions": "Cancel"
+                            }
+                        ],
+                        "enableFilter": false,
+                        "contentDisplay": "table"
+                    }
+                }
+            ]
         }
     ]
 };
