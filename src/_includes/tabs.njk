@@ -19,30 +19,18 @@
                     {% Breadcrumbs parent=account, current=title %}
                 {% endif %}
                 <h1 class="section-title">{{ tab.panel.title }}</h1>
-                <p class="section-desc">
-                    {{ tab.panel.desc | safe }}
-                </p>
+                {% if tab.panel.desc %}
+                    <p class="section-desc">
+                        {{ tab.panel.desc | safe }}
+                    </p>
+                {% endif %}
             </div>
             {% if tab.panel.enableFilter %}
                 {% set filter=tab.panel.title|replace(' ', '_') %}
                 {% include "./filter.njk" %}
             {% endif %}
             <div class="section-content">
-                {% if tab.panel.contentDisplay==="grid" %}
-                    <div class="tabs-panel-grid grid grid-col-2 grid-col-fixed">
-                        {%- for item in tab.panel.content -%}
-                            {% Card img=item.img, title=item.title, desc=item.desc, tag=item.tag, status=item.status,
-                                type="card-ticket" %}
-                        {%- endfor -%}
-                    </div>
-                {% elseif tab.panel.contentDisplay==="table" %}
-                    <div class="tabs-panel-table">
-                        {% set data = tab.panel.content %}
-                        {% include "./table.njk" %}
-                    </div>
-                {% else %}
-                    {{ tab.panel.content|safe }}
-                {% endif %}
+                {% include "./tabs-content.njk" %}
             </div>
         </div>
     {%- endfor -%}

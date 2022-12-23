@@ -1,27 +1,22 @@
-<div class="table hidden-less-sm">
+<div class="table">
     <div class="table-head grid grid-col">
         {% for key, value in data[0] %}
-        <div class="table-cell">{{ key }}</div>
+            <div class="table-cell">{{ key }}</div>
         {% endfor %}
     </div>
     <div class="table-body">
         {% for item in data %}
-        <div class="table-row grid grid-col">
-            <div class="table-cell"><a href="#"
-                    style='color: inherit; text-decoration: underline;'>{{ item["Organiser"] }}</a></div>
-            <div class="table-cell">{{ item["Membership"] }}</div>
-            <div class="table-cell">{{ item["Date Subscribed"] }}</div>
-            <div class="table-cell">{{ item["Price"] }}</div>
-            <div class="table-cell">{{ item["Status"] }}</div>
-            <div class="table-cell">{{ item["Next Billing Date"] }}</div>
-            <div class="table-cell"><a href="#">{{ item["Actions"] }}</a></div>
-        </div>
+            <div class="table-row grid grid-col">
+                {% for key, value in item %}
+                    {% if key === "Organiser" %}
+                        <div class="table-cell">
+                            <a href="#" style='color: inherit; text-decoration: underline;'>{{ value }}</a>
+                        </div>
+                    {% else %}
+                        <div class="table-cell">{{ value|safe }}</div>
+                    {% endif %}
+                {% endfor %}
+            </div>
         {% endfor %}
     </div>
-</div>
-<div class="grid grid-col-2 grid-col-fixed hidden-more-sm">
-    {%- for item in data -%}
-    {% Card title=item["Organiser"], desc='<strong style="text-transform: uppercase;">Membership: </strong>'+item["Membership"]+'<br/>'+'<strong style="text-transform: uppercase;">Price: </strong>'+item["Price"]+'<br/>'+'<strong style="text-transform: uppercase;">Next Billing Date: </strong>'+item["Next Billing Date"], tag=item["Status"], status="primary",
-    type="card-ticket", options=item["Actions"] %}
-    {%- endfor -%}
 </div>
