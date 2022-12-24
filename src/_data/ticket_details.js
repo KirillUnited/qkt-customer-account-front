@@ -47,7 +47,7 @@ module.exports = {
             link: "/pages/ticket-details/list-ticket-for-resale",
             "tabs": [
                 {
-                    "title": "Available FOR RESALE",
+                    "title": "Available For Resale",
                     "panel": {
                         "title": "Put Your Tickets Up For Resale",
                         "desc": "View payments below. Payment will happen every month only for revenue<br class=\"hidden-less-sm\"/> generated for events which have successfully finished.",
@@ -82,7 +82,7 @@ module.exports = {
                     }
                 },
                 {
-                    "title": "CURRENTLY LISTED",
+                    "title": "Currently Listed",
                     "panel": {
                         "title": "Your Currently Listed Tickets",
                         "desc": "You will receive a ticket once your ticket is sold.",
