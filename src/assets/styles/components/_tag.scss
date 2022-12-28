@@ -1,16 +1,8 @@
 .tag {
     $font-size: 14px;
     --bg-color: transparent;
-
-    font-family: var(--font-main);
-    font-weight: 500;
-    font-size: $font-size;
-    color: var(--color);
-    background-color: var(--bg-color);
-    display: inline-flex;
-    align-items: center;
-    letter-spacing: 0.0125em;
-    text-transform: uppercase;
+    @include truncate(100%);
+    @include tag($font-size);
 
     &[class*="tag-"] {
         height: calc(29px/$font-size)*1em;
