@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% include "../_includes/head.html" %}
+    {% block head %}
+        <link rel="stylesheet" href="/assets/styles/index.css"/>
+    {% endblock %}
+</head>
+
+<body>
+<div class="wrapper">
+    {% block header %}
+        {% include "../_includes/header.html" %}
+    {% endblock %}
+
+    <main class="content">
+        {% block content %}
+            <section class="section">
+                <div class="container">
+                    <div class="section-inner">
+                        {% if title %}
+                            <div class="section-header">
+                                {% if breadcrumbs %}
+                                    {% Breadcrumbs parent=account, current=title %}
+                                {% endif %}
+                                <h1 class="section-title">{{ title }}</h1>
+                                {% if description %}
+                                    <p class="section-desc">{{ description | safe }}</p>
+                                {% endif %}
+                            </div>
+                        {% endif %}
+                        <div class="section-content">
+                            {{ content | safe }}
+                        </div>
+                    </div>
+                </div>
+            </section>
+        {% endblock %}
+    </main>
+
+    {% block footer %}
+        {% if footer %}
+            <footer class="footer">
+                <div class="container">
+                    <div class="footer-inner">
+                        {{ footer|safe }}
+                    </div>
+                </div>
+            </footer>
+        {% endif %}
+    {% endblock %}
+</div>
+
+{% block scripts %}
+    {% include "../_includes/scripts.html" %}
+{% endblock %}
+</body>
+
+</html>
+

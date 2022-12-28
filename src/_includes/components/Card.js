@@ -15,7 +15,7 @@ function Card(props) {
                 
                 ${(type === "card-ticket") &&
                     `
-                     ${Tag(props)}
+                     ${tag && Tag(props)}
                      ${linkTitle && `<a href="" class="card-link">${linkTitle}</a>`}
                      `
                 }
