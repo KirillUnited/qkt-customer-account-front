@@ -8,26 +8,25 @@
     &-head,
     &-row {
         --column-width: 0px;
-        --gap: #{getMinMax(8px, 8px)};
+        --gap: 0;
         border-radius: 8px;
-        padding-left: getMinMax(10px, 24px);
-        padding-right: getMinMax(10px, 24px);
     }
 
     &-head {
         font-weight: 600;
         background-color: var(--color-grey);
         margin-bottom: getMinMax(16px, 16px);
-        padding-top: getMinMax(10px, 24px);
-        padding-bottom: getMinMax(10px, 24px);
+
+        .table-cell {
+            padding-top: getMinMax(10px, 24px);
+            padding-bottom: getMinMax(10px, 24px);
+        }
     }
 
     &-row {
         font-weight: 400;
         background: #FFFFFF;
         border: 1px solid #F1F5F9;
-        padding-top: getMinMax(10px, 16px);
-        padding-bottom: getMinMax(10px, 16px);
 
         & + * {
             margin-top: getMinMax(8px, 8px);
@@ -35,8 +34,17 @@
     }
 
     &-cell {
+        padding: getMinMax(10px, 16px);
         word-break: break-word;
         hyphens: auto;
+
+        &:first-child {
+            padding-left: getMinMax(10px, 24px);
+        }
+
+        &:last-child {
+            padding-right: getMinMax(10px, 24px);
+        }
     }
 
     @include less-sm() {
@@ -54,6 +62,10 @@
                     display: block;
                 }
             }
+        }
+        &-head {
+            padding-top: 0;
+            padding-bottom: 0;
         }
         &-row {
             &:nth-child(even) {
