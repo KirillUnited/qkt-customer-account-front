@@ -7,7 +7,7 @@ const Dropdown = require("./Dropdown");
 function Card(props) {
     const {img="", title="", desc="", type, tag="", status, options="", linkTitle="", selectTicket=""} = props;
     return html`
-        <div class="card ${type}">
+        <${selectTicket ? `label` : `div`} class="card ${type}">
             <div class="card-img">
                 <img src="/assets/images/${img}" alt="${title}">
             </div>
@@ -50,7 +50,7 @@ function Card(props) {
                     </svg>
                 </button>`
             }
-        </div>
+        </${selectTicket ? `label` : `div`}>
     `;
 }
 

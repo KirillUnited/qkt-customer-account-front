@@ -68,6 +68,10 @@
         appearance: none;
     }
 
+    label {
+        cursor: pointer;
+    }
+
     @include less-sm() {
         --footer-min-height: 75px;
 
