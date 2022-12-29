@@ -122,7 +122,8 @@
             grid-template-columns: 1fr auto;
             grid-gap: 8px;
 
-            .tag {
+            .tag,
+            .card-options {
                 grid-column: 2;
                 grid-row: 1;
             }
@@ -133,13 +134,11 @@
             grid-row: 3;
             margin-left: auto;
         }
-    }
 
-    .dropdown {
-        position: absolute;
-        top: 16px;
-        right: 16px;
-        z-index: 1;
+        &-desc {
+            grid-column: 1/3;
+            grid-row: 2;
+        }
     }
 }
 
@@ -184,8 +183,21 @@
                 flex-direction: column;
                 align-items: flex-start;
 
-                .tag {
+                .tag,
+                .card-options {
                     order: -1;
+                }
+
+                .tag {
+                    grid-column: 1;
+                    grid-row: 1;
+                }
+
+                .card-options {
+                    position: absolute;
+                    top: 16px;
+                    right: 16px;
+                    z-index: 1;
                 }
             }
 

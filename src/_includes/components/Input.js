@@ -40,7 +40,7 @@ const Input = ({type, id, label, children = "", rest = {}}) => {
 `
 };
 
-const Checkbox = ({type="checkbox", id, name=id, label, status=""}) => {
+const Checkbox = ({type="checkbox", id, name=id, label="", status=""}) => {
     return html`
             <label class="form-${type}">
                 <input type="${type}" id="${id}" name="${name}" value="" ${status}>
@@ -61,7 +61,7 @@ const Checkbox = ({type="checkbox", id, name=id, label, status=""}) => {
                     <!-- The checkmark-->
                     <polyline class="checkbox__checkmark" points="4,14 12,23 28,5" stroke="transparent" stroke-width="4" fill="none"></polyline>
                 </svg>`}
-                <span>${label}</span>
+                ${label && `<span>${label}</span>`}
             </label>
 `
 };

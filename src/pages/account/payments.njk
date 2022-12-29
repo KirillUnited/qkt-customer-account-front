@@ -8,7 +8,8 @@ title: 'Payments & Payouts'
     <ul class="tabs-list list-style-reset" data-tablist>
         {%- for tab in account.actions[4].tabs -%}
             <li class="tabs-item">
-                <a href="#" class="tabs-link {{ 'tabs-link-active' if loop.index === 1 }}" data-tab="{{ tab.panel.title|replace(' ', '_') }}">
+                <a href="#" class="tabs-link {{ 'tabs-link-active' if loop.index === 1 }}"
+                   data-tab="{{ tab.panel.title|replace(' ', '_') }}">
                     <span class="text-truncate">{{ tab.title }}</span>
                 </a>
             </li>
@@ -17,17 +18,23 @@ title: 'Payments & Payouts'
 </nav>
 <div class="tabs-content">
     {%- for tab in account.actions[4].tabs -%}
-        <div id="{{ tab.panel.title|replace(' ', '_') }}" class="tabs-panel" data-panel="{{ tab.panel.title|replace(' ', '_') }}">
+        <div id="{{ tab.panel.title|replace(' ', '_') }}" class="tabs-panel"
+             data-panel="{{ tab.panel.title|replace(' ', '_') }}" {{ "hidden" if loop.index > 1 }}>
             <div class="section-header">
                 {% Breadcrumbs parent=account, current=title %}
                 <h1 class="section-title">{{ tab.panel.title }}</h1>
-                <p class="section-desc">{{ tab.panel.desc | safe }}</p>
+                <p class="section-desc">
+                    {{ tab.panel.desc | safe }}
+                    {% if tab.title === "payouts" %}
+                        {% Button children=tab.panel.placeholder.title, state="primary", type="button", rest={toggle: "modal", target: "add_account_payments_modal"} %}
+                    {% endif %}
+                </p>
             </div>
             <div class="section-content">
-                {% if tab.panel.fake_methods %}
+                {% if tab.panel.methods %}
                     <div class="tabs-panel-grid grid grid-col-2 grid-col-fixed">
                         {%- for method in tab.panel.methods -%}
-                            {% Card link=method.link, img=method.img, title=method.title, desc=method.desc, type="card-account" %}
+                            {% Card img=method.img, title=method.title, desc=method.desc, type="card-account" %}
                         {%- endfor -%}
                     </div>
                 {% else %}
