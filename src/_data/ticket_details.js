@@ -39,7 +39,65 @@ module.exports = {
         {
             title: "Request A Refund",
             icon: "icons/close-one.svg",
-            link: "/"
+            link: "/pages/ticket-details/request-refund",
+            tabs: [
+                {
+                    "title": "Request A Refund",
+                    "panel": {
+                        "title": "Cancellation and refund request",
+                        "desc": "Please select the tickets below you wish to cancel and refund.",
+                        "Select Ticket": true,
+                        "enableFilter": false,
+                        "contentDisplay": "grid",
+                        content: [
+                            {
+                                "title": "Rocking The Daisies",
+                                "img": "tickets/ticket-1.png",
+                                "desc": "<strong>Ticket Holder:</strong> John Doe" +
+                                    "<br/><strong>Date:</strong> Sunday, 7 October 2018" +
+                                    "<br/><strong>Bank Details:</strong> FNB Savings **** 7682"
+                            },
+                            {
+                                "title": "Rocking The Daisies 2",
+                                "img": "tickets/ticket-2.png",
+                                "desc": "<strong>Ticket Holder:</strong> John Doe" +
+                                    "<br/><strong>Date:</strong> Sunday, 7 October 2018" +
+                                    "<br/><strong>Bank Details:</strong> FNB Savings **** 7682"
+                            },
+                            {
+                                "title": "Rocking The Daisies 3",
+                                "img": "tickets/ticket-3.png",
+                                "desc": "<strong>Ticket Holder:</strong> John Doe" +
+                                    "<br/><strong>Date:</strong> Sunday, 7 October 2018" +
+                                    "<br/><strong>Bank Details:</strong> FNB Savings **** 7682"
+                            }
+                        ]
+                    }
+                }
+            ],
+            content: [
+                {
+                    "title": "Rocking The Daisies",
+                    "img": "tickets/ticket-1.png",
+                    "desc": "<strong>Ticket Holder:</strong> John Doe" +
+                        "<br/><strong>Date:</strong> Sunday, 7 October 2018" +
+                        "<br/><strong>Bank Details:</strong> FNB Savings **** 7682"
+                },
+                {
+                    "title": "Rocking The Daisies 2",
+                    "img": "tickets/ticket-2.png",
+                    "desc": "<strong>Ticket Holder:</strong> John Doe" +
+                        "<br/><strong>Date:</strong> Sunday, 7 October 2018" +
+                        "<br/><strong>Bank Details:</strong> FNB Savings **** 7682"
+                },
+                {
+                    "title": "Rocking The Daisies 3",
+                    "img": "tickets/ticket-3.png",
+                    "desc": "<strong>Ticket Holder:</strong> John Doe" +
+                        "<br/><strong>Date:</strong> Sunday, 7 October 2018" +
+                        "<br/><strong>Bank Details:</strong> FNB Savings **** 7682"
+                }
+            ]
         },
         {
             title: "List Ticket For Resale",

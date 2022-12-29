@@ -2,7 +2,7 @@
     <div class="tabs-panel-grid grid grid-col-2 grid-col-fixed">
         {%- for item in tab.panel.content -%}
             {% Card img=item.img, title=item.title, desc=item.desc, tag=item.tag, status=item.status,
-                type="card-ticket", linkTitle=tab.panel.linkTitle %}
+                type="card-ticket", linkTitle=tab.panel.linkTitle, selectTicket=tab.panel["Select Ticket"] %}
         {%- endfor -%}
     </div>
 {% elseif tab.panel.contentDisplay==="table" %}
@@ -16,7 +16,7 @@
             <div class="grid grid-col-2 grid-col-fixed hidden-more-sm">
                 {%- for item in tab.panel.contentGrid -%}
                     {% Card title=item.title, desc=item.desc, tag=item.tag, status=item.status,
-                        type="card-ticket", options="Actions", linkTitle=tab.panel.linkTitle %}
+                        type="card-ticket", options="Actions", linkTitle=tab.panel.linkTitle, selectTicket=tab.panel["Select Ticket"] %}
                 {%- endfor -%}
             </div>
         {% endif %}

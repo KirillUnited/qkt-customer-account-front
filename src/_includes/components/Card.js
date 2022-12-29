@@ -1,9 +1,11 @@
+const {Checkbox}= require("./Input");
+
 const {html} = require("common-tags");
 const Tag = require("./Tag");
 const Dropdown = require("./Dropdown");
 
 function Card(props) {
-    const {img, title, desc, type, tag, status, options="", linkTitle=""} = props;
+    const {img="", title="", desc="", type, tag="", status, options="", linkTitle="", selectTicket=""} = props;
     return html`
         <div class="card ${type}">
             <div class="card-img">
@@ -11,18 +13,23 @@ function Card(props) {
             </div>
             <div class="card-body">
                 <h2 class="card-title">${title}</h2>
-                ${desc && `<p class="card-desc">${desc}</p>`}
-                
+                ${desc && `<p class="card-desc">${desc}</p>`}                
                 ${(type === "card-ticket") &&
                     `
                      ${tag && Tag(props)}
                      ${linkTitle && `<a href="" class="card-link">${linkTitle}</a>`}
                      `
                 }
+                
+                ${selectTicket && `
+                    <div class="card-options">${Checkbox({id: `ticket_${title.replace(/\s/g, "_")}`})}</div>
+                `}
+                
                 ${options&&`
-                    ${Dropdown(`options_${title.replace(" ", "_")}`)}
+                    <div class="card-options">${Dropdown(`options_${title.replace(/\s/g, "_")}`)}</div>
                 `}
             </div>
+            
             ${(type === "card-minimal") &&
                 `<svg class="hidden-more-sm" width="24" height="24" viewBox="0 0 24 24" fill="none"
                      xmlns="http://www.w3.org/2000/svg">
@@ -31,6 +38,7 @@ function Card(props) {
                           fill="#485868"/>
                 </svg>`
             }
+            
             ${(type === "card-account") &&
                 `<button class="card-account-del" data-toggle="modal" data-target="del_account_payments_modal">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
