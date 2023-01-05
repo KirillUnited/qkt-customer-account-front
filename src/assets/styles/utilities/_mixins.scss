@@ -86,8 +86,8 @@
 
 @mixin input-radio($font-size: 16) {
     position: relative;
-    width: calc(calc(var(--size, 20)/$font-size)*1em);
-    height: calc(calc(var(--size, 20)/$font-size)*1em);
+    width: calc(calc(var(--size, 20) / $font-size) * 1em);
+    height: calc(calc(var(--size, 20) / $font-size) * 1em);
     border: 1px solid var(--border-color, currentColor);
     border-radius: 50%;
     margin: 0;
@@ -102,8 +102,8 @@
         top: 50%;
         position: absolute;
         transform: translate(-50%, -50%);
-        width: calc(calc(12/$font-size)*1em);
-        height: calc(calc(12/$font-size)*1em);
+        width: calc(calc(12 / $font-size) * 1em);
+        height: calc(calc(12 / $font-size) * 1em);
         border-radius: 50%;
         background-color: var(--bg-color);
     }
@@ -268,6 +268,7 @@
 
 @mixin button($fontSize: 16px, $height: auto) {
     --min-width: 11ch;
+    --transition: 180ms ease-in-out;
 
     display: inline-flex;
     align-items: center;
@@ -289,7 +290,7 @@
     cursor: pointer;
     appearance: none;
     border-color: transparent;
-    transition: 180ms ease-in-out;
+    transition: var(--transition);
     transition-property: color, background, border;
 
     @media screen and (-ms-high-contrast: active) {
@@ -304,13 +305,17 @@
     &-icon {
         width: 1.5em;
         height: 1.5em;
-        margin-right: 0.25em;
 
         // stylelint-disable-next-line  selector-max-type
         svg {
             width: 100%;
             height: 100%;
-            fill: currentColor;
+        }
+
+        svg,
+        path {
+            fill: var(--color, currentColor);
+            transition: var(--transition);
         }
     }
 }

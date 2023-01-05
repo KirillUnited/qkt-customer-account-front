@@ -1,0 +1,37 @@
+---
+layout: api.html
+title: API Keys
+description: 'In order to access the Quicket API you will need an API subscriber key. To get a subscriber key you <br
+        class="hidden-less-sm"/> must
+first register on the Quicket Developer Portal at <a href="https://developer.quicket.co.za/" target="_blank">https://developer.quicket.co.za/</a>.'
+breadcrumbs: true
+---
+
+{% import "../../_includes/macros/forms.njk" as forms %}
+
+<section class="section section-api">
+    <div class="container">
+        <div class="section-inner">
+            {% if title %}
+                <div class="section-header">
+                    {% if breadcrumbs %}
+                        {% Breadcrumbs parent=account, current=title %}
+                    {% endif %}
+                    <h1 class="section-title">{{ title }}</h1>
+                    <p class="section-desc">{{ description | safe }}</p>
+                </div>
+            {% endif %}
+            <div class="section-content">
+                {{ forms.form_api(id='account_api', label='For any authenticated calls you will need to add a "usertoken" header
+                        below.', type='generate_token') }}
+                <p style="font-size: 16px;
+                        color: #94A3B8;text-align: center; margin-top: 80px">
+                    Please note that the Quicket API is in Beta and is subject to change. If you have any<br
+                            class="hidden-less-sm"/> queries or suggestions about the
+                    API please
+                    <a href="#" class="deactivate">contact us.</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</section>

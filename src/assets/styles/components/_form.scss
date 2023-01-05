@@ -24,7 +24,7 @@
         --column-width: 250px;
         --gap: 24px;
 
-        &+.form-fieldset {
+        & + .form-fieldset {
             border-top: 1px solid #D8D8D8;
             padding-top: var(--gap);
         }
@@ -111,11 +111,15 @@
         display: flex;
         gap: var(--gap);
 
-        &>* {
+        & > [type="submit"] {
             flex: 1;
         }
 
-        &>.has-input {
+        & > [type="button"] {
+            --min-width: auto;
+        }
+
+        & > .has-input {
             flex: 5;
         }
     }
