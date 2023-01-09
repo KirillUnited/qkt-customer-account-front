@@ -1,4 +1,4 @@
-const {Checkbox}= require("./Input");
+const {Checkbox}= require("./form");
 const {html} = require("common-tags");
 const Tag = require("./Tag");
 const Dropdown = require("./Dropdown");

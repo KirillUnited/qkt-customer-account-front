@@ -1,6 +1,6 @@
 const eleventySass = require("eleventy-sass");
 const Card = require("./src/_includes/components/Card");
-const { Input, Checkbox } = require("./src/_includes/components/Input");
+const { Input, Checkbox } = require("./src/_includes/components/form");
 const Breadcrumbs = require("./src/_includes/components/Breadcrumbs");
 const Button = require("./src/_includes/components/Button");
 const Modal = require("./src/_includes/components/modal/Modal");

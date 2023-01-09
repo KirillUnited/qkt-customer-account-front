@@ -1,5 +1,5 @@
 const {html} = require("common-tags");
-const {Input, Checkbox} = require("../Input");
+const {Input, Checkbox} = require("../form");
 
 function getDelAccountTmpl() {
     return html`

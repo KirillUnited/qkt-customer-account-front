@@ -1,5 +1,5 @@
 const {html} = require("common-tags");
-const {Input, Checkbox} = require("../Input");
+const {Input, Checkbox} = require("../form");
 
 function getPaymentsTmpl() {
     return html`<div class="form-group grid-col-span">
