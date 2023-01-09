@@ -1,0 +1,17 @@
+---
+layout: account.html
+title: Earn Comission
+description: "Explore the way you can earn a comission through Quicket."
+footer: '
+<p style="display: block; color: #64748B; text-align: center;">
+    By using the getting involved in either two of the above, you agree to<br class="hidden-less-sm"/> the Quicket <a
+            href="#">terms and conditions</a>.
+</p>
+'
+---
+
+<div class="actions grid grid-col-2">
+    {%- for card in earn_comission.actions -%}
+        <a href="{{ card.link }}">{% Card img=card.img, title=card.title, desc=card.desc, type="card-minimal" %}</a>
+    {%- endfor -%}
+</div>

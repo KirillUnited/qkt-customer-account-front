@@ -44,6 +44,16 @@ title: Customer Account
                             {% endfor %}
                         </ul>
                     </li>
+                    <li>
+                        <a href="{{ earn_comission.path }}">{{earn_comission.title}}</a>
+                        <ul>
+                            {% for action in earn_comission.actions %}
+                                <li>
+                                    <a href="{{ action.link }}">{{ action.title }}</a>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </li>
                 </ul>
             </div>
         </div>
