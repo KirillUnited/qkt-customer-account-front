@@ -45,15 +45,18 @@ title: Customer Account
                         </ul>
                     </li>
                     <li>
-                        <a href="{{ earn_comission.path }}">{{earn_comission.title}}</a>
+                        <a href="{{ earn_commission.path }}">{{earn_commission.title}}</a>
                         <ul>
-                            {% for action in earn_comission.actions %}
+                            {% for action in earn_commission.actions %}
                                 <li>
                                     <a href="{{ action.link }}">{{ action.title }}</a>
                                 </li>
                             {% endfor %}
                             <li>
-                                <a href="{{ earn_comission.actions.networks.placeholder.link }}">{{ earn_comission.actions.networks.title }} - empty</a>
+                                <a href="{{ earn_commission.actions.networks.placeholder.link }}">{{ earn_commission.actions.networks.title }} - empty</a>
+                            </li>
+                            <li>
+                                <a href="{{ earn_commission.actions.referrals.placeholder.link }}">{{ earn_commission.actions.referrals.title }} - empty</a>
                             </li>
                         </ul>
                     </li>

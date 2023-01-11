@@ -1,19 +1,20 @@
 module.exports = {
-    "title": "Earn Comission",
-    "path": "/pages/earn-comission",
+    "title": "Earn Commission",
+    "path": "/pages/earn-commission",
     "actions": {
         "networks":
             {
                 "img": "icons/Megaphone.svg",
                 "title": "Promoter Networks",
                 "desc": "Promote events for organisers.",
-                "link": "/pages/earn-comission/networks",
+                "link": "/pages/earn-commission/networks",
                 "placeholder": {
-                    "img": "/assets/images/earn-comission/placeholder-networks.png",
+                    "img": "/assets/images/earn-commission/placeholder-networks.png",
                     "title": "Become a promoter",
                     "desc": "You join promoter networks by invitation from an organiser or by browsing public promoter networks.",
+                    "button": false,
                     "footer": null,
-                    "link": "/pages/earn-comission/networks-empty"
+                    "link": "/pages/earn-commission/networks-empty"
                 }
             },
         "referrals":
@@ -21,13 +22,14 @@ module.exports = {
                 "img": "icons/link.svg",
                 "title": "Referrals",
                 "desc": "Sign event organisers up to quicket",
-                "link": "/pages/earn-comission/referrals",
+                "link": "/pages/earn-commission/referrals",
                 "placeholder": {
-                    "img": "/assets/images/earn-comission/placeholder-referrals.png",
-                    "title": "No Comissions Earned Yet",
+                    "img": "/assets/images/earn-commission/placeholder-referrals.png",
+                    "title": "No commissions Earned Yet",
                     "desc": "Your commissions will appear here once they go through.",
+                    "button": "LINK BANK ACCOUNT",
                     "footer": null,
-                    "link": "/pages/earn-comission/referrals-empty"
+                    "link": "/pages/earn-commission/referrals-empty"
                 }
             }
     }
