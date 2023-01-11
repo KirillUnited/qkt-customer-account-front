@@ -1,0 +1,9 @@
+---
+layout: default.njk
+title: 'Promoter Networks - empty'
+description: 'Promoter networks are created by event organisers to help spread the word about their events.'
+breadcrumbs: true
+---
+{% import "../../_includes/macros/contentholder.html" as macros %}
+{% set placeholder=earn_comission.actions.networks.placeholder %}
+{{ macros.contentholder(placeholder.img, placeholder.title, placeholder.desc, enableButton, placeholder.footer) }}
