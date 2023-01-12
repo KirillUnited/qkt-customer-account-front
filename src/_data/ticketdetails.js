@@ -1,5 +1,5 @@
 const Tag = require("../_includes/components/Tag");
-const {Checkbox} = require("../_includes/components/Input");
+const {Checkbox} = require("../_includes/components/form");
 
 module.exports = {
     path: "/pages/ticket-details",

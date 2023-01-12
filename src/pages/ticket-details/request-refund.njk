@@ -18,7 +18,7 @@ footer: '
     }
 </style>
 <form id="refund_request" method="POST" action="">
-    {% set tabs = ticket_details.actions[4].tabs %}
+    {% set tabs = ticketdetails.actions[4].tabs %}
     {% include "../../_includes/tabs.njk" %}
     <div class="tabs-content">
         {% Checkbox id="refund_request_confirm", label="I confirm that I want to be refunded for these tickets and that the refund<br /> is irreversible. I am aware of the fees involved as described above." %}

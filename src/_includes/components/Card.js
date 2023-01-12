@@ -1,31 +1,39 @@
-const {Checkbox}= require("./Input");
+const {Checkbox}= require("./form");
 const {html} = require("common-tags");
 const Tag = require("./Tag");
 const Dropdown = require("./Dropdown");
 
 module.exports = function Card(props) {
-    const {img="", title="", desc="", type="", options="", selectTicket=""} = props;
+    const {img = "", title = "", type = "", selectTicket = ""} = props;
 
     return html`
         <${selectTicket ? `label` : `div`} class="card ${type}">
             <div class="card-img">
                 <img src="/assets/images/${img}" alt="${title}">
             </div>
-            <div class="card-body">
-                <h2 class="card-title">${title}</h2>
-                ${desc && `<p class="card-desc">${desc}</p>`}
-                ${(type === "card-ticket") && getTemplate(type, props)}                
-                ${selectTicket && `
-                    <div class="card-options">${Checkbox({id: `ticket_${title.replace(/\s/g, "_")}`})}</div>
-                `}                
-                ${options&&`
-                    <div class="card-options">${Dropdown(`options_${title.replace(/\s/g, "_")}`)}</div>
-                `}
-            </div>            
+            ${getBody(props)}
             ${(type !== "card-ticket") && getTemplate(type)}
         </${selectTicket ? `label` : `div`}>
     `;
 };
+
+function getBody(props) {
+    const {title = "", desc = "", type = "", options = "", selectTicket = ""} = props;
+
+    return html`
+            <div class="card-body">
+                <h2 class="card-title">${title}</h2>
+                ${desc && `<p class="card-desc">${desc}</p>`}
+                ${(type === "card-ticket") && getTemplate(type, props)}
+                ${selectTicket && `
+                    <div class="card-options">${Checkbox({id: `ticket_${title.replace(/\s/g, "_")}`})}</div>
+                `}                
+                ${options && `
+                    <div class="card-options">${Dropdown(`options_${title.replace(/\s/g, "_")}`)}</div>
+                `}
+            </div>
+`;
+}
 
 function getTemplate(type, props = {}) {
     const {tag = "", linkTitle = ""} = props;
