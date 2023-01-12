@@ -24,7 +24,7 @@ function getBody(props) {
             <div class="card-body">
                 <h2 class="card-title">${title}</h2>
                 ${desc && `<p class="card-desc">${desc}</p>`}
-                ${(type === "card-ticket") && getTemplate(type, props)}                
+                ${(type === "card-ticket") && getTemplate(type, props)}
                 ${selectTicket && `
                     <div class="card-options">${Checkbox({id: `ticket_${title.replace(/\s/g, "_")}`})}</div>
                 `}                
