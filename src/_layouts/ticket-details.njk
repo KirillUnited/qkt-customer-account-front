@@ -21,11 +21,11 @@
             <div class="container">
                 <div class="section-inner">
                     <div class="section-hero-banner has-img-fit img-holder">
-                        {% if ticket_details.image %}
-                            {% Picture src="/assets/images/tickets/"+ticket_details.image,
-                                srcSet="/assets/images/tickets/"+ticket_details.imageMobile,
+                        {% if ticketdetails.image %}
+                            {% Picture src="/assets/images/tickets/"+ticketdetails.image,
+                                srcSet="/assets/images/tickets/"+ticketdetails.imageMobile,
                                 className="img-bg has-img-fit",
-                                text=ticket_details.title %}
+                                text=ticketdetails.title %}
                         {% endif %}
                     </div>
                 </div>
@@ -38,11 +38,11 @@
                         {% if breadcrumbs %}
                             {% Breadcrumbs parent=account, current=title if breadcrumbs %}
                         {% endif %}
-                        {% Tag tag=ticket_details.tag, status=ticket_details.status %}
-                        <h1 class="section-title">{{ ticket_details.title }}</h1>
-                        {% if ticket_details.desc %}
+                        {% Tag tag=ticketdetails.tag, status=ticketdetails.status %}
+                        <h1 class="section-title">{{ ticketdetails.title }}</h1>
+                        {% if ticketdetails.desc %}
                             <div class="section-desc">
-                                {%- for key, value in ticket_details.desc -%}
+                                {%- for key, value in ticketdetails.desc -%}
                                     <p class="section-desc-item">
                                         <span class="vw-text-bold">{{ key }}:</span> {{ value }}</p>
                                 {% endfor %}
