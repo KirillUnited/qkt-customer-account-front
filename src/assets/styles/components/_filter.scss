@@ -9,10 +9,8 @@
         padding: 0;
 
         & > .form-fieldset {
-            flex-direction: row;
-            & > * {
-                flex: 1;
-            }
+            display: grid;
+            grid-template-columns: 1fr 205px 205px;
         }
     }
 
@@ -38,5 +36,18 @@
 
     input {
         font-weight: 400;
+    }
+
+    @include less-sm() {
+        &-form {
+            --width: 100%;
+            background-color: transparent;
+            box-shadow: none;
+            padding: 0;
+
+            & > .form-fieldset {
+                grid-template-columns: 1fr 48px;
+            }
+        }
     }
 }

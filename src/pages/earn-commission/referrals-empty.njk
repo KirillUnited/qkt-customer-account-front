@@ -1,0 +1,45 @@
+---
+layout: default.njk
+title: "Referral Program - empty"
+description: "Share this link with anyone who wants to run an event and earn 20% of Quicket's commission<br
+        class='hidden-less-sm'> for yourself.
+<a href>Read more.</a>"
+breadcrumbs: true
+---
+
+<style>
+    .commission .section-desc {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+    }
+
+    @media (min-width: 768px) {
+        .commission .contentholder .btn {
+            display: none;
+        }
+    }
+</style>
+
+{% import "../../_includes/macros/contentholder.html" as macros %}
+{% import "../../_includes/macros/forms.njk" as forms %}
+{% set placeholder=earn_commission.actions.referrals.placeholder %}
+
+{{ forms.form_api(id='affiliate', label='Customise your affiliate link below:', type='edit_link') }}
+
+<div class="section-content commission">
+    <div class="section-header">
+        <h1 class="section-title">Commission Earned</h1>
+        <p class="section-desc">Payment will happen every month only for revenue generated for events<br
+                    class="hidden-less-sm"> which have
+            successfully finished.
+            <span class="hidden-less-sm">
+                {% Button children="LINK BANK ACCOUNT", state="primary", type="button", rest={toggle: "modal", target: "add_bank_account_modal"} %}
+            </span>
+        </p>
+    </div>
+
+    {{ macros.contentholder(placeholder.img, placeholder.title, placeholder.desc, placeholder.button, placeholder.footer) }}
+</div>
+
+{% Modal id="add_bank_account_modal", title="Add Bank Account", desc="Please enter your bank details below.", content="payments" %}

@@ -6,9 +6,7 @@ body {
     }
 }
 
-.page-account {
-    footer {
-        padding-bottom: 80px;
-        padding-top: 80px;
-    }
+footer {
+    padding-bottom: getMinMax(25px, 80px);
+    padding-top: getMinMax(25px, 80px);
 }

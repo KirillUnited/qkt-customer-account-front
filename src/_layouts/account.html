@@ -37,6 +37,15 @@
     </main>
 
     {% block footer %}
+    {% if footer %}
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-inner">
+                {{ footer|safe }}
+            </div>
+        </div>
+    </footer>
+    {% endif %}
     {% endblock %}
 </div>
 
