@@ -14,9 +14,8 @@ const Input = ({type, id, label, children = "", rest = {}}) => {
 `
 };
 
-function getFormInput(props) {
-    const {type = "", id = "", children = ""} = props;
-    const {placeholder = "", pattern = "", required = "", disabled = "", value = ""} = props.rest;
+function getFormInput({type = "", id = "", children = "", rest = {}}) {
+    const {placeholder = "", pattern = "", required = "", disabled = "", value = ""} = rest;
 
     return html`
         <div class="form-input">
@@ -36,9 +35,8 @@ function getFormInput(props) {
     `;
 }
 
-function getFormSelect(props) {
-    const {id = ""} = props;
-    const {placeholder = ""} = props.rest;
+function getFormSelect({id = "", rest = {}}) {
+    const {placeholder = ""} = rest;
 
     return html`
         <div class="form-input form-select">
