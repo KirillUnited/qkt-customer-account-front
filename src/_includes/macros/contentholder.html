@@ -6,7 +6,7 @@
             <h1 class="contentholder-title">{{title}}</h1>
             <p class="contentholder-desc">{{desc|safe}}</p>
             {% if button %}
-                {% Button children=title, state="primary", type="button", rest={toggle: "modal", target: "add_account_payments_modal"} %}
+                {% Button children=button, state="primary", type="button", rest={toggle: "modal", target: "add_account_payments_modal"} %}
             {% endif %}
         </div>
     </div>

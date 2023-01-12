@@ -85,7 +85,7 @@
                 "desc": "Name Surname"
               }
             ],
-            "enableButton": true,
+            "enableButton": "Add Bank Accounts",
             "placeholder": {
               "img": "/assets/images/payments/placeholder-accounts.png",
               "title": "Add Bank Accounts",
