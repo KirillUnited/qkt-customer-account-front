@@ -23,11 +23,15 @@ document.addEventListener('DOMContentLoaded', () => {
         tablist.addEventListener('click', handleClick);
 
         function setActivePanel(panel) {
+            if (!panels.length) return;
+
             panels.forEach(item => item.hidden = true);
             panel.hidden = false;
         }
 
         function setActiveTab(tab) {
+            if (!tabs.length) return;
+
             tabs.forEach(tab => tab.classList.remove('tabs-link-active'));
             tab.classList.add('tabs-link-active');
         }
