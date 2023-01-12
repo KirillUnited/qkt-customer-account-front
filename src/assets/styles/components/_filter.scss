@@ -13,6 +13,9 @@
             & > * {
                 flex: 1;
             }
+            &>.has-input{
+                flex: 5;
+            }
         }
     }
 
