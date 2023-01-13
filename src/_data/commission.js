@@ -37,7 +37,7 @@ module.exports = {
                         panel: {
                             title: "Link Existing",
                             desc: "Please select your account below that you wish for the refund to be processed to.",
-                            type: "delete"
+                            type: "account"
                         }
                     }
                 ],
