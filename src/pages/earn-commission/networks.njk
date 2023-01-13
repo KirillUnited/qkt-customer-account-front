@@ -1,0 +1,11 @@
+---
+layout: default.njk
+title: 'Promoter Networks'
+description: 'Promoter networks are created by event organisers to help spread the word<br class="hidden-less-sm"/> about their events. View the ones you are a part of below.'
+breadcrumbs: true
+---
+<div class="grid grid-col-2 grid-col-fixed">
+    {%- for item in commission.actions.networks.content -%}
+        {% Card img=item.img, title=item.title, desc=item.desc, tag=item.tag, status=item.status, linkTitle="VIEW DETAILS", type="card-ticket" %}
+    {%- endfor -%}
+</div>
