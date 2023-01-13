@@ -2,47 +2,28 @@ const {html} = require("common-tags");
 const getPaymentsTemplate = require("./getPaymentsTmpl");
 const getDelAccountTemplate = require("./getDelAccountTmpl");
 
-
-// class ModalTabs {
-//     constructor({id, title, desc = "", header, content = "", className = ""}) {
-//         this.id = id;
-//         this.title = title;
-//         this.desc = desc;
-//         this.header = header;
-//         this.className = className;
-//     }
-//
-//     getTemplate() {
-//         return html`
-//         <div class="modal ${this.className}" data-modal='${this.id}' data-close="true">
-//             <div class="modal-dialog">
-//                 ${this.header ? `<div class="modal-header">${this.header}</div>` : getHeader(this.title, this.desc)}
-//             </div>
-//         </div>
-//     `
-//     }
-// }
-//
-// const addBank = new ModalTabs({id:"ID", desc:"", header: false, className:"class"}).getTemplate();
-
-const ModalTabs = ({id="", className="", config}) => {
+const ModalTabs = ({id="", className="", config}={}) => {
     const tabs = config || [
         {
-            title: "Add Bank Account",
-            desc: "This is the bank account the refund will be processed to.",
-            type: "payments"
+            title: "title",
+            panel: {
+                title: "title",
+                desc: "desc"
+            }
         },
         {
-            title: "Link Existing",
-            desc: "Please select your account below that you wish for the refund to be processed to.",
-            type: "delete"
+            title: "title",
+            panel: {
+                title: "title",
+                desc: "desc"
+            }
         }
     ];
 
     function getNavbar(id, tabs = []) {
         return html`
         <nav class="tabs-navbar">
-            <ul class="tabs-list list-style-reset" data-tablist>
+            <ul class="tabs-list list-style-reset" data-tablist> 
                 ${tabs.map(({title}) => {
                     return `
                                 <li class="tabs-item">
@@ -63,11 +44,13 @@ const ModalTabs = ({id="", className="", config}) => {
             <div class="modal-dialog">
                 ${getNavbar(id, tabs)}
                 <div class="tabs-content">
-                    ${tabs.map(({title, desc, type})=>{
+                    ${tabs.map(({panel})=>{
+                        const {title, desc, type} = panel;
+                        
                         return `
                             <div id="${id}_${title.replace(/\s/g, "_")}" class="tabs-panel" data-panel="${id}_${title.replace(/\s/g, "_")}">
                                 ${getHeader(title,desc)}
-                                ${getContent(id, getContentTemplate(type))}
+                                ${getContent(`${id}_${title.replace(/\s/g, "_")}`, getContentTemplate(type))}
                             </div>
                         `
                     }).join('')}
@@ -77,17 +60,27 @@ const ModalTabs = ({id="", className="", config}) => {
         </div>
     `
 };
-const Modal = ({id, title, desc="", header, content="", className=""}) => {
+const Modal = (props = {}) => {
+    const {id, className = ""} = props;
+
     return html`
         <div class="modal ${className}" data-modal='${id}' data-close="true">
             <div class="modal-dialog">
-                ${header ? `<div class="modal-header">${header}</div>` : getHeader(title, desc)}
-                ${getContentTemplate(content) && getContent(id, getContentTemplate(content))}
-                ${getFooter(id, content)}
+                ${getInner(props)}
             </div>
         </div>
     `
 };
+
+function getInner(props={}) {
+    const {id, title, desc = "", header, content = ""} = props;
+
+    return html`
+        ${header ? `<div class="modal-header">${header}</div>` : getHeader(title, desc)}
+        ${getContentTemplate(content) && getContent(id, getContentTemplate(content))}
+        ${getFooter(id, content)}
+    `
+}
 
 function getHeader(title = "", desc = "") {
     return html`
