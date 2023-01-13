@@ -42,4 +42,4 @@ breadcrumbs: true
     {{ macros.contentholder(placeholder.img, placeholder.title, placeholder.desc, placeholder.button, placeholder.footer) }}
 </div>
 
-{% Modal id="add_bank_account_modal", title="Add Bank Account", desc="Please enter your bank details below.", content="payments" %}
+{% ModalTabs id="add_bank_account_modal", className="modal-tabs", config=commission.actions.referrals.tabs %}

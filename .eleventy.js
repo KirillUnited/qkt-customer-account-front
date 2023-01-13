@@ -1,9 +1,9 @@
 const eleventySass = require("eleventy-sass");
 const Card = require("./src/_includes/components/Card");
-const { Input, Checkbox } = require("./src/_includes/components/form");
+const {Input, Checkbox} = require("./src/_includes/components/form");
 const Breadcrumbs = require("./src/_includes/components/Breadcrumbs");
 const Button = require("./src/_includes/components/Button");
-const Modal = require("./src/_includes/components/modal/Modal");
+const {Modal,ModalTabs} = require("./src/_includes/components/modal/Modal");
 const Tag = require("./src/_includes/components/Tag");
 const {EleventyRenderPlugin} = require("@11ty/eleventy");
 const eleventyVue = require("@11ty/eleventy-plugin-vue");
@@ -28,6 +28,7 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addShortcode("Breadcrumbs", Breadcrumbs);
     eleventyConfig.addShortcode("Button", Button);
     eleventyConfig.addShortcode("Modal", Modal);
+    eleventyConfig.addShortcode("ModalTabs", ModalTabs);
     eleventyConfig.addShortcode("Tag", Tag);
     eleventyConfig.addShortcode("Dropdown", Dropdown);
     eleventyConfig.addShortcode("Picture", Picture);

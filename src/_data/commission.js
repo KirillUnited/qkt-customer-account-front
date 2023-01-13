@@ -23,6 +23,24 @@ module.exports = {
                 "title": "Referrals",
                 "desc": "Sign event organisers up to quicket",
                 "link": "/pages/earn-commission/referrals",
+                "tabs": [
+                    {
+                        title: "Add Bank Account",
+                        panel: {
+                            title: "Add Bank Account",
+                            desc: "This is the bank account the refund will be processed to.",
+                            type: "payments"
+                        }
+                    },
+                    {
+                        title: "Link Existing",
+                        panel: {
+                            title: "Link Existing",
+                            desc: "Please select your account below that you wish for the refund to be processed to.",
+                            type: "account"
+                        }
+                    }
+                ],
                 "placeholder": {
                     "img": "/assets/images/earn-commission/placeholder-referrals.png",
                     "title": "No commissions Earned Yet",

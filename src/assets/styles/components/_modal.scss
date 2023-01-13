@@ -100,6 +100,21 @@
     padding: getMinMax(14px, 14px) getMinMax(24px, 24px);
 }
 
+.modal-tabs {
+    .tabs-navbar {
+        padding-top: getMinMax(24px, 24px);
+    }
+
+    .tabs-content {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .tabs-item {
+        max-width: 100%;
+    }
+}
+
 @include less-sm {
     .modal {
         overflow: auto;
