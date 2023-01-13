@@ -47,9 +47,9 @@ title: Customer Account
                     <li>
                         <a href="{{ commission.path }}">{{commission.title}}</a>
                         <ul>
-                            {% for action in commission.actions %}
+                            {% for key, value in commission.actions %}
                                 <li>
-                                    <a href="{{ action.link }}">{{ action.title }}</a>
+                                    <a href="{{ value.link }}">{{ value.title }}</a>
                                 </li>
                             {% endfor %}
                             <li>
