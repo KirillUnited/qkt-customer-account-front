@@ -46,16 +46,17 @@ const ModalTabs = ({id="", className="", config}={}) => {
                 <div class="tabs-content">
                     ${tabs.map(({panel})=>{
                         const {title, desc, type} = panel;
+                        const ID = `${id}_${title.replace(/\s/g, "_")}`;
                         
                         return `
-                            <div id="${id}_${title.replace(/\s/g, "_")}" class="tabs-panel" data-panel="${id}_${title.replace(/\s/g, "_")}">
+                            <div id="${ID}" class="tabs-panel" data-panel="${ID}">
                                 ${getHeader(title,desc)}
-                                ${getContent(`${id}_${title.replace(/\s/g, "_")}`, getContentTemplate(type))}
+                                ${getContent(ID, getContentTemplate(type))}
+                                ${getFooter(ID)}
                             </div>
                         `
                     }).join('')}
                 </div>
-                ${getFooter(id)}
             </div>
         </div>
     `
