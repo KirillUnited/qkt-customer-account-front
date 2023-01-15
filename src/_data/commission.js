@@ -60,7 +60,7 @@ module.exports = {
                         title: "Link Existing",
                         panel: {
                             title: "Link Existing",
-                            desc: "Please select your account below that you wish for the refund to be processed to.",
+                            desc: "Please select your account below.",
                             type: "account"
                         }
                     }

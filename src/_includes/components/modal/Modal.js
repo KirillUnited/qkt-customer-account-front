@@ -1,6 +1,7 @@
 const {html} = require("common-tags");
 const getPaymentsTemplate = require("./getPaymentsTmpl");
 const getDelAccountTemplate = require("./getDelAccountTmpl");
+const getAccountTemplate = require("./getAccountTmpl");
 
 module.exports = class _Modal {
     constructor(props = {}) {
@@ -54,6 +55,7 @@ module.exports = class _Modal {
         const contentTemplates = {
             "payments": getPaymentsTemplate(),
             "delete": getDelAccountTemplate(),
+            "account": getAccountTemplate(),
             "default": content
         };
 
