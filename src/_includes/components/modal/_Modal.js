@@ -2,34 +2,32 @@ const {html} = require("common-tags");
 const getPaymentsTemplate = require("./getPaymentsTmpl");
 const getDelAccountTemplate = require("./getDelAccountTmpl");
 
-class Modal {
-    constructor({
-                    id,
-                    title,
-                    desc = "",
-                    header, content = "",
-                    className = ""
-                } = {}) {
+module.exports = class _Modal {
+    constructor(props = {}) {
+        const {id="", className = ""} = props;
 
         this.id = id;
-        this.title = title;
-        this.desc = desc;
-        this.header = header;
         this.className = className;
-
-        this.render();
+        this.props = props;
     }
 
     render() {
+        return html`
+            <div class="modal ${this.className}" data-modal='${this.id}' data-close="true">
+                <div class="modal-dialog">
+                    ${this.getInner(this.props)}
+                </div>
+            </div>
+        `
     }
 
-    getInner(props={}) {
+    getInner(props = {}) {
         const {id, title, desc = "", header, content = ""} = props;
 
         return html`
-        ${header ? `<div class="modal-header">${header}</div>` : getHeader(title, desc)}
-        ${getContentTemplate(content) && getContent(id, getContentTemplate(content))}
-        ${getFooter(id, content)}
+        ${header ? `<div class="modal-header">${header}</div>` : this.getHeader(title, desc)}
+        ${this.getContentTemplate(content) && this.getContent(id, this.getContentTemplate(content))}
+        ${this.getFooter(id, content)}
     `
     }
 
@@ -70,4 +68,4 @@ class Modal {
                 </div>
     `
     }
-}
+};

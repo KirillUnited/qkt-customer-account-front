@@ -1,6 +1,7 @@
 const {html} = require("common-tags");
 const getPaymentsTemplate = require("./getPaymentsTmpl");
 const getDelAccountTemplate = require("./getDelAccountTmpl");
+const _Modal = require("./_Modal");
 
 const ModalTabs = ({id="", className="", config}={}) => {
     const tabs = config || [
@@ -24,10 +25,10 @@ const ModalTabs = ({id="", className="", config}={}) => {
         return html`
         <nav class="tabs-navbar">
             <ul class="tabs-list list-style-reset" data-tablist> 
-                ${tabs.map(({title}) => {
+                ${tabs.map(({title}, index) => {
                     return `
                                 <li class="tabs-item">
-                                    <a href="#" class="tabs-link tabs-link-active"
+                                    <a href="#" class="tabs-link ${index === 0 ? 'tabs-link-active': ''}"
                                        data-tab="${id}_${title.replace(/\s/g, "_")}">
                                         <span class="text-truncate">${title}</span>
                                     </a>
@@ -62,15 +63,9 @@ const ModalTabs = ({id="", className="", config}={}) => {
     `
 };
 const Modal = (props = {}) => {
-    const {id, className = ""} = props;
+    const _modal = new _Modal(props);
 
-    return html`
-        <div class="modal ${className}" data-modal='${id}' data-close="true">
-            <div class="modal-dialog">
-                ${getInner(props)}
-            </div>
-        </div>
-    `
+    return html`${_modal.render()}`;
 };
 
 function getInner(props={}) {
