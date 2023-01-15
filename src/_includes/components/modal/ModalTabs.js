@@ -1,5 +1,5 @@
 const {html} = require("common-tags");
-const _Modal = require("./_Modal");
+const _Modal = require("./Modal");
 
 module.exports = class _ModalTabs extends _Modal {
     constructor(props = {}) {
