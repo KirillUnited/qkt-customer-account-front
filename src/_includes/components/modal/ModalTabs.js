@@ -49,7 +49,7 @@ module.exports = class _ModalTabs extends _Modal {
             <nav class="tabs-navbar">
                 <ul class="tabs-list list-style-reset" data-tablist> 
                     ${tabs.map(({title}, index) => {
-                        const ID = `${this.id}_${title.replace(/\s/g, "_")}`;
+                        const ID = `${id}_${title.replace(/\s/g, "_")}`;
                         
                         return `
                                     <li class="tabs-item">
