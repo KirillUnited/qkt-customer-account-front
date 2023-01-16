@@ -36,16 +36,15 @@ function getFormInput({type = "", id = "", children = "", rest = {}}) {
 }
 
 function getFormSelect({id = "", rest = {}}) {
-    const {placeholder = ""} = rest;
+    const {placeholder = "", options = []} = rest;
 
     return html`
         <div class="form-input form-select">
                        <select class="form-input-field" id="${id}" name="${id}">
                            <option disabled selected>${placeholder ? placeholder : 'Please Select'}</option>
-                           <option value="Today">Today</option>
-                           <option value="This Weekend">This Weekend</option>
-                           <option value="Next 7 Days">Next 7 Days</option>
-                           <option value="Next 30 Days">All Dates</option>
+                           ${options.map(({text, value})=>{
+                               return `<option value="${value}">${text}</option>`;
+                           }).join('')}
                        </select>
                    </div>
     `;

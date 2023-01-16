@@ -1,3 +1,6 @@
+{% set type = [{text: "Physical Event", value: "Physical Event"}] %}
+{% set sort = [{text: "Upcoming Events", value: "Upcoming Events"}] %}
+
 <div class="filter">
     <form class="filter-form form form-api" id="{{ filter }}_filter" method="GET" action="">
         <fieldset class="form-fieldset">
@@ -8,12 +11,12 @@
                     rest={placeholder: "Search"} %}
             </div>
             <div class="hidden-less-sm">
-                {% Input id="filter_type",
-                    rest={placeholder: "Type"} %}
+                {% Input id=filter+"_filter_type",
+                    rest={placeholder: "Type", options: type} %}
             </div>
             <div class="hidden-less-sm">
-                {% Input id="filter_sort",
-                    rest={placeholder: "Sort"} %}
+                {% Input id=filter+"_filter_sort",
+                    rest={placeholder: "Sort", options: sort} %}
             </div>
             <div class="hidden-more-sm">{% include "filter-modal.html" %}</div>
         </fieldset>

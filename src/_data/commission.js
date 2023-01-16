@@ -61,7 +61,21 @@ module.exports = {
                         panel: {
                             title: "Link Existing",
                             desc: "Please select your account below.",
-                            type: "account"
+                            type: "account",
+                            options: [
+                                {
+                                    text: "FNB Savings **** 2332",
+                                    value: "FNB Savings **** 2332"
+                                },
+                                {
+                                    text: "FNB Savings **** 7682",
+                                    value: "FNB Savings **** 7682"
+                                },
+                                {
+                                    text: "FNB Savings **** 6799",
+                                    value: "FNB Savings **** 6799"
+                                },
+                            ]
                         }
                     }
                 ],
