@@ -4,6 +4,8 @@ title: Edit Ticket Details
 description: ""
 breadcrumbs: true
 ---
+{% set countries = [{text: "South Africa", value: "South Africa"}] %}
+
 <form class="form" id="account_info" method="POST" action="">
     <legend>
         <h2>Ticket Details</h2>
@@ -15,7 +17,7 @@ breadcrumbs: true
         {% Input type="email", id="account_info_Email", label="Email" %}
         {% Input type="tel", id="account_info_Cellphone", label="Cellphone" %}
         {% Input type="text", id="account_info_ID", label="ID / Passport number" %}
-        {% Input id="account_info_Country", label="Country" %}
+        {% Input id="account_info_Country", label="Country", rest={options: countries} %}
     </fieldset>
     <div class="form-footer">
         <div class="container">

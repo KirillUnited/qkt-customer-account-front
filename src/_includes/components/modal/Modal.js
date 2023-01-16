@@ -27,7 +27,7 @@ module.exports = class _Modal {
 
         return html`
         ${header ? `<div class="modal-header">${header}</div>` : this.getHeader(title, desc)}
-        ${this.getContentTemplate(content) && this.getContent(id, this.getContentTemplate(content))}
+        ${this.getContentTemplate(content) && this.getContent(id, this.getContentTemplate(content, props))}
         ${this.getFooter(id, content)}
     `
     }
@@ -51,11 +51,11 @@ module.exports = class _Modal {
                 </div>`
     }
 
-    getContentTemplate(content = "") {
+    getContentTemplate(content = "", props={}) {
         const contentTemplates = {
             "payments": getPaymentsTemplate(),
             "delete": getDelAccountTemplate(),
-            "account": getAccountTemplate(),
+            "account": getAccountTemplate(props),
             "default": content
         };
 

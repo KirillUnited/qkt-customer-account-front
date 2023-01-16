@@ -35,7 +35,7 @@ module.exports = class _ModalTabs extends _Modal {
                     return `
                                     <div id="${ID}" class="tabs-panel" data-panel="${ID}">
                                         ${this.getHeader(title,desc)}
-                                        ${this.getContent(ID, this.getContentTemplate(type))}
+                                        ${this.getContent(ID, this.getContentTemplate(type, panel))}
                                         ${this.getFooter(ID)}
                                     </div>
                                 `
