@@ -1,0 +1,19 @@
+---
+layout: referrals.njk
+title: "Referral Program"
+description: "Share this link with anyone who wants to run an event and earn 20% of Quicket's commission<br
+        class='hidden-less-sm'> for yourself.
+<a href>Read more.</a>"
+breadcrumbs: true
+subtitle: "Comission Earned"
+subdesc: "View payments below. Payment will happen every month only for revenue<br
+        class='hidden-less-sm'> generated for events which have successfully finished."
+---
+
+{% set data = commission.actions.referrals.content %}
+{% set tableType = commission.actions.referrals.tableType %}
+
+{% include "../../_includes/link-account-alert.njk" %}
+<div class="section-content">
+    {% include "../../_includes/table.njk" %}
+</div>

@@ -39,6 +39,18 @@ module.exports = {
                     "button": false,
                     "footer": null,
                     "link": "/pages/earn-commission/networks-empty"
+                },
+                "network_details": {
+                    title: "Promoter Network Details",
+                    "content": [
+                        {
+                            "Tickets Sold": 0,
+                            "Link Clicks": 0,
+                            "Sales": "R 0.0",
+                            "Account": "<span class=\"text-clamp\" style='--lines: 1'>FNB Savings **** 7682</span>",
+                            "Your Share": "R 0.0"
+                        }
+                    ]
                 }
             },
         "referrals":
@@ -77,6 +89,33 @@ module.exports = {
                                 },
                             ]
                         }
+                    }
+                ],
+                "tableType": "commission",
+                "content": [
+                    {
+                        "": "Commission Earned",
+                        "Date": "",
+                        "Account": "",
+                        "Balance": "<span class=\"text-clamp\" style='--lines: 1'>R 10 000</span>"
+                    },
+                    {
+                        "": "Owed To You",
+                        "Date": "",
+                        "Account": "",
+                        "Balance": "<span class=\"text-clamp\" style='--lines: 1'>R 10 000</span>"
+                    },
+                    {
+                        "title": "",
+                        "Date": "<span class=\"text-clamp\" style='--lines: 1'>20/03/2022</span>",
+                        "Account": "<span class=\"text-clamp\" style='--lines: 1'>FNB Savings **** 7682</span>",
+                        "Balance": "<span class=\"text-clamp\" style='--lines: 1'>R 10 000</span>"
+                    },
+                    {
+                        "title": "",
+                        "Date": "<span class=\"text-clamp\" style='--lines: 1'>20/03/2022</span>",
+                        "Account": "<span class=\"text-clamp\" style='--lines: 1'>FNB Savings **** 7682</span>",
+                        "Balance": "<span class=\"text-clamp\" style='--lines: 1'>R 10 000</span>"
                     }
                 ],
                 "placeholder": {

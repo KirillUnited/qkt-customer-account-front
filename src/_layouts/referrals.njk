@@ -1,0 +1,36 @@
+{% extends "./default.njk" %}
+{% import "../_includes/macros/forms.njk" as forms %}
+
+{% block head %}
+    {{ super() }}
+    <link rel="stylesheet" href="/assets/styles/themes/page-account.css"/>
+    <link rel="stylesheet" href="/assets/styles/themes/page-commission.css"/>
+{% endblock %}
+
+{% block section_content %}
+    {{ forms.form_api(id='affiliate', label='Customise your affiliate link below:', type='edit_link') }}
+
+    <div class="section-content commission">
+        <div class="section-header">
+            <h1 class="section-title">{{ subtitle }}</h1>
+            <p class="section-desc">{{ subdesc|safe }}</p>
+        </div>
+
+        {{ content|safe }}
+
+        <div class="form-footer">
+            <div class="container">
+                <div class="form-footer-item">
+                    <p class="vw-h4 vw-text-normal">Total Comission Earned</p>
+                    <p class="vw-h1 text-truncate">R10 000</p>
+                </div>
+                <div class="form-footer-item">
+                    <p class="vw-h4 vw-text-normal">Linked Account</p>
+                    <p class="vw-h1 text-truncate">FNB Savings **** 7682</p>
+                </div>
+                {% Button children="CHOOSE BANK ACCOUNT", state="primary", type="submit" %}
+            </div>
+        </div>
+    </div>
+    {% ModalTabs id="add_bank_account_modal", className="modal-tabs", config=commission.actions.referrals.tabs %}
+{% endblock %}
