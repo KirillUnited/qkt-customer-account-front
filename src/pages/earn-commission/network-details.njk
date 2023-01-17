@@ -1,0 +1,16 @@
+---
+layout: referrals.njk
+title: "Promoter Network Details"
+description: "Share this link with everyone and earn 1% of the tickets for yourself. <a href>Read more.</a>"
+breadcrumbs: true
+subtitle: "Payment Details"
+subdesc: "View payments below. Payment will happen every month only for revenue<br
+        class='hidden-less-sm'> generated for events which have successfully finished."
+---
+
+{% set data = commission.actions.networks.details.content %}
+{% set tableType = commission.actions.networks.details.tableType %}
+
+<div class="section-content">
+    {% include "../../_includes/table.njk" %}
+</div>

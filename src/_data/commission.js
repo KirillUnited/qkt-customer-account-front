@@ -40,8 +40,9 @@ module.exports = {
                     "footer": null,
                     "link": "/pages/earn-commission/networks-empty"
                 },
-                "network_details": {
+                "details": {
                     title: "Promoter Network Details",
+                    path: "/pages/earn-commission/network-details",
                     "content": [
                         {
                             "Tickets Sold": 0,
@@ -49,7 +50,28 @@ module.exports = {
                             "Sales": "R 0.0",
                             "Account": "<span class=\"text-clamp\" style='--lines: 1'>FNB Savings **** 7682</span>",
                             "Your Share": "R 0.0"
-                        }
+                        },
+                        {
+                            "Tickets Sold": 0,
+                            "Link Clicks": 0,
+                            "Sales": "R 0.0",
+                            "Account": "<span class=\"text-clamp\" style='--lines: 1'>FNB Savings **** 7682</span>",
+                            "Your Share": "R 0.0"
+                        },
+                        {
+                            "Tickets Sold": 0,
+                            "Link Clicks": 0,
+                            "Sales": "R 0.0",
+                            "Account": "<span class=\"text-clamp\" style='--lines: 1'>FNB Savings **** 7682</span>",
+                            "Your Share": "R 0.0"
+                        },
+                        {
+                            "Tickets Sold": 0,
+                            "Link Clicks": 0,
+                            "Sales": "R 0.0",
+                            "Account": "<span class=\"text-clamp\" style='--lines: 1'>FNB Savings **** 7682</span>",
+                            "Your Share": "R 0.0"
+                        },
                     ]
                 }
             },
