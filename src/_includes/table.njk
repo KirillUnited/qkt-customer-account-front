@@ -1,4 +1,4 @@
-<div class="table">
+<div class="table {{ 'table-commission' if tableType==='commission' }}">
     <div class="table-head grid grid-col">
         {% for key, value in data[0] %}
             <div class="table-cell">{{ key }}</div>

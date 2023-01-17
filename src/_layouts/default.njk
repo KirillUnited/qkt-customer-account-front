@@ -30,9 +30,11 @@
                                 {% endif %}
                             </div>
                         {% endif %}
-                        <div class="section-content">
-                            {{ content | safe }}
-                        </div>
+                        {% block section_content %}
+                            <div class="section-content">
+                                {{ content | safe }}
+                            </div>
+                        {% endblock %}
                     </div>
                 </div>
             </section>

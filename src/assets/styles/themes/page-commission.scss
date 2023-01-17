@@ -1,0 +1,51 @@
+@import "../utilities";
+
+.commission {
+    --footer-min-height: 120px;
+
+    padding-bottom: var(--footer-min-height);
+
+    .section-desc {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+    }
+
+    .form-footer {
+        &-item {
+            max-width: calc(50% - 16px);
+        }
+
+        .container {
+            --gap: #{getMinMax(16px, 34px)};
+
+            justify-content: space-between;
+        }
+
+        .btn {
+            margin-left: auto;
+        }
+    }
+}
+
+@include more-sm() {
+    .commission {
+        .contentholder .btn {
+            display: none;
+        }
+    }
+}
+
+@include less-sm() {
+    .commission {
+        --footer-min-height: 355px;
+
+        .form-footer {
+            --footer-min-height: 120px;
+
+            .btn {
+                --min-width: #{getMinMax(240px, 240px)};
+            }
+        }
+    }
+}
