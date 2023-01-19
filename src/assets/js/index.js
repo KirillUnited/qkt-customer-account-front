@@ -42,7 +42,14 @@ document.addEventListener('DOMContentLoaded', () => {
         const showButtons = document.querySelectorAll('[data-toggle="modal"]');
         const handleClick = (e) => {
             const closeButton = e.target.dataset.close;
-            if (closeButton) hide(e);
+            const forms = e.currentTarget.querySelectorAll(`.form`);
+
+            if (closeButton) {
+                hide(e);
+                forms.forEach((form)=>{
+                    form.reset()
+                })
+            }
         };
 
         showButtons.forEach((btn) => btn.addEventListener('click', show));

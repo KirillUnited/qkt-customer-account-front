@@ -5,7 +5,7 @@ const getAccountTemplate = require("./getAccountTmpl");
 
 module.exports = class _Modal {
     constructor(props = {}) {
-        const {id="", className = ""} = props;
+        const {id = "", className = ""} = props;
 
         this.id = id;
         this.className = className;
@@ -51,7 +51,7 @@ module.exports = class _Modal {
                 </div>`
     }
 
-    getContentTemplate(content = "", props={}) {
+    getContentTemplate(content = "", props = {}) {
         const contentTemplates = {
             "payments": getPaymentsTemplate(),
             "delete": getDelAccountTemplate(),
