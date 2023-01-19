@@ -55,7 +55,9 @@ function getTemplate(type, props = {}) {
                 </button>`,
         "card-ticket": `
                      ${tag && Tag(props)}
-                     ${linkTitle && `<a href="" class="card-link">${linkTitle}</a>`}
+                     ${linkTitle && `<a href="" class="card-link text-truncate">
+                                        <span class="text-truncate">${linkTitle}</span>
+                                     </a>`}
                      `,
         "default": ""
     };
