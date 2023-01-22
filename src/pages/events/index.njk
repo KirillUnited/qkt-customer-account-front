@@ -1,0 +1,10 @@
+---
+layout: default.njk
+title: 'My Saved Events'
+description: 'These are events you have previously favourited.'
+breadcrumbs: false
+body_class: "tabs"
+---
+
+{% set filter=title|replace(' ', '_') %}
+{% include "../../_includes/filter.njk" %}
