@@ -6,6 +6,9 @@
   "scripts": {
     "dev": "eleventy --serve",
     "build": "npm run clear && eleventy",
+    "dev:webpack": "webpack --mode development",
+    "build:webpack": "webpack",
+    "watch:webpack": "webpack --watch --mode development",
     "clear": "rimraf ./_site"
   },
   "keywords": [],
@@ -22,7 +25,9 @@
     "autoprefixer": "^10.4.13",
     "common-tags": "^1.8.2",
     "postcss": "^8.4.21",
-    "rimraf": "2.7.1"
+    "rimraf": "2.7.1",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1"
   },
   "dependencies": {
     "eleventy-sass": "^2.1.3"
