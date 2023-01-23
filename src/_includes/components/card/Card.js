@@ -19,6 +19,7 @@ module.exports = class _Card {
                             <img src="/assets/images/${this.img}" alt="${this.title}">
                         </div>
                         ${this.getBody(this.props)}
+                        ${this.getFooter(this.props)}
                         ${(this.type !== "card-ticket") && this.getTemplate(this.type)}
                     </${this.selectTicket ? `label` : `div`}>`;
     }
@@ -34,6 +35,9 @@ module.exports = class _Card {
                 ${this.getOptions(props)}
             </div>
     `;
+    }
+
+    getFooter(props) {
     }
 
     getTemplate(type, props = {}) {

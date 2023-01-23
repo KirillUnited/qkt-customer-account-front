@@ -45,7 +45,10 @@ title: Customer Account
                         </ul>
                     </li>
                     <li>
-                        <a href="{{ commission.path }}">{{commission.title}}</a>
+                        <a href="{{ events.path }}">{{ events.title }}</a>
+                    </li>
+                    <li>
+                        <a href="{{ commission.path }}">{{ commission.title }}</a>
                         <ul>
                             {% for key, value in commission.actions %}
                                 <li>
@@ -56,10 +59,12 @@ title: Customer Account
                                 <a href="{{ commission.actions.networks.details.path }}">{{ commission.actions.networks.details.title }}</a>
                             </li>
                             <li>
-                                <a href="{{ commission.actions.networks.placeholder.link }}">{{ commission.actions.networks.title }} - empty</a>
+                                <a href="{{ commission.actions.networks.placeholder.link }}">{{ commission.actions.networks.title }}
+                                    - empty</a>
                             </li>
                             <li>
-                                <a href="{{ commission.actions.referrals.placeholder.link }}">{{ commission.actions.referrals.title }} - empty</a>
+                                <a href="{{ commission.actions.referrals.placeholder.link }}">{{ commission.actions.referrals.title }}
+                                    - empty</a>
                             </li>
                         </ul>
                     </li>
