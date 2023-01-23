@@ -11,10 +11,17 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "browserslist": [
+    "last 2 versions",
+    "not dead",
+    "> 0.2%"
+  ],
   "devDependencies": {
     "@11ty/eleventy": "^1.0.2",
     "@11ty/eleventy-plugin-vue": "^0.7.4",
+    "autoprefixer": "^10.4.13",
     "common-tags": "^1.8.2",
+    "postcss": "^8.4.21",
     "rimraf": "2.7.1"
   },
   "dependencies": {

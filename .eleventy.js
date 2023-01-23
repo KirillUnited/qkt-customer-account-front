@@ -1,4 +1,6 @@
 const eleventySass = require("eleventy-sass");
+const postcss = require("postcss");
+const autoprefixer = require("autoprefixer");
 const Card = require("./src/_includes/components/card");
 const {Input, Checkbox} = require("./src/_includes/components/form");
 const Breadcrumbs = require("./src/_includes/components/Breadcrumbs");
@@ -18,7 +20,8 @@ module.exports = function (eleventyConfig) {
         sass: {
             style: "compressed",
             sourceMap: false
-        }
+        },
+        postcss: postcss([autoprefixer])
     });
     eleventyConfig.addPlugin(EleventyRenderPlugin);
     eleventyConfig.addPlugin(eleventyVue);
