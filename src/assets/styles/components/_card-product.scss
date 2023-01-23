@@ -2,16 +2,6 @@
     --gap: 0;
     padding: 0;
 
-    &:has(.card-footer) {
-        .card-body {
-            padding-bottom: getMinMax(6px, 8px);
-        }
-
-        .card-footer {
-            padding-top: getMinMax(6px, 8px);
-        }
-    }
-
     &-meta {
         display: flex;
         flex-wrap: wrap;
@@ -34,11 +24,15 @@
     }
 
     .card-body {
-        padding: getMinMax(8px, 16px);
+        padding: getMinMax(16px, 16px) getMinMax(8px, 16px) getMinMax(6px, 8px);
+
+        &:last-child {
+            padding-bottom: getMinMax(16px, 16px);
+        }
     }
 
     .card-footer {
-        padding: getMinMax(8px, 16px);
+        padding: getMinMax(6px, 8px) getMinMax(8px, 16px) getMinMax(16px, 16px);
     }
 
     .card-title {
