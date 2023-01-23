@@ -14,7 +14,6 @@ const Picture = require("./src/_includes/components/Picture");
 
 module.exports = function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy("src/assets/images/");
-    // eleventyConfig.addPassthroughCopy("src/assets/js/index.js");
     eleventyConfig.addWatchTarget("./src/");
     eleventyConfig.addPlugin(eleventySass, {
         sass: {
