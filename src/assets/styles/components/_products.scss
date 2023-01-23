@@ -1,0 +1,7 @@
+.products {
+    &-list {
+        --gap: #{getMinMax(24px, 24px)} #{getMinMax(16px, 16px)};
+
+        padding: getMinMax(12px, 12px) 0;
+    }
+}
