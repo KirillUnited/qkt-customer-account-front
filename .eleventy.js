@@ -1,11 +1,11 @@
 const eleventySass = require("eleventy-sass");
 const postcss = require("postcss");
 const autoprefixer = require("autoprefixer");
-const Card = require("./src/_includes/components/card");
+const {Card, CardProduct} = require("./src/_includes/components/card");
 const {Input, Checkbox} = require("./src/_includes/components/form");
 const Breadcrumbs = require("./src/_includes/components/Breadcrumbs");
 const Button = require("./src/_includes/components/Button");
-const {Modal,ModalTabs} = require("./src/_includes/components/modal");
+const {Modal, ModalTabs} = require("./src/_includes/components/modal");
 const Tag = require("./src/_includes/components/Tag");
 const {EleventyRenderPlugin} = require("@11ty/eleventy");
 const eleventyVue = require("@11ty/eleventy-plugin-vue");
@@ -25,6 +25,7 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addPlugin(EleventyRenderPlugin);
     eleventyConfig.addPlugin(eleventyVue);
     eleventyConfig.addShortcode("Card", Card);
+    eleventyConfig.addShortcode("CardProduct", CardProduct);
     eleventyConfig.addShortcode("Input", Input);
     eleventyConfig.addShortcode("Checkbox", Checkbox);
     eleventyConfig.addShortcode("Breadcrumbs", Breadcrumbs);

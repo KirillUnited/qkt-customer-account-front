@@ -68,6 +68,10 @@
         }
     }
 
+    &-footer {
+        margin-top: auto;
+    }
+
     strong {
         font-weight: 500;
     }
@@ -145,6 +149,8 @@
         }
     }
 }
+
+@import "./card-product";
 
 @include more-sm() {
     .card-ticket {
