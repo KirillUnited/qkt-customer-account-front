@@ -1,6 +1,8 @@
 module.exports = {
     "title": "My Saved Events",
     "path": "/pages/events",
+    "catalog_title": "New Browse Events",
+    "catalog_path": "/pages/events/browse",
     "data": [
         {
             "img": "events/event-1.png",
@@ -209,5 +211,13 @@ module.exports = {
             }),
             "time": `${new Date().getHours()}.${new Date("2012-01-18T16:15").getMinutes()}`
         }
-    ]
+    ],
+    "filter": {
+        "Upcoming Events": [],
+        "Type": [],
+        "City": [],
+        "Category": [],
+        "Country": [],
+        "Region": []
+    }
 };

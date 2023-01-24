@@ -48,6 +48,9 @@ title: Customer Account
                         <a href="{{ events.path }}">{{ events.title }}</a>
                     </li>
                     <li>
+                        <a href="{{ events.catalog_path }}">{{ events.catalog_title }}</a>
+                    </li>
+                    <li>
                         <a href="{{ commission.path }}">{{ commission.title }}</a>
                         <ul>
                             {% for key, value in commission.actions %}
