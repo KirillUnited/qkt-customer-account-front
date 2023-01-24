@@ -9,13 +9,18 @@
             </legend>
             {% set item_id = "Upcoming Events__Dates"|replace(' ', '_') %}
             {% Input id=item_id, label="Dates", rest={options: filters["Upcoming Events"][0]["Dates"]} %}
+            <button class="products-filter-date btn-style-reset" type="button" data-filter="date">
+                Select Custom Dates
+            </button>
         </fieldset>
         {% for filter_label, filter_items in filters %}
             {% if filter_label !== "Upcoming Events" %}
                 <fieldset class="products-filter-item form-fieldset">
                     <legend class="products-filter-legend vw-h4">
                         <span>{{ filter_label }}</span>
-                        <button class="products-filter-reset" type="button" data-filter="reset">Clear All</button>
+                        <button class="products-filter-reset btn-style-reset" type="button" data-filter="reset">Clear
+                            All
+                        </button>
                     </legend>
                     {% for item in filter_items %}
                         {% set item_id = filter_label+"__"+item|replace(' ', '_') %}

@@ -262,6 +262,14 @@
 //     -webkit-appearance: button;
 // }
 
+@mixin btn-style-reset {
+    background-color: transparent;
+    margin: 0;
+    padding: 0;
+    border: none;
+    appearance: none;
+}
+
 @mixin button($fontSize: 16px, $height: auto) {
     --min-width: 11ch;
     --transition: 180ms ease-in-out;

@@ -34,17 +34,17 @@
             }
         }
 
-        &-reset {
+        &-reset,
+        &-date {
             font-weight: 400;
             font-size: getMinMax(14px, 14px);
             letter-spacing: 0.005em;
             color: var(--color-text-body);
-            background-color: transparent;
-            margin: 0;
-            padding: 0;
-            border: none;
-            appearance: none;
             cursor: pointer;
+        }
+
+        &-date {
+            align-self: start;
         }
 
         select {
