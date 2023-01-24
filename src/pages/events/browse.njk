@@ -3,10 +3,5 @@ layout: catalog.njk
 body_class: ''
 ---
 
-<div class="products">
-    <div class="products-list grid grid-col-5 grid-col-fill">
-        {%- for item in events.data -%}
-            {% CardProduct type="card-product", img=item.img, title=item.title, desc=item.desc, date=item.date, time=item.time %}
-        {%- endfor -%}
-    </div>
-</div>
+{% set products = events.data %}
+{% include "../../_includes/products.njk" %}
