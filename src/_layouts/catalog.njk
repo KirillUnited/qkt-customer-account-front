@@ -1,0 +1,20 @@
+{% extends "./default.njk" %}
+
+{% block header %}
+    {{ super() }}
+{% endblock %}
+
+{% block section_content %}
+    <div class="section-content">
+        <div class="catalog">
+            <div class="catalog-filter"></div>
+            <div class="catalog-content">
+                {{ content | safe }}
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block footer %}
+
+{% endblock %}

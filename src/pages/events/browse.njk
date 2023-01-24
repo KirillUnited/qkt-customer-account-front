@@ -1,17 +1,12 @@
 ---
-layout: default.njk
+layout: catalog.njk
 body_class: ''
 ---
 
-<div class="catalog">
-    <div class="catalog-filter"></div>
-    <div class="catalog-content">
-        <div class="products">
-            <div class="products-list grid grid-col-5 grid-col-fill">
-                {%- for item in events.data -%}
-                    {% CardProduct type="card-product", img=item.img, title=item.title, desc=item.desc, date=item.date, time=item.time %}
-                {%- endfor -%}
-            </div>
-        </div>
+<div class="products">
+    <div class="products-list grid grid-col-5 grid-col-fill">
+        {%- for item in events.data -%}
+            {% CardProduct type="card-product", img=item.img, title=item.title, desc=item.desc, date=item.date, time=item.time %}
+        {%- endfor -%}
     </div>
 </div>
