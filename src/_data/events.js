@@ -1,8 +1,6 @@
 module.exports = {
     "title": "My Saved Events",
     "path": "/pages/events",
-    "catalog_title": "New Browse Events",
-    "catalog_path": "/pages/events/browse",
     "data": [
         {
             "img": "events/event-1.png",
@@ -212,12 +210,46 @@ module.exports = {
             "time": `${new Date().getHours()}.${new Date("2012-01-18T16:15").getMinutes()}`
         }
     ],
-    "filter": {
-        "Upcoming Events": [],
-        "Type": [],
-        "City": [],
-        "Category": [],
-        "Country": [],
-        "Region": []
+    "catalog": {
+        "title": "New Browse Events",
+        "path": "/pages/events/browse",
+    },
+    "filters": {
+        "Upcoming Events": [
+            {
+                "Dates": [
+                    {text: "Today", value: "Today"},
+                    {text: "This Weekend", value: "This Weekend"},
+                    {text: "Next 7 Days", value: "Next 7 Days"},
+                    {text: "Next 30 Days", value: "Next 30 Days"},
+                    {text: "All Days", value: "All Days"}
+                ]
+            }
+        ],
+        "Type": [
+            "Physical Event",
+            "Fundraiser",
+            "Online Event"
+        ],
+        "City": [
+            "Cape Town",
+            "Johannesburg",
+            "Pretoria"
+        ],
+        "Category": [
+            "Music",
+            "Business & Industry",
+            "Charity & Causes"
+        ],
+        "Country": [
+            "South Africa",
+            "Uganda",
+            "Zambia"
+        ],
+        "Region": [
+            "Western Cape",
+            "Gauteng",
+            "Eastern Cape"
+        ]
     }
 };

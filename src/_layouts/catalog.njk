@@ -7,7 +7,9 @@
 {% block section_content %}
     <div class="section-content">
         <div class="catalog">
-            <div class="catalog-filter"></div>
+            <div class="catalog-sidebar">
+                {% include "../_includes/products-filter.njk" %}
+            </div>
             <div class="catalog-content">
                 <p class="catalog-filter-results vw-h4">{{ events.data.length }} Results Found</p>
                 {{ content | safe }}

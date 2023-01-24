@@ -1,0 +1,29 @@
+{% set form_name = events.catalog.title|replace(' ', '_') %}
+{% set filters = events.filters %}
+
+<div class="products-filter">
+    <form class="products-form form" id="{{ form_name }}_filter" method="GET" action="">
+        <fieldset class="products-form-fieldset form-fieldset">
+            <legend class="vw-h4">
+                <span>Upcoming Events</span>
+            </legend>
+            {% set item_id = "Upcoming Events__Dates"|replace(' ', '_') %}
+            {% Input id=item_id, label="Dates", rest={options: filters["Upcoming Events"][0]["Dates"]} %}
+        </fieldset>
+        {% for filter_label, filter_items in filters %}
+            {% if filter_label !== "Upcoming Events" %}
+                <fieldset class="products-form-fieldset form-fieldset">
+                    <legend class="vw-h4">
+                        <span>{{ filter_label }}</span>
+                        <button type="button">Clear All</button>
+                    </legend>
+                    {% for item in filter_items %}
+                        {% set item_id = filter_label+"__"+item|replace(' ', '_') %}
+
+                        {% Checkbox id=item_id, name=item_id, label=item %}
+                    {% endfor %}
+                </fieldset>
+            {% endif %}
+        {% endfor %}
+    </form>
+</div>
