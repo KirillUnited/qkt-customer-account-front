@@ -1,8 +1,68 @@
 .products {
     &-list {
         --gap: #{getMinMax(24px, 24px)} #{getMinMax(16px, 16px)};
-
         padding: getMinMax(12px, 12px) 0;
+    }
+
+    &-filter {
+        --gap: 0;
+        width: 100%;
+        background-color: #FFFFFF;
+        border: 1px solid rgba(207, 212, 221, 0.5);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+        border-radius: 4px;
+        padding-bottom: 0;
+
+        &-legend {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            margin-bottom: 0;
+        }
+
+        &-item {
+            display: flex;
+            flex-direction: column;
+            padding-bottom: 24px;
+
+            &.form-fieldset {
+                padding-top: 0;
+            }
+
+            & > * {
+                padding: 14px 16px 14px 24px;
+            }
+        }
+
+        &-reset {
+            font-weight: 400;
+            font-size: getMinMax(14px, 14px);
+            letter-spacing: 0.005em;
+            color: var(--color-text-body);
+            background-color: transparent;
+            margin: 0;
+            padding: 0;
+            border: none;
+            appearance: none;
+            cursor: pointer;
+        }
+
+        select {
+            --bg-color: var(--color-grey);
+            --border-radius: 4px;
+            border: none;
+        }
+
+        .form-label {
+            font-weight: 400;
+        }
+
+        .form-checkbox {
+            flex-direction: row-reverse;
+            align-self: stretch;
+            justify-content: space-between;
+            font-size: getMinMax(14px, 14px);
+        }
     }
 
     @include less-sm() {
