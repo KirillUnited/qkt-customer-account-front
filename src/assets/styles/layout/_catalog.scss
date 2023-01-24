@@ -1,5 +1,10 @@
 .catalog {
+    --width: 1170px;
+    --filter-width: 355px;
+    --gap: 40px;
+    width: min(100%, var(--width));
     display: grid;
-    grid-template-columns: 355px 1fr;
-    gap: 40px;
+    grid-template-columns: var(--filter-width) 1fr;
+    gap: var(--gap);
+    margin: 0 auto;
 }
