@@ -19,6 +19,7 @@
     }
 
     @include less-sm() {
+        grid-template-columns: 1fr;
         grid-template-areas: "sidebar sidebar" "content content";
     }
 }

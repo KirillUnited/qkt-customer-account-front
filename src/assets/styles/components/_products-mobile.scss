@@ -1,0 +1,5 @@
+.products-mobile {
+    @include more-sm() {
+        display: none;
+    }
+}

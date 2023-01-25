@@ -75,5 +75,10 @@
         &-list {
             --column-width: #{getMinMax(160px, 160px)};
         }
+        &-filter {
+            display: none;
+        }
     }
 }
+
+@import "./products-mobile";

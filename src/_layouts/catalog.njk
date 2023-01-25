@@ -1,4 +1,7 @@
 {% extends "./default.njk" %}
+{% set products_form_name = events.catalog.title|replace(' ', '_') %}
+{% set products_filters = events.filters %}
+{% set products = events.data %}
 
 {% block header %}
     {{ super() }}
@@ -8,10 +11,13 @@
     <div class="section-content">
         <div class="catalog">
             <div class="catalog-sidebar">
-                {% include "../_includes/products-filter.njk" %}
+                <div class="products">
+                    {% include "../_includes/products-filter-mobile.njk" %}
+                    {% include "../_includes/products-filter.njk" %}
+                </div>
             </div>
             <div class="catalog-content">
-                <p class="catalog-filter-results vw-h4">{{ events.data.length }} Results Found</p>
+                <p class="catalog-filter-results vw-h4">{{ products.length }} Results Found</p>
                 {{ content | safe }}
             </div>
         </div>
