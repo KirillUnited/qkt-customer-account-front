@@ -13,13 +13,6 @@
         border-radius: 4px;
         padding-bottom: 0;
 
-        &-legend {
-            display: flex;
-            align-items: baseline;
-            justify-content: space-between;
-            margin-bottom: 0;
-        }
-
         &-item {
             display: flex;
             flex-direction: column;
@@ -30,21 +23,34 @@
             }
 
             & > * {
-                padding: 14px 16px 14px 24px;
+                padding: 14px 16px 13px 24px;
             }
         }
 
-        &-reset,
-        &-date {
-            font-weight: 400;
-            font-size: getMinMax(14px, 14px);
+        &-legend,
+        &-btn,
+        .form-checkbox {
+            line-height: 21px;
             letter-spacing: 0.005em;
-            color: var(--color-text-body);
-            cursor: pointer;
         }
 
-        &-date {
+        &-legend {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            margin-bottom: 0;
+        }
+
+        &-btn {
+            --min-width: auto;
+            min-height: auto;
             align-self: start;
+            font-family: var(--font-main);
+            font-weight: 400;
+            font-size: getMinMax(14px, 14px);
+            color: var(--color-text-body);
+            text-transform: none;
+            padding: 0;
         }
 
         select {

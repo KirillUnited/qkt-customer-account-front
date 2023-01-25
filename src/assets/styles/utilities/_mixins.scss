@@ -281,7 +281,7 @@
     min-height: $height;
     padding: 0.25em 1em;
     background-color: var(--bg-color, transparent);
-    color: var(--color, #000);
+    color: var(--color, var(--color-text-body));
     font-size: $fontSize;
     font-weight: var(--font-weight, 700);
     font-stretch: normal;

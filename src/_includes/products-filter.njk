@@ -2,23 +2,25 @@
 {% set filters = events.filters %}
 
 <div class="products">
-    <form class="products-filter form" id="{{ form_name }}_filter" method="GET" action="">
+    <form id="{{ form_name }}_filter" class="products-filter form" data-filter="products" method="GET" action="">
         <fieldset class="products-filter-item form-fieldset">
             <legend class="products-filter-legend vw-h4">
                 <span>Upcoming Events</span>
             </legend>
             {% set item_id = "Upcoming Events__Dates"|replace(' ', '_') %}
             {% Input id=item_id, label="Dates", rest={options: filters["Upcoming Events"][0]["Dates"]} %}
-            <button class="products-filter-date btn-style-reset" type="button" data-filter="date">
-                Select Custom Dates
-            </button>
+            <div class="form-group">
+                <button class="products-filter-btn btn" type="button" data-filter="date">
+                    Select Custom Dates
+                </button>
+            </div>
         </fieldset>
         {% for filter_label, filter_items in filters %}
             {% if filter_label !== "Upcoming Events" %}
                 <fieldset class="products-filter-item form-fieldset">
                     <legend class="products-filter-legend vw-h4">
                         <span>{{ filter_label }}</span>
-                        <button class="products-filter-reset btn-style-reset" type="button" data-filter="reset">Clear
+                        <button class="products-filter-btn btn" type="button" data-filter="reset">Clear
                             All
                         </button>
                     </legend>
@@ -27,6 +29,11 @@
 
                         {% Checkbox id=item_id, name=item_id, label=item %}
                     {% endfor %}
+                    <div class="form-group">
+                        <button class="products-filter-btn btn" type="button" data-filter="expand">
+                            See More
+                        </button>
+                    </div>
                 </fieldset>
             {% endif %}
         {% endfor %}
