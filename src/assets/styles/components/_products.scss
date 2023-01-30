@@ -5,13 +5,15 @@
     }
 
     &-filter {
-        --gap: 0;
-        width: 100%;
-        background-color: #FFFFFF;
-        border: 1px solid rgba(207, 212, 221, 0.5);
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
-        border-radius: 4px;
-        padding-bottom: 0;
+        &-form {
+            --gap: 0;
+            width: 100%;
+            background-color: #FFFFFF;
+            border: 1px solid rgba(207, 212, 221, 0.5);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+            border-radius: 4px;
+            padding-bottom: 0;
+        }
 
         &-item {
             display: flex;
@@ -71,6 +73,17 @@
         }
     }
 
+    @include more-sm() {
+        &-filter-mobile {
+            @include more-sm() {
+                display: none;
+            }
+        }
+        .header {
+            display: none;
+        }
+    }
+
     @include less-sm() {
         &-list {
             --column-width: #{getMinMax(160px, 160px)};
@@ -78,7 +91,9 @@
         &-filter {
             display: none;
         }
+        .filter .form-input-field {
+            --bg-color: #fff;
+            border: 1px solid #C2C9D1;
+        }
     }
 }
-
-@import "./products-mobile";
