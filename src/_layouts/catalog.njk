@@ -1,7 +1,8 @@
 {% extends "./default.njk" %}
-{% set products_form_name = events.catalog.title|replace(' ', '_') %}
+{#{% set products_form_name = events.catalog.title|replace(' ', '_') %}#}
 {% set products_filters = events.filters %}
 {% set products = events.data %}
+{% import "../_includes/macros/filters.njk" as filters %}
 
 {% block header %}
     {{ super() }}
@@ -12,8 +13,7 @@
         <div class="catalog">
             <div class="catalog-sidebar">
                 <div class="products">
-                    {% include "../_includes/products-filter-mobile.njk" %}
-                    {% include "../_includes/products-filter.njk" %}
+                    {{ filters.catalog(title=events.catalog.title, config=products_filters) }}
                 </div>
             </div>
             <div class="catalog-content">
