@@ -71,25 +71,44 @@
             justify-content: space-between;
             font-size: getMinMax(14px, 14px);
         }
+
+        .header {
+            background-color: #FFFFFF;
+        }
+
+        .modal-dialog {
+            width: 100%;
+            max-height: none;
+            margin: 0;
+            border-radius: 0;
+        }
     }
 
     @include more-sm() {
-        &-filter-mobile {
+        &-search {
             @include more-sm() {
                 display: none;
             }
         }
-        .header {
-            display: none;
+        &-filter {
+            &.modal {
+                position: relative;
+                background-color: initial;
+                opacity: 1;
+                visibility: visible;
+                pointer-events: auto;
+                z-index: 1;
+            }
+
+            .header {
+                display: none;
+            }
         }
     }
 
     @include less-sm() {
         &-list {
             --column-width: #{getMinMax(160px, 160px)};
-        }
-        &-filter {
-            display: none;
         }
         .filter .form-input-field {
             --bg-color: #fff;
