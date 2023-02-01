@@ -5,12 +5,10 @@
     <div class="products-search filter">
         <div class="filter-form form form-api">
             <fieldset class="form-fieldset">
-                <div class="has-input">
-                    {% Input type="search", id=id+"_filter_search", children='<img alt="" src="/assets/images/icons/Search.svg"
+                {% Input type="search", id=id+"_filter_search", children='<img alt="" src="/assets/images/icons/Search.svg"
                                                                         width="20" height="20"
                                                                         class="form-input-icon">',
-                        rest={placeholder: "Search"} %}
-                </div>
+                    rest={placeholder: "Search", form: id+"_filter"} %}
                 <button class="filter-btn" type="button" data-toggle="modal" data-target="{{ id }}_filter_modal">
                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" clip-rule="evenodd"
@@ -25,7 +23,7 @@
     <div class="products-filter modal" data-filter="products" data-modal="{{ id }}_filter_modal">
         <div class="modal-dialog">
             {% include "../header.html" %}
-            <form id="{{ id }}_filter" class="products-filter-form form" data-filter="form" method="GET"
+            <form id="{{ id }}_filter" name="{{ id }}_filter" class="products-filter-form form" data-filter="form" method="GET"
                   action="">
                 <fieldset class="products-filter-item form-fieldset">
                     <legend class="products-filter-legend vw-h4">
