@@ -46,6 +46,10 @@
     margin-bottom: 0;
 }
 
+.btn-style-reset{
+    @include btn-style-reset();
+}
+
 .text-truncate {
     @include truncate();
 }

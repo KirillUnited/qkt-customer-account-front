@@ -7,11 +7,9 @@ body_class: "tabs"
 ---
 
 {% set filter=title|replace(' ', '_') %}
-{% include "../../_includes/filter.njk" %}
+{% set products = events.data %}
+
 <div class="products">
-    <div class="products-list grid grid-col-5 grid-col-fill">
-        {%- for item in events.data -%}
-            {% CardProduct type="card-product", img=item.img, title=item.title, desc=item.desc, date=item.date, time=item.time %}
-        {%- endfor -%}
-    </div>
+    {% include "../../_includes/filter.njk" %}
+    {% include "../../_includes/products-list.njk" %}
 </div>

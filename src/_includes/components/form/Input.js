@@ -14,8 +14,8 @@ const Input = ({type, id, label, children = "", rest = {}}) => {
 `
 };
 
-function getFormInput({type = "", id = "", children = "", rest = {}}) {
-    const {placeholder = "", pattern = "", required = "", disabled = "", value = ""} = rest;
+function getFormInput({type = "", id = "", children = "", rest = {}, }) {
+    const {form = "", placeholder = "", pattern = "", required = "", disabled = "", value = ""} = rest;
 
     return html`
         <div class="form-input">
@@ -29,6 +29,7 @@ function getFormInput({type = "", id = "", children = "", rest = {}}) {
                     ${pattern && `pattern="${pattern}"`}
                     ${required && `required`}
                     ${disabled && `disabled`}
+                    ${form && `form=${form}`}
                 />
                 ${children}
             </div>
