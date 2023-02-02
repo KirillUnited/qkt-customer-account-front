@@ -1,6 +1,6 @@
-import Tabs from "./Tabs";
-import Modal from "./Modal";
-import Dropdown from "./Dropdown";
+import Tabs from "./tabs";
+import Modal from "./modal";
+import Dropdown from "./dropdown";
 
 document.addEventListener('DOMContentLoaded', () => {
     const productFilter = document.querySelector('.products-filter');
