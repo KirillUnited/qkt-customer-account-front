@@ -1,13 +1,118 @@
 .products {
     &-list {
         --gap: #{getMinMax(24px, 24px)} #{getMinMax(16px, 16px)};
-
         padding: getMinMax(12px, 12px) 0;
+    }
+
+    &-filter {
+        &-form {
+            --gap: 0;
+            width: 100%;
+            background-color: #FFFFFF;
+            border: 1px solid rgba(207, 212, 221, 0.5);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+            border-radius: 4px;
+            padding-bottom: 0;
+        }
+
+        &-item {
+            display: flex;
+            flex-direction: column;
+            padding-bottom: 24px;
+
+            &.form-fieldset {
+                padding-top: 0;
+            }
+
+            & > * {
+                padding: 14px 16px 13px 24px;
+            }
+        }
+
+        &-legend,
+        &-btn,
+        .form-checkbox {
+            line-height: 21px;
+            letter-spacing: 0.005em;
+        }
+
+        &-legend {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            margin-bottom: 0;
+        }
+
+        &-btn {
+            --min-width: auto;
+            min-height: auto;
+            align-self: start;
+            font-family: var(--font-main);
+            font-weight: 400;
+            font-size: getMinMax(14px, 14px);
+            color: var(--color-text-body);
+            text-transform: none;
+            padding: 0;
+        }
+
+        select {
+            --bg-color: var(--color-grey);
+            --border-radius: 4px;
+            border: none;
+        }
+
+        .form-label {
+            font-weight: 400;
+        }
+
+        .form-checkbox {
+            flex-direction: row-reverse;
+            align-self: stretch;
+            justify-content: space-between;
+            font-size: getMinMax(14px, 14px);
+        }
+
+        .header {
+            background-color: #FFFFFF;
+        }
+
+        .modal-dialog {
+            width: 100%;
+            max-height: none;
+            margin: 0;
+            border-radius: 0;
+        }
+    }
+
+    @include more-sm() {
+        &-search {
+            @include more-sm() {
+                display: none;
+            }
+        }
+        &-filter {
+            &.modal {
+                position: relative;
+                background-color: initial;
+                opacity: 1;
+                visibility: visible;
+                pointer-events: auto;
+                z-index: 1;
+            }
+
+            .header {
+                display: none;
+            }
+        }
     }
 
     @include less-sm() {
         &-list {
             --column-width: #{getMinMax(160px, 160px)};
+        }
+        .filter .form-input-field {
+            --bg-color: #fff;
+            border: 1px solid #C2C9D1;
         }
     }
 }

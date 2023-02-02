@@ -1,0 +1,28 @@
+{% extends "./default.njk" %}
+{% set products_filters = events.filters %}
+{% set products = events.data %}
+{% import "../_includes/macros/filters.njk" as filters %}
+
+{% block header %}
+    {{ super() }}
+{% endblock %}
+
+{% block section_content %}
+    <div class="section-content">
+        <div class="catalog">
+            <div class="catalog-sidebar">
+                <div class="products">
+                    {{ filters.catalog(title=events.catalog.title, config=products_filters) }}
+                </div>
+            </div>
+            <div class="catalog-content">
+                <p class="catalog-filter-results vw-h4">{{ products.length }} Results Found</p>
+                {{ content | safe }}
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block footer %}
+
+{% endblock %}

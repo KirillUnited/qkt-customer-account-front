@@ -87,11 +87,12 @@ fieldset {
 }
 
 legend {
+    float: left;
     display: block;
     width: 100%;
     max-width: 100%;
     padding: 0;
-    margin-bottom: .6em;
+    margin-bottom: .4em;
     font-size: 1.15rem;
     line-height: inherit;
     color: inherit;
