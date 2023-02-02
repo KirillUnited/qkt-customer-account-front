@@ -15,6 +15,10 @@
     background-position: center;
 }
 
+.hidden {
+    display: none !important;
+}
+
 .hidden-more-sm {
     @include more-sm() {
         display: none !important;
@@ -46,7 +50,7 @@
     margin-bottom: 0;
 }
 
-.btn-style-reset{
+.btn-style-reset {
     @include btn-style-reset();
 }
 
