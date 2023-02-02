@@ -3,13 +3,13 @@ import Modal from "./Modal";
 import Dropdown from "./Dropdown";
 
 document.addEventListener('DOMContentLoaded', () => {
+    const productFilter = document.querySelector('.products-filter');
+
     Tabs();
     Modal();
     Dropdown();
 
-    const productFilter = document.querySelector('.products-filter');
-
-    productFilter !== null && productFilter.addEventListener('click', function (e) {
+    productFilter?.addEventListener('click', function (e) {
         const back = e.target.closest('.header .back');
 
         if (back) {
