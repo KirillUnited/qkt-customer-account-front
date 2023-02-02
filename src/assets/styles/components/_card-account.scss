@@ -1,0 +1,30 @@
+.card-account {
+    --flex-dir: row;
+
+    min-height: 104px;
+    align-items: center;
+    padding: getMinMax(16px, 24px);
+
+    &-del {
+        appearance: none;
+        border: none;
+        cursor: pointer;
+        background-color: transparent;
+    }
+
+    .card {
+        &-img {
+            flex: 0 0 40px;
+            height: auto;
+        }
+
+        &-title {
+            font-size: 16px;
+            font-weight: 700;
+        }
+    }
+
+    @include less-sm() {
+        min-height: getMinMax(130px, 130px);
+    }
+}
