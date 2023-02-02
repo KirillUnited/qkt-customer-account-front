@@ -1,0 +1,12 @@
+<div class="products-filter modal" data-filter="products" data-modal="{{ id }}_filter_modal">
+    <div class="modal-dialog">
+        {% include "../header.html" %}
+        <form id="{{ id }}_filter" name="{{ id }}_filter" class="products-filter-form form" data-filter="form"
+              method="GET"
+              action="">
+            {% for filter_label, filter_items in config %}
+                {% include "./products-filter-item.njk" %}
+            {% endfor %}
+        </form>
+    </div>
+</div>

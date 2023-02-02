@@ -1,0 +1,21 @@
+<fieldset class="products-filter-item form-fieldset">
+    <legend class="products-filter-legend vw-h4">
+        <span>{{ filter_label }}</span>
+        <button class="products-filter-btn btn" type="button" data-filter="reset">Clear
+            All
+        </button>
+    </legend>
+    {% for item, item_data in filter_items %}
+        {% set item_id = filter_label+"__"+item|replace(' ', '_') %}
+        {% if item_data.length %}
+            {% Input id=item_id, label=item, rest={options: item_data} %}
+        {% else %}
+            {% Checkbox id=item_id, name=item_id, label=item %}
+        {% endif %}
+    {% endfor %}
+    <div class="form-group">
+        <button class="products-filter-btn btn" type="button" data-filter="expand">
+            See More
+        </button>
+    </div>
+</fieldset>

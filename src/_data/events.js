@@ -215,41 +215,42 @@ module.exports = {
         "path": "/pages/events/browse",
     },
     "filters": {
-        "Upcoming Events": [
-            {
-                "Dates": [
-                    {text: "Today", value: "Today"},
-                    {text: "This Weekend", value: "This Weekend"},
-                    {text: "Next 7 Days", value: "Next 7 Days"},
-                    {text: "Next 30 Days", value: "Next 30 Days"},
-                    {text: "All Days", value: "All Days"}
-                ]
-            }
-        ],
-        "Type": [
-            "Physical Event",
-            "Fundraiser",
-            "Online Event"
-        ],
-        "City": [
-            "Cape Town",
-            "Johannesburg",
-            "Pretoria"
-        ],
-        "Category": [
-            "Music",
-            "Business & Industry",
-            "Charity & Causes"
-        ],
-        "Country": [
-            "South Africa",
-            "Uganda",
-            "Zambia"
-        ],
-        "Region": [
-            "Western Cape",
-            "Gauteng",
-            "Eastern Cape"
-        ]
+        "Upcoming Events": {
+            "Dates": [
+                {text: "Today", value: "Today"},
+                {text: "This Weekend", value: "This Weekend"},
+                {text: "Next 7 Days", value: "Next 7 Days"},
+                {text: "Next 30 Days", value: "Next 30 Days"},
+                {text: "All Days", value: "All Days"}
+            ]
+        },
+        "Type": {
+            "Physical Event": [],
+            "Fundraiser": [],
+            "Online Event": [],
+            "Another Physical Event": [],
+            "Another Fundraiser": [],
+            "Another Online Event": []
+        },
+        "City": {
+            "Cape Town": [],
+            "Johannesburg": [],
+            "Pretoria": []
+        },
+        "Category": {
+            "Music": [],
+            "Business & Industry": [],
+            "Charity & Causes": []
+        },
+        "Country": {
+            "South Africa": [],
+            "Uganda": [],
+            "Zambia": []
+        },
+        "Region": {
+            "Western Cape": [],
+            "Gauteng": [],
+            "Eastern Cape": []
+        }
     }
 };

@@ -1,0 +1,7 @@
+{% macro products(type="", title="", config={}) %}
+    {% set id = title|replace(' ', '_') %}
+    {% set title = "Filter "+title %}
+
+    {% include "../products/products-search.njk" %}
+    {% include "../products/products-filter.njk" %}
+{% endmacro %}
