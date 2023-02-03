@@ -145,6 +145,10 @@
 
         .form-fieldset {
             flex-direction: column;
+
+            & > .has-input {
+                flex: 0;
+            }
         }
     }
 }

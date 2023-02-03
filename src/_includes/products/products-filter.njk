@@ -1,0 +1,18 @@
+<div id="products_filter" class="products-filter modal" data-modal="{{ id }}_filter_modal">
+    <div class="modal-dialog">
+
+        {% include "../header.html" %}
+
+        <form id="{{ id }}_filter" name="{{ id }}_filter" class="products-filter-form form" data-filter-form=""
+              method="GET"
+              action="">
+
+            {% for filter_label, filter_items in config %}
+                {% include "./products-filter-item.njk" %}
+            {% endfor %}
+
+            {% Button children="CLEAR ALL", state="", type="reset" %}
+            {% Button children="APPLY FILTERS", state="primary", type="submit" %}
+        </form>
+    </div>
+</div>
