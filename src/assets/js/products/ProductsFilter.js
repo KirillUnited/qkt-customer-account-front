@@ -45,7 +45,7 @@ export default class ProductsFilter {
     }
 
     bindSubElementEvents(item) {
-        item.addEventListener("pointerdown", this.handleSubElementClick);
+        item.addEventListener("click", this.handleSubElementClick);
     }
 
     showExcerpt(content, show = true) {
