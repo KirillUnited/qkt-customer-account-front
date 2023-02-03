@@ -33,13 +33,14 @@ export default class ProductsFilter {
 
         this.element = document.getElementById(id);
         this.SUB_ELEMENT_SHOW_ITEMS_COUNT = showItems;
-
-        this.bindEvents();
     }
 
     init() {
+        if (!this.element) return;
+
         this.subElements = this.getSubElements(this.element);
         this.handleSubElements();
+        this.bindEvents();
     }
 
     bindEvents() {
