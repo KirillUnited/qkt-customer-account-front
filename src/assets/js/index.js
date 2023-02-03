@@ -14,18 +14,4 @@ document.addEventListener('DOMContentLoaded', () => {
     Dropdown();
 
     productsFilter.init();
-    productFilters.forEach((item) => {
-        bindProductFilterEvents(item);
-    });
 });
-
-function bindProductFilterEvents(productFilter) {
-    productFilter?.addEventListener('click', function (e) {
-        const back = e.target.closest('.header .back');
-
-        if (back) {
-            e.preventDefault();
-            this.classList.remove('modal-show');
-        }
-    });
-}

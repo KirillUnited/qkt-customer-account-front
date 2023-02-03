@@ -10,6 +10,14 @@ export default class ProductsFilter {
             this.bindSubElementEvents(item);
         }
     };
+    handleClick = (e) => {
+        const back = e.target.closest('.header .back');
+
+        if (back) {
+            e.preventDefault();
+            this.element.classList.remove('modal-show');
+        }
+    };
     handleSubElementClick = (e) => {
         const expandBtn = e.target.closest('[data-filter-expand="true"]');
 
@@ -22,12 +30,18 @@ export default class ProductsFilter {
         const {showItems} = config;
 
         this.element = document.getElementById(id);
-        this.SUB_ELEMENT_SHOW_ITEMS_COUNT=showItems;
+        this.SUB_ELEMENT_SHOW_ITEMS_COUNT = showItems;
+
+        this.bindEvents();
     }
 
     init() {
         this.subElements = this.getSubElements(this.element);
         this.handleSubElements();
+    }
+
+    bindEvents() {
+        this.element.addEventListener("click", this.handleClick);
     }
 
     bindSubElementEvents(item) {
