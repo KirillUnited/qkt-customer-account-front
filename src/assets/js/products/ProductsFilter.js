@@ -20,9 +20,13 @@ export default class ProductsFilter {
     };
     handleSubElementClick = (e) => {
         const expandBtn = e.target.closest('[data-filter-expand="true"]');
+        const resetBtn = e.target.closest('[data-filter-reset="true"]');
 
         if (expandBtn) {
             this.toggleSubElementExpand(expandBtn);
+        }
+        if (resetBtn) {
+            this.resetSubElement(e);
         }
     };
 
@@ -90,6 +94,15 @@ export default class ProductsFilter {
             this.showExcerpt(itemContent, true);
             item.innerText = "See More";
         }
+    }
+
+    resetSubElement(e) {
+        const inputs = e.target.closest('[data-filter-element]').querySelectorAll('input, select');
+
+        inputs?.forEach(input => {
+            input.checked = false;
+            input.value = "";
+        });
     }
 
     getSubElements(element) {
