@@ -49,7 +49,7 @@ export default class ProductsFilter {
     }
 
     showExcerpt(content, show = true) {
-        if (!this.SUB_ELEMENT_SHOW_ITEMS_COUNT) return;
+        if (this.SUB_ELEMENT_SHOW_ITEMS_COUNT < 1) return;
 
         const itemHeight = content.firstElementChild.clientHeight;
 
@@ -61,7 +61,7 @@ export default class ProductsFilter {
     }
 
     appendSubElementExpandButton(item) {
-        if (!this.SUB_ELEMENT_SHOW_ITEMS_COUNT) return;
+        if (this.SUB_ELEMENT_SHOW_ITEMS_COUNT < 1) return;
 
         const itemContent = item.querySelector('.products-filter-content');
 
