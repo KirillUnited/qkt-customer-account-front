@@ -27,7 +27,9 @@ export default class ProductsFilter {
     };
 
     constructor(id, config = {}) {
-        const {showItems} = config;
+        const {
+            showItems
+        } = config;
 
         this.element = document.getElementById(id);
         this.SUB_ELEMENT_SHOW_ITEMS_COUNT = showItems;
@@ -76,14 +78,16 @@ export default class ProductsFilter {
     toggleSubElementExpand(item) {
         const parent = item.closest('[data-filter-element]');
         const itemContent = parent.querySelector('.products-filter-content');
+        const itemContentIsExpanded = itemContent?.classList.contains('products-filter-content-expand')
 
         itemContent?.classList.toggle('products-filter-content-expand');
-        if (itemContent?.classList.contains('products-filter-content-expand')) {
+
+        if (!itemContentIsExpanded) {
             this.showExcerpt(itemContent, false);
-            item.innerText = "See less";
+            item.innerText = "See Less";
         } else {
             this.showExcerpt(itemContent, true);
-            item.innerText = "See more";
+            item.innerText = "See More";
         }
     }
 
