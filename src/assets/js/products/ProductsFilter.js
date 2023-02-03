@@ -1,7 +1,7 @@
 export default class ProductsFilter {
     element;
     subElements = {};
-    SUB_ELEMENT_SHOW_ITEMS_COUNT = 3;
+    SUB_ELEMENT_SHOW_ITEMS_COUNT;
     handleSubElements = () => {
         for (const [key, value] of Object.entries(this.subElements)) {
             const item = this.subElements[key];
@@ -35,9 +35,9 @@ export default class ProductsFilter {
     }
 
     showExcerpt(content, show = true) {
-        const itemHeight = content.firstElementChild.clientHeight;
-
         if (!this.SUB_ELEMENT_SHOW_ITEMS_COUNT) return;
+
+        const itemHeight = content.firstElementChild.clientHeight;
 
         if (show) {
             content.style.height = `${itemHeight * this.SUB_ELEMENT_SHOW_ITEMS_COUNT}px`;
@@ -47,9 +47,9 @@ export default class ProductsFilter {
     }
 
     appendSubElementExpandButton(item) {
-        const itemContent = item.querySelector('.products-filter-content');
-
         if (!this.SUB_ELEMENT_SHOW_ITEMS_COUNT) return;
+
+        const itemContent = item.querySelector('.products-filter-content');
 
         if (itemContent?.childElementCount > this.SUB_ELEMENT_SHOW_ITEMS_COUNT) {
             const expandBtn = item.querySelector('[data-filter-expand="true"]');
