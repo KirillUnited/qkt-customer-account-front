@@ -77,8 +77,8 @@ export default class ProductsFilter {
         const parent = item.closest('[data-filter-element]');
         const itemContent = parent.querySelector('.products-filter-content');
 
-        parent?.classList.toggle('products-filter-item-expand');
-        if (parent?.classList.contains('products-filter-item-expand')) {
+        itemContent?.classList.toggle('products-filter-content-expand');
+        if (itemContent?.classList.contains('products-filter-content-expand')) {
             this.showExcerpt(itemContent, false);
             item.innerText = "See less";
         } else {
