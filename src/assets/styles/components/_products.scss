@@ -26,6 +26,8 @@
         &-content {
             display: flex;
             flex-direction: column;
+            overflow: hidden;
+            transition: .2ms ease-in-out;
         }
 
         &-btn,

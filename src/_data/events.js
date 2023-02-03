@@ -240,7 +240,10 @@ module.exports = {
         "Category": {
             "Music": [],
             "Business & Industry": [],
-            "Charity & Causes": []
+            "Charity & Causes": [],
+            "AnotherMusic": [],
+            "AnotherBusiness & Industry": [],
+            "AnotherCharity & Causes": []
         },
         "Country": {
             "South Africa": [],

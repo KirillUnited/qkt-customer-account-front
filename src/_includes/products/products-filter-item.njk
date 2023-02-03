@@ -1,11 +1,11 @@
-<fieldset class="products-filter-item form-fieldset">
+<fieldset class="products-filter-item form-fieldset" data-filter-element="{{ filter_label|replace(' ', '_') }}">
     {% set events_label="Upcoming Events" %}
 
     <div class="products-filter-legend vw-h4">
         <span>{{ filter_label }}</span>
 
         {% if filter_label!==events_label %}
-            <button class="products-filter-btn btn hidden-less-sm" type="button" data-filter="reset">
+            <button class="products-filter-btn btn hidden-less-sm" type="button" data-filter-reset="true">
                 Clear All
             </button>
         {% endif %}
@@ -21,24 +21,26 @@
             {% set item_id = filter_label+"__"+item|replace(' ', '_') %}
 
             {% if item_data.length %}
-                {% Input id=item_id, label=item, rest={options: item_data} %}
+                <div>
+                    {% Input id=item_id, label=item, rest={options: item_data} %}
+
+                    {% if filter_label===events_label %}
+                        <div class="form-group">
+                            <button class="products-filter-btn btn" type="button" data-filter-date="true">
+                                Select Custom Dates
+                            </button>
+                        </div>
+                    {% endif %}
+                </div>
             {% else %}
                 <div class="form-group">
                     {% Checkbox id=item_id, name=item_id, label=item %}
                 </div>
             {% endif %}
         {% endfor %}
-
-        {% if filter_label===events_label %}
-            <div class="form-group">
-                <button class="products-filter-btn btn" type="button" data-filter="expand">
-                    Select Custom Dates
-                </button>
-            </div>
-        {% endif %}
     </div>
-    <div class="form-group">
-        <button class="products-filter-btn btn" type="button" data-filter="expand">
+    <div class="form-group hidden">
+        <button class="products-filter-btn btn" type="button" data-filter-expand="true">
             See More
         </button>
     </div>
