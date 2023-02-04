@@ -19,25 +19,36 @@ export default class ProductsFilter {
         }
     };
     handleSubElementClick = (e) => {
-        const expandBtn = e.target.closest('[data-filter-expand="true"]');
+        const expandContentBtn = e.target.closest('[data-filter-expand="true"]');
+        const resetBtn = e.target.closest('[data-filter-reset="true"]');
+        const expandItemBtn = e.target.closest('.products-filter-legend');
 
-        if (expandBtn) {
-            this.toggleSubElementExpand(expandBtn);
+        if (expandContentBtn) {
+            this.toggleSubElementExpand(expandContentBtn);
+        }
+        if (resetBtn) {
+            this.resetSubElement(e);
+        }
+        if (expandItemBtn) {
+            this.expandSubElement(e);
         }
     };
 
     constructor(id, config = {}) {
-        const {showItems} = config;
+        const {
+            showItems
+        } = config;
 
         this.element = document.getElementById(id);
         this.SUB_ELEMENT_SHOW_ITEMS_COUNT = showItems;
-
-        this.bindEvents();
     }
 
     init() {
+        if (!this.element) return;
+
         this.subElements = this.getSubElements(this.element);
         this.handleSubElements();
+        this.bindEvents();
     }
 
     bindEvents() {
@@ -49,7 +60,7 @@ export default class ProductsFilter {
     }
 
     showExcerpt(content, show = true) {
-        if (!this.SUB_ELEMENT_SHOW_ITEMS_COUNT) return;
+        if (this.SUB_ELEMENT_SHOW_ITEMS_COUNT < 1) return;
 
         const itemHeight = content.firstElementChild.clientHeight;
 
@@ -61,7 +72,7 @@ export default class ProductsFilter {
     }
 
     appendSubElementExpandButton(item) {
-        if (!this.SUB_ELEMENT_SHOW_ITEMS_COUNT) return;
+        if (this.SUB_ELEMENT_SHOW_ITEMS_COUNT < 1) return;
 
         const itemContent = item.querySelector('.products-filter-content');
 
@@ -76,15 +87,31 @@ export default class ProductsFilter {
     toggleSubElementExpand(item) {
         const parent = item.closest('[data-filter-element]');
         const itemContent = parent.querySelector('.products-filter-content');
+        const itemContentIsExpanded = itemContent?.classList.contains('products-filter-content-expanded')
 
-        parent?.classList.toggle('products-filter-item-expand');
-        if (parent?.classList.contains('products-filter-item-expand')) {
+        itemContent?.classList.toggle('products-filter-content-expanded');
+
+        if (!itemContentIsExpanded) {
             this.showExcerpt(itemContent, false);
-            item.innerText = "See less";
+            item.innerText = "See Less";
         } else {
             this.showExcerpt(itemContent, true);
-            item.innerText = "See more";
+            item.innerText = "See More";
         }
+    }
+
+    resetSubElement(e) {
+        const inputs = e.target.closest('[data-filter-element]').querySelectorAll('input, select');
+
+        inputs?.forEach(input => {
+            input.checked = false;
+            input.value = "";
+        });
+    }
+
+    expandSubElement(e) {
+        console.log(e.target)
+        e.target.closest('.products-filter-item').classList.toggle('products-filter-item-expanded');
     }
 
     getSubElements(element) {

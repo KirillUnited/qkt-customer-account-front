@@ -21,6 +21,12 @@
             &.form-fieldset {
                 padding-top: 0;
             }
+
+            &-expanded {
+                .arrow {
+                    transform: rotate(90deg);
+                }
+            }
         }
 
         &-content {
@@ -141,7 +147,22 @@
             }
 
             &-item {
-                padding-bottom: getMinMax(16px, 16px);
+                display: grid;
+                grid-template-rows: auto 0 0;
+                padding-bottom: 0;
+                overflow: hidden;
+
+                & > * {
+                    overflow: hidden;
+
+                    &:last-child {
+                        padding-bottom: getMinMax(30px, 30px);
+                    }
+                }
+
+                &-expanded {
+                    grid-template-rows: repeat(3, auto);
+                }
             }
 
             .form-group {
