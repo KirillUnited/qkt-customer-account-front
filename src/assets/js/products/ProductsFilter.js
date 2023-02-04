@@ -110,7 +110,6 @@ export default class ProductsFilter {
     }
 
     expandSubElement(e) {
-        console.log(e.target)
         e.target.closest('.products-filter-item').classList.toggle('products-filter-item-expanded');
     }
 
