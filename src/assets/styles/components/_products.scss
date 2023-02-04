@@ -21,6 +21,12 @@
             &.form-fieldset {
                 padding-top: 0;
             }
+
+            &-expanded {
+                .arrow {
+                    transform: rotate(90deg);
+                }
+            }
         }
 
         &-content {
@@ -148,9 +154,14 @@
 
                 & > * {
                     overflow: hidden;
+
                     &:last-child {
                         padding-bottom: getMinMax(30px, 30px);
                     }
+                }
+
+                &-expanded {
+                    grid-template-rows: repeat(3, auto);
                 }
             }
 

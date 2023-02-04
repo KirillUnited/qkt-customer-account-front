@@ -19,14 +19,18 @@ export default class ProductsFilter {
         }
     };
     handleSubElementClick = (e) => {
-        const expandBtn = e.target.closest('[data-filter-expand="true"]');
+        const expandContentBtn = e.target.closest('[data-filter-expand="true"]');
         const resetBtn = e.target.closest('[data-filter-reset="true"]');
+        const expandItemBtn = e.target.closest('.products-filter-legend');
 
-        if (expandBtn) {
-            this.toggleSubElementExpand(expandBtn);
+        if (expandContentBtn) {
+            this.toggleSubElementExpand(expandContentBtn);
         }
         if (resetBtn) {
             this.resetSubElement(e);
+        }
+        if (expandItemBtn) {
+            this.expandSubElement(e);
         }
     };
 
@@ -83,9 +87,9 @@ export default class ProductsFilter {
     toggleSubElementExpand(item) {
         const parent = item.closest('[data-filter-element]');
         const itemContent = parent.querySelector('.products-filter-content');
-        const itemContentIsExpanded = itemContent?.classList.contains('products-filter-content-expand')
+        const itemContentIsExpanded = itemContent?.classList.contains('products-filter-content-expanded')
 
-        itemContent?.classList.toggle('products-filter-content-expand');
+        itemContent?.classList.toggle('products-filter-content-expanded');
 
         if (!itemContentIsExpanded) {
             this.showExcerpt(itemContent, false);
@@ -103,6 +107,11 @@ export default class ProductsFilter {
             input.checked = false;
             input.value = "";
         });
+    }
+
+    expandSubElement(e) {
+        console.log(e.target)
+        e.target.closest('.products-filter-item').classList.toggle('products-filter-item-expanded');
     }
 
     getSubElements(element) {
