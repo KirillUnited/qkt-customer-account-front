@@ -115,6 +115,7 @@ export default class ProductsFilter {
             input.checked = false;
             input.value = "";
         });
+        this.productsFilterCustomDate.reset();
     }
 
     expandSubElement(e) {
