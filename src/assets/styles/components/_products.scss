@@ -68,6 +68,16 @@
             padding: 0;
         }
 
+        &-date {
+            display: grid;
+
+            &-opened {
+                &>* {
+                    grid-area: 1/1;
+                }
+            }
+        }
+
         select {
             --bg-color: var(--color-grey);
             --border-radius: 4px;
@@ -113,6 +123,7 @@
                 display: none;
             }
         }
+
         &-filter {
             &.modal {
                 position: relative;
@@ -135,6 +146,7 @@
         &-list {
             --column-width: #{getMinMax(160px, 160px)};
         }
+
         &-filter {
             &-form {
                 border: none;
@@ -155,7 +167,7 @@
                 padding-bottom: 0;
                 overflow: hidden;
 
-                & > * {
+                &>* {
                     overflow: hidden;
                 }
 
@@ -169,6 +181,7 @@
                 padding-right: 0;
             }
         }
+
         .filter {
             .form-input-field {
                 --bg-color: #fff;

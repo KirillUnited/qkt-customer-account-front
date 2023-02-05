@@ -1,12 +1,72 @@
 @import "../../vendors/Datepicker.js/css/datepicker.material.scss";
 
-// .datepicker.custom {
-//     position: static !important;
+.datepicker.custom {
+    .datepicker__wrapper {
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+    }
 
-//     .datepicker__wrapper {
-//         top: 0 !important;
-//         left: 0 !important;
-//         width: 100%;
-//         height: 100%;
-//     }
-// }
+    .datepicker__header {
+        background-color: #fff;
+    }
+
+    .datepicker__title,
+    table th,
+    .btn {
+        font-size: getMinMax(14px, 14px);
+    }
+
+    .datepicker__title,
+    table th,
+    .datepicker__day,
+    .datepicker__wrapper {
+        color: var(--color-text-body);
+        font-family: "Inter", sans-serif;
+        font-weight: 400;
+    }
+
+    .datepicker__day.is-disabled,
+    .datepicker__day.is-otherMonth {
+        color: var(--color-disabled);
+    }
+
+    .datepicker__day.is-today {
+        color: var(--color-green);
+    }
+
+    .datepicker__day.is-selected div,
+    .datepicker__day.is-selected:hover div::after {
+        background-color: var(--color-green);
+    }
+
+    .datepicker__daynum {
+        font-size: getMinMax(16px, 16px);
+    }
+
+    .datepicker__next,
+    .datepicker__prev {
+        background-image: url("data:image/svg+xml,%3Csvg width='16' height='17' viewBox='0 0 16 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2.5 8.5H13.5' stroke='%235EB700' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M9 4L13.5 8.5L9 13' stroke='%235EB700' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+
+        &:hover {
+            background-color: transparent;
+        }
+    }
+
+    .datepicker__prev {
+        transform: rotate(180deg);
+    }
+
+    .datepicker-footer {
+        display: flex;
+        justify-content: end;
+        padding: getMinMax(16px, 16px) 0;
+
+        .btn {
+            --min-width: 10ch;
+            min-height: 36px;
+        }
+    }
+}

@@ -43,10 +43,12 @@ export default class ProductsFilterCustomDate {
 
     show() {
         this.customDate.classList.remove('hidden');
+        this.customDate.closest('.products-filter-date').classList.add('products-filter-date-opened');
     }
 
     hide() {
         this.customDate.classList.add('hidden');
+        this.customDate.closest('.products-filter-date').classList.remove('products-filter-date-opened')
     }
 
     reset() {
