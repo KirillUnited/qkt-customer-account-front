@@ -38,17 +38,17 @@ export default class ProductsFilterCustomDate {
         this.datepicker = new Datepicker(this.selector, this.config);
         this.customDate = document.querySelector('.datepicker');
 
-        this.customDate.addEventListener("click", this.handleClick);
+        this.customDate?.addEventListener("click", this.handleClick);
     }
 
     show() {
-        this.customDate.classList.remove('hidden');
-        this.customDate.closest('.products-filter-date').classList.add('products-filter-date-opened');
+        this.customDate?.classList.remove('hidden');
+        this.customDate?.closest('.products-filter-date')?.classList.add('products-filter-date-opened');
     }
 
     hide() {
-        this.customDate.classList.add('hidden');
-        this.customDate.closest('.products-filter-date').classList.remove('products-filter-date-opened')
+        this.customDate?.classList.add('hidden');
+        this.customDate?.closest('.products-filter-date')?.classList.remove('products-filter-date-opened')
     }
 
     reset() {
