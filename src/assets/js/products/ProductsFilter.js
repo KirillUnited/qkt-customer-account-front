@@ -12,10 +12,12 @@ export default class ProductsFilter {
     };
     handleClick = (e) => {
         const back = e.target.closest('.header .back');
+        const html = document.documentElement;
 
         if (back) {
             e.preventDefault();
             this.element.classList.remove('modal-show');
+            html.classList.remove('modal-open');
         }
     };
     handleSubElementClick = (e) => {
