@@ -60,8 +60,9 @@
     }
 
     .datepicker-footer {
+        width: 100%;
         display: flex;
-        justify-content: end;
+        justify-content: flex-end;
         padding: getMinMax(16px, 16px) 0;
 
         .btn {
