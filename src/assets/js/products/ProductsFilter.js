@@ -15,6 +15,7 @@ export default class ProductsFilter {
         const back = e.target.closest('.header .back');
         const html = document.documentElement;
         const customDate = e.target.closest('[data-filter-date="true"]');
+        const resetBtn = e.target.closest('[type="reset"]');
 
         if (back) {
             e.preventDefault();
@@ -23,6 +24,9 @@ export default class ProductsFilter {
         }
         if (customDate) {
             this.productsFilterCustomDate.show();
+        }
+        if (resetBtn) {
+            this.productsFilterCustomDate.reset();
         }
     };
     handleSubElementClick = (e) => {
@@ -115,7 +119,6 @@ export default class ProductsFilter {
             input.checked = false;
             input.value = "";
         });
-        this.productsFilterCustomDate.reset();
     }
 
     expandSubElement(e) {
