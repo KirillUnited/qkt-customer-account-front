@@ -30,6 +30,7 @@
         }
 
         &-content {
+            position: relative;
             display: flex;
             flex-direction: column;
             overflow: hidden;
@@ -156,14 +157,11 @@
 
                 & > * {
                     overflow: hidden;
-
-                    &:last-child {
-                        padding-bottom: getMinMax(30px, 30px);
-                    }
                 }
 
                 &-expanded {
                     grid-template-rows: repeat(3, auto);
+                    padding-bottom: getMinMax(16px, 16px);
                 }
             }
 
