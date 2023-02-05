@@ -101,7 +101,7 @@ export default class ProductsFilter {
     }
 
     resetSubElement(e) {
-        const inputs = e.target.closest('[data-filter-element]').querySelectorAll('input, select');
+        const inputs = e.target.closest('[data-filter-element]')?.querySelectorAll('input, select');
 
         inputs?.forEach(input => {
             input.checked = false;
@@ -110,7 +110,9 @@ export default class ProductsFilter {
     }
 
     expandSubElement(e) {
-        e.target.closest('.products-filter-item').classList.toggle('products-filter-item-expanded');
+        const item = e.target.closest('.products-filter-item');
+
+        item.classList.toggle('products-filter-item-expanded');
     }
 
     getSubElements(element) {
