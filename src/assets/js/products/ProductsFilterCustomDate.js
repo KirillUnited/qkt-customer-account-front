@@ -36,7 +36,7 @@ export default class ProductsFilterCustomDate {
     constructor(selector) {
         this.selector = selector;
         this.datepicker = new Datepicker(this.selector, this.config);
-        this.customDate = document.querySelector('.datepicker');
+        this.customDate = document.querySelector('.datepicker.custom');
 
         this.customDate?.addEventListener("click", this.handleClick);
     }
