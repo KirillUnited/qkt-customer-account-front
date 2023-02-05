@@ -12,10 +12,12 @@ export default class ProductsFilter {
     };
     handleClick = (e) => {
         const back = e.target.closest('.header .back');
+        const html = document.documentElement;
 
         if (back) {
             e.preventDefault();
             this.element.classList.remove('modal-show');
+            html.classList.remove('modal-open');
         }
     };
     handleSubElementClick = (e) => {
@@ -101,7 +103,7 @@ export default class ProductsFilter {
     }
 
     resetSubElement(e) {
-        const inputs = e.target.closest('[data-filter-element]').querySelectorAll('input, select');
+        const inputs = e.target.closest('[data-filter-element]')?.querySelectorAll('input, select');
 
         inputs?.forEach(input => {
             input.checked = false;
@@ -110,8 +112,9 @@ export default class ProductsFilter {
     }
 
     expandSubElement(e) {
-        console.log(e.target)
-        e.target.closest('.products-filter-item').classList.toggle('products-filter-item-expanded');
+        const item = e.target.closest('.products-filter-item');
+
+        item.classList.toggle('products-filter-item-expanded');
     }
 
     getSubElements(element) {
