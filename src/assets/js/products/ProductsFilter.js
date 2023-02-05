@@ -1,3 +1,4 @@
+import ProductsFilterCustomDate from "./ProductsFilterCustomDate";
 export default class ProductsFilter {
     element;
     subElements = {};
@@ -13,11 +14,15 @@ export default class ProductsFilter {
     handleClick = (e) => {
         const back = e.target.closest('.header .back');
         const html = document.documentElement;
+        const customDate = e.target.closest('[data-filter-date="true"]');
 
         if (back) {
             e.preventDefault();
             this.element.classList.remove('modal-show');
             html.classList.remove('modal-open');
+        }
+        if (customDate) {
+            this.productsFilterCustomDate.show();
         }
     };
     handleSubElementClick = (e) => {
@@ -43,6 +48,7 @@ export default class ProductsFilter {
 
         this.element = document.getElementById(id);
         this.SUB_ELEMENT_SHOW_ITEMS_COUNT = showItems;
+        this.productsFilterCustomDate = new ProductsFilterCustomDate('#datepicker');
     }
 
     init() {
