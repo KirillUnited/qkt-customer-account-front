@@ -2,8 +2,13 @@
 {% import "../_includes/_macros/_filters.njk" as filters %}
 {% set products = events.data %}
 
-{% block header %}
+{% block head %}
     {{ super() }}
+    <link rel="stylesheet" href="/assets/styles/header-logged.css"/>
+{% endblock %}
+
+{% block header %}
+    {% include "../_includes/header-logged-out.njk" %}
 {% endblock %}
 
 {% block section_content %}
