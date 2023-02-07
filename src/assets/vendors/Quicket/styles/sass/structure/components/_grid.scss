@@ -1,0 +1,22 @@
+.qkt-component-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-column-gap: 2rem;
+    grid-row-gap: 2rem;
+    max-width: 1280px;
+    margin: 0 auto;
+  
+  .qkt-grid-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffff;
+    box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.08);
+    border-radius: 16px;
+    padding: 2rem;
+  }
+
+  @include respond-to('medium') {
+      grid-template-columns: 1fr 1fr 1fr;
+  }
+}

@@ -1,0 +1,20 @@
+.qkt-container-full {
+    max-width: $full-container-width;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+.qkt-container {
+    max-width: $container-width;
+    margin: 0 auto;
+}
+.qkt-section {
+    margin-bottom: 5.5rem;
+    margin-top: 5.5rem;
+    padding-left: 1rem;
+    padding-bottom: 1rem;
+
+    @include respond-to('small') {
+        padding-left: 0;
+        padding-right: 0;
+    }    
+}

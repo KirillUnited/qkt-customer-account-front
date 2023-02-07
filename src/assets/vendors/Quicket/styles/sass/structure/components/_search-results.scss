@@ -1,0 +1,16 @@
+.qkt-search-container {
+    max-width: $search-container-width;
+    margin: 0 auto;
+
+    .qkt-search-results {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-column-gap: 2rem;
+        grid-row-gap: 2rem;
+
+        @include respond-to('medium') {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+}
+  

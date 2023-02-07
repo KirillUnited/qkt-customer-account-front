@@ -1,0 +1,86 @@
+body {
+    background-color: #fafafc;
+    padding-top: 1rem;
+}
+
+a {
+
+    &,
+    &:hover {
+        text-decoration: none;
+        color: inherit;
+    }
+}
+
+img {
+    width: 100%;
+}
+
+.qkt-logo {
+    max-width: 168px;
+    margin-left: -3px;
+}
+
+.qkt-filter-dropdown {
+    border: 0;
+    background-color: #fcfcfc;
+    font-size: 1.25rem;
+    line-height: 2.5rem;
+    letter-spacing: 0.15%;
+    font-weight: 500;
+    font-family: Heebo;
+}
+
+select {
+    /* Auto layout */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px 8px 10px 12px;
+
+    /* Shades / 00 */
+    background: #FFFFFF;
+    border: none;
+    /* Md-shadow */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.08);
+    border-radius: 8px;
+
+    /* Inside auto layout */
+    flex: none;
+    order: 1;
+    align-self: stretch;
+    flex-grow: 0;
+    margin: 8px 0px;
+}
+
+.qkt-form-control {
+    width: 100%;
+    padding: .625rem .5rem .625rem .75rem;
+    box-sizing: border-box;
+    font-size: 1rem;
+    border-radius: 8px;
+    border: 1px solid #C2C9D1
+}
+
+.qkt-named-field {
+    border: 0;
+    background-color: transparent;
+    font-size: inherit;
+}
+
+.qkt-browse-features {
+    display: flex;
+    align-items: center;
+}
+
+/* Search Mockup */
+.qkt-search-results {
+    top: 100%;
+    background-color: white;
+    width: 100%;
+    padding: .25rem;
+}
+
+.qkt-search-results img {
+    max-width: 100px;
+}

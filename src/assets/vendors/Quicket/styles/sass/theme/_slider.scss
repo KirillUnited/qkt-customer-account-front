@@ -1,0 +1,24 @@
+input[type=range].qkt-slider.qkt-slider-green::-webkit-slider-thumb {
+    background-color: var(--qkt-green);
+}
+input[type=range].qkt-slider.qkt-slider-green::-ms-thumb {
+    background-color: var(--qkt-green);
+}
+input[type=range].qkt-slider.qkt-slider-green::-moz-range-thumb {
+    background-color: var(--qkt-green);
+}
+input[type=range].qkt-slider.qkt-slider-green::-ms-fill-lower {
+    background-color: var(--qkt-green);
+}
+input[type=range].qkt-slider.qkt-slider-green::-webkit-slider-runnable-track {
+    background-color: #efefef;
+}
+input[type=range].qkt-slider.qkt-slider-green::-webkit-slider-runnable-track {
+    background: linear-gradient(--qkt-green,--qkt-green) 0/var(--sx) 100% no-repeat, #EFEFEF;
+}
+input[type=range].qkt-slider.qkt-slider-green::-moz-range-track {
+    background-color: #efefef;
+}
+input[type=range].qkt-slider.qkt-slider-green::-moz-range-track {
+    background: linear-gradient(--qkt-green,--qkt-green) 0/var(--sx) 100% no-repeat, #EFEFEF;
+}

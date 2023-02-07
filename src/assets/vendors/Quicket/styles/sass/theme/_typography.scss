@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@400;700&family=Inter:wght@500&display=swap');
+@import 'fonts/style.css';
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--qkt-heading-text);
+}
+h2 {
+    @include reset-list;
+
+    font-family: "Heebo";
+    font-style: normal;
+    font-weight: bold;
+    font-size: 3.75rem;
+    line-height: 117.88%;
+    
+    /* or 71px */
+    letter-spacing: -0.005em;
+    text-transform: capitalize;
+}
+h3 {
+    font-size: 3rem;
+    line-height: 4rem;
+    font-weight: bold;
+    text-transform: capitalize;
+    margin: 0;
+}
+h4 {
+    font-size: 2.125rem;
+    line-height: 3rem;
+    font-weight: bold;
+    letter-spacing: 0.0025em;
+    margin: 0;
+}
+h5,h6 {
+    font-family: "Heebo";
+    font-style: normal;
+    font-weight: 500;
+}
+h5 {
+    font-size: 1.5rem;
+    text-transform: capitalize;
+    margin-top: .75rem;
+    margin-bottom: .5rem;
+    line-height: 2.25rem;
+}
+h6 {
+    font-size: 1.25rem;
+    margin: 0;
+}
+.buyline {
+    color: var(--qkt-orange);
+    font-weight: 500;
+    font-size: 1.25rem;
+    line-height: 29px;
+    letter-spacing: 0.12em;    
+    line-height: 2.25rem;
+}
+.qkt-text-body-1 {
+    font-size: 1rem!important;
+    letter-spacing: 0.5%;
+}
+.qkt-text-body-2 {
+    font-size: 0.875rem;
+    letter-spacing: 0.25%;
+}
+.qkt-text-caption {
+    font-size: 0.75rem;
+    letter-spacing: 0.4%;
+}
+.qkt-text-overline {
+    font-size: 0.625rem;
+    letter-spacing: 1.5%;
+}
+.qkt-font-3 {
+    font-size: 1.25rem;
+}
+.qkt-font-4 {
+    font-size: 1.5rem;
+}
+.qkt-font-5 {
+    font-size: 1.75rem;
+}
+.qkt-font-6 {
+    font-size: 2rem;
+}
+.qkt-subtitle-1 {
+    font-weight: 500;
+    font-size: 1rem;
+    line-height: 1.5rem;
+}
+.qkt-subtitle-2 {
+    font-weight: 500;
+    font-size: .875rem;
+    line-height: 1rem;
+}

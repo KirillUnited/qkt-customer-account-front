@@ -1,0 +1,92 @@
+.qkt-carousel {
+    overflow: hidden;
+}
+.qkt-carousel-inner {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: 0;
+    flex-wrap: nowrap;
+}    
+.qkt-carousel-inner div {
+    min-width: 100% !important;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    margin: 0;
+    transition: all 1s;
+}
+@include respond-to('small') {
+    .qkt-carousel {
+        &.qkt-carousel-size-sm-2 {
+            .qkt-carousel-inner div {
+                min-width: 50% !important;
+            }
+        }
+        &.qkt-carousel-size-sm-3 {
+            .qkt-carousel-inner div {
+                min-width: 33.33333% !important;
+            }
+        }
+        &.qkt-carousel-size-sm-4 {        
+            .qkt-carousel-inner div {
+                min-width: 25% !important;
+            }
+        }
+        &.qkt-carousel-size-sm-5 {
+            .qkt-carousel-inner div {
+                min-width: 20% !important;
+            }
+        }
+    }
+}
+@include respond-to('medium') {
+    .qkt-carousel {
+        &.qkt-carousel-size-md-2 {
+            .qkt-carousel-inner div {
+                min-width: 50% !important;
+            }
+        }
+        &.qkt-carousel-size-md-3 {
+            .qkt-carousel-inner div {
+                min-width: 33.33333% !important;
+            }
+        }
+        &.qkt-carousel-size-md-4 {        
+            .qkt-carousel-inner div {
+                min-width: 25% !important;
+            }
+        }
+        &.qkt-carousel-size-md-5 {
+            .qkt-carousel-inner div {
+                min-width: 20% !important;
+            }
+        }
+    }
+}
+@include respond-to('large') {
+    .qkt-carousel {
+        &.qkt-carousel-size-lg-2 {
+            .qkt-carousel-inner div {
+                min-width: 50% !important;
+            }
+        }
+        &.qkt-carousel-size-lg-3 {
+            .qkt-carousel-inner div {
+                min-width: 33.33333% !important;
+            }
+        }
+        &.qkt-carousel-size-lg-4 {        
+            .qkt-carousel-inner div {
+                min-width: 25% !important;
+            }
+        }
+        &.qkt-carousel-size-lg-5 {
+            .qkt-carousel-inner div {
+                min-width: 20% !important;
+            }
+        }
+    }
+}

@@ -1,0 +1,13 @@
+.qkt-component-infobox {
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+    box-sizing: border-box;
+    border-radius: 8px;
+
+    div:first-child {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}

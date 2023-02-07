@@ -1,0 +1,96 @@
+.qkt-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-family: Inter;
+    font-weight: 500;
+    font-size: 0.875rem;
+    min-width: 200px;
+    height: 40px;
+    border-radius: 8px;
+    border: 0;
+    letter-spacing: 1px;
+    line-height: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.08);
+}
+
+@include respond-to('small') {
+    .qkt-button {
+        height: 48px;
+    }
+}
+
+@include respond-to('medium') {
+    .qkt-button {
+        height: 50px;
+    }
+}
+.qkt-cta-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0.625rem 1.5rem;
+    border-radius: 6.5rem;
+    border: 0;
+}
+
+.qkt-fab {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 7.25px;
+
+    position: static;
+    width: 32.5px;
+    height: 32.5px;
+    left: 149px;
+    top: 0px;
+
+    border-radius: 54.375px;
+
+    /* Inside auto layout */
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    margin: 0px 16px;    
+}
+.qkt-search {
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    input {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 0.625rem 0 0.625rem 2.5rem;
+
+        width: 259px;
+        height: 48px;
+    
+        border-radius: 8px;
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        box-sizing: border-box;
+    
+        /* Inside auto layout */
+        flex: none;
+        order: 0;
+        flex-grow: 0;
+        margin: 0px 16px;
+
+        font-size: 1rem;
+    }
+
+    span {
+        position: absolute;
+        left: 2rem;
+        font-size: 1rem;
+        z-index: 100000;
+        display: flex;
+    }    
+}
+  

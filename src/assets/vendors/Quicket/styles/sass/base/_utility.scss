@@ -1,0 +1,61 @@
+.qkt-pointer {
+  cursor: pointer!important;
+}
+.qkt-block {
+  display: block!important;
+}
+.qkt-rotate-90 {
+  transform: rotate(-90deg);
+}
+.qkt-rounded-3 {
+  border-radius: .75rem;
+}
+.qkt-rounded-4 {
+  border-radius: 1rem;
+}
+.qkt-position-absolute {
+  position: absolute;
+}
+.qkt-visible-md,
+.qkt-visible-sm {
+  display: none!important;
+}
+.qkt-overflow-hidden {
+  overflow: hidden;
+}
+.qkt-shadow-1 {
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.08);
+}
+.qkt-shadow-2 {
+  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.05);
+}
+.qkt-mobile-block {
+  @include respond-to('medium') {
+    display: none!important;
+  }
+}
+.qkt-desktop-block {
+  display: none!important;
+  @include respond-to('medium') {
+    display: block!important;
+  }
+}
+
+@include respond-to('small') {
+  .qkt-hidden-sm {
+    display: none!important;
+  }
+  .qkt-visible-sm {
+    display: flex!important;
+  }
+}
+@include respond-to('medium') {
+  .qkt-hidden-md {
+    display: none!important;
+  }
+  .qkt-visible-md {
+    display: flex!important;
+  }
+}
+
+  

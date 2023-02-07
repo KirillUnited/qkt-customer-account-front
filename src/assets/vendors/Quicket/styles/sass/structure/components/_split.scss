@@ -1,0 +1,83 @@
+@import '../../base/base';
+@import '../variables';
+
+$primary-width: 45%;
+$secondary-width: 55%;
+
+.qkt-component-split {
+    display: flex;
+    flex-direction: column;
+
+    & > :first-child,
+    & > :last-child {
+        box-sizing: border-box;
+    }
+
+    & > :first-child {
+        flex: 0 0 100%;
+    }
+    & > :last-child {
+        flex: 0 0 100%;
+    }
+
+    &.splitter-reverse {
+        flex-flow: row-reverse;
+        flex-wrap: wrap-reverse;
+    }
+
+    @include respond-to('small') {
+        flex-direction: row;
+        justify-content: space-between;
+
+        & > :first-child {
+            flex: 0 0 $primary-width;
+            padding-right: 1.5rem;
+        }
+        & > :last-child {
+            flex: 0 0 $secondary-width;
+            padding-left: 1.5rem;
+        }
+
+        &.splitter-reverse {
+            flex-flow: row;
+            flex-wrap: wrap;
+            & > :first-child {
+                flex: 0 0 $secondary-width;
+            }
+            & > :last-child {
+                flex: 0 0 $primary-width;
+            }
+        }
+
+        &.split-50 {
+            & > :last-child,
+            & > :first-child {
+                flex: 0 0 50%!important;
+            }
+        }
+        &.split-60-30 {
+            & > :first-child {
+                flex: 0 0 55%!important;
+            }
+            & > :last-child {
+                flex: 0 0 40%!important;
+            }
+        }
+        &.split-45-55 {
+            & > :first-child {
+                flex: 0 0 45%!important;
+            }
+            & > :last-child {
+                flex: 0 0 55%!important;
+            }
+        }
+        &.split-40-60 {
+            & > :first-child {
+                flex: 0 0 40%!important;
+            }
+            & > :last-child {
+                flex: 0 0 60%!important;
+            }
+        }
+    }
+}
