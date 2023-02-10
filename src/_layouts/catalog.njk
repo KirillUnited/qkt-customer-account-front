@@ -1,11 +1,9 @@
 {% extends "./default.njk" %}
 {% import "../_includes/_macros/_filters.njk" as filters %}
 {% set products = events.data %}
-
 {% block header %}
     {{ super() }}
 {% endblock %}
-
 {% block section_content %}
     <div class="section-content">
         <div class="catalog">
@@ -21,7 +19,8 @@
         </div>
     </div>
 {% endblock %}
-
-{% block footer %}
-
+{% block footer %}{% endblock %}
+{% block scripts %}
+    {{ super() }}
+    <script src="/assets/js/products.bundle.js"></script>
 {% endblock %}
