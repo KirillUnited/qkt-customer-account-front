@@ -26,7 +26,8 @@
         </div>
     </div>
 {% endblock %}
-
-{% block footer %}
-
+{% block footer %}{% endblock %}
+{% block scripts %}
+    {{ super() }}
+    <script src="/assets/js/products.bundle.js"></script>
 {% endblock %}
