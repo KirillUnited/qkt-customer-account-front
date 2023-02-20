@@ -111,10 +111,12 @@
 
         display: flex;
         flex-wrap: wrap;
+        align-items: start;
         gap: var(--gap);
 
         & > [type="submit"] {
-            flex: 1;
+            --min-width: #{getMinMax(211px, 211px)};
+            flex: 1 0 auto;
         }
 
         & > [type="button"] {
@@ -143,12 +145,13 @@
         padding-top: 0;
         padding-bottom: 0;
 
-        .form-fieldset {
-            flex-direction: column;
-
-            & > .has-input {
-                flex: 0;
-            }
-        }
+        //.form-fieldset {
+        //    flex-direction: column;
+        //
+        //    & > .has-input {
+        //        flex: 0;
+        //    }
+        //}
     }
 }
+
