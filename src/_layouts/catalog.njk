@@ -1,14 +1,10 @@
 {% extends "./default.njk" %}
 {% import "../_includes/_macros/_filters.njk" as filters %}
 {% set products = events.data %}
+{% set header_layout = "log out" %}
 
 {% block head %}
-    <link rel="stylesheet" href="/assets/vendors/Quicket/styles/styles.css"/>
     {{ super() }}
-{% endblock %}
-
-{% block header %}
-    {% include "../_includes/header-logged-out.njk" %}
 {% endblock %}
 
 {% block section_content %}
