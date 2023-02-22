@@ -1,3 +1,5 @@
+{% import "./_macros/_header.njk" as header_macro %}
+
 <header class="header">
     <div class="container">
         <div class="header-inner">
@@ -15,81 +17,18 @@
             <nav class="header-navbar hidden-less-sm">
                 <ul class="header-navbar-list list-style-reset">
                     {% if header_layout === "account" %}
-                        <li class="header-navbar-item header-dropdown">
-                            <button type="button" class="header-navbar-link header-dropdown-btn">
-                                <span class="text-truncate">{{ header.menu.account.title }}</span>
-                            </button>
-                            <ul class="header-dropdown-list list-style-reset">
-                                <li class="header-dropdown-item header-dropdown-header">
-                                    <a class="header-navbar-link"
-                                       href="{{ tickets.path }}">{{ header.menu.account.header.title }}</a>
-                                </li>
-                                {%- for item in header.menu.account.list -%}
-                                    <li class="header-dropdown-item">
-                                        <a class="header-navbar-link" href="#">{{ item.title }}</a>
-                                    </li>
-                                {% endfor %}
-                                <li class="header-dropdown-item header-dropdown-footer">
-                                    <a class="header-navbar-link" href="#">{{ header.menu.account.footer.title }}</a>
-                                </li>
-                            </ul>
-                        </li>
+                        {{ header_macro.menu_item(header.menu.account) }}
                     {% else %}
                         {%- for key, value in header.menu -%}
                             {% if key !== "account" %}
-                                <li class="header-navbar-item header-dropdown">
-                                    <a type="button"
-                                       class="header-navbar-link {{ 'header-dropdown-btn' if value.list.length }}">
-                                        <span class="text-truncate">{{ value.title }}</span>
-                                    </a>
-                                    {% if value.list.length %}
-                                        <ul class="header-dropdown-list list-style-reset">
-                                            {% if value.header %}
-                                                <li class="header-dropdown-item header-dropdown-header">
-                                                    <a class="header-navbar-link"
-                                                       href="{{ tickets.path }}">{{ value.header.title }}</a>
-                                                </li>
-                                            {% endif %}
-                                            {%- for item in value.list -%}
-                                                <li class="header-dropdown-item">
-                                                    <a class="header-navbar-link" href="#">{{ item.title }}</a>
-                                                </li>
-                                            {% endfor %}
-                                            {% if value.footer %}
-                                                <li class="header-dropdown-item header-dropdown-footer">
-                                                    <a class="header-navbar-link"
-                                                       href="#">{{ value.footer.title }}</a>
-                                                </li>
-                                            {% endif %}
-                                        </ul>
-                                    {% endif %}
-                                </li>
+                                {{ header_macro.menu_item(value) }}
                             {% endif %}
                         {% endfor %}
                         {% if header_layout === "login" %}
                             <li class="header-navbar-item">
                                 {% Button children="CREATE EVENT", state="primary", type="button" %}
                             </li>
-                            <li class="header-navbar-item header-dropdown">
-                                <button type="button" class="header-navbar-link header-dropdown-btn">
-                                    <span class="text-truncate">{{ header.menu.account.title }}</span>
-                                </button>
-                                <ul class="header-dropdown-list list-style-reset">
-                                    <li class="header-dropdown-item header-dropdown-header">
-                                        <a class="header-navbar-link"
-                                           href="{{ tickets.path }}">{{ header.menu.account.header.title }}</a>
-                                    </li>
-                                    {%- for item in header.menu.account.list -%}
-                                        <li class="header-dropdown-item">
-                                            <a class="header-navbar-link" href="#">{{ item.title }}</a>
-                                        </li>
-                                    {% endfor %}
-                                    <li class="header-dropdown-item header-dropdown-footer">
-                                        <a class="header-navbar-link"
-                                           href="#">{{ header.menu.account.footer.title }}</a>
-                                    </li>
-                                </ul>
-                            </li>
+                            {{ header_macro.menu_item(header.menu.account) }}
                         {% else %}
                             <li class="header-navbar-item">
                                 {% Button children="Login", state="primary", type="button" %}
