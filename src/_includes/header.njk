@@ -11,7 +11,7 @@
                 <img src="/assets/images/icons/logo.svg" class="logo hidden-less-sm" width="169" height="48"
                      alt="Quicket"/>
             </a>
-            <h2 class="header-title text-truncate hidden-more-sm">{{title}}</h2>
+            <h2 class="header-title text-truncate hidden-more-sm">{{ title }}</h2>
             <nav class="header-navbar hidden-less-sm">
                 <ul class="header-navbar-list list-style-reset">
                     <li class="header-navbar-item">
@@ -23,26 +23,20 @@
                     <li class="header-navbar-item">
                         <div class="header-dropdown">
                             <button type="button" class="header-navbar-link header-dropdown-btn">
-                                <span class="text-truncate">CUSTOMER@gmail.com</span>
+                                <span class="text-truncate">{{ header.menu.account.title }}</span>
                             </button>
                             <ul class="header-dropdown-list list-style-reset">
                                 <li class="header-dropdown-item header-dropdown-header">
-                                    <a class="header-navbar-link" href="{{tickets.path}}">My Tickets</a>
+                                    <a class="header-navbar-link"
+                                       href="{{ tickets.path }}">{{ header.menu.account.header.title }}</a>
                                 </li>
-                                <li class="header-dropdown-item">
-                                    <a class="header-navbar-link" href="#">Create Event</a>
-                                </li>
-                                <li class="header-dropdown-item">
-                                    <a class="header-navbar-link" href="{{ events.path }}">saved events</a>
-                                </li>
-                                <li class="header-dropdown-item">
-                                    <a class="header-navbar-link" href="{{ commission.path }}">EARN COmission</a>
-                                </li>
-                                <li class="header-dropdown-item">
-                                    <a class="header-navbar-link" href="{{account.path}}">My Account</a>
-                                </li>
+                                {%- for item in header.menu.account.list -%}
+                                    <li class="header-dropdown-item">
+                                        <a class="header-navbar-link" href="#">{{ item.title }}</a>
+                                    </li>
+                                {% endfor %}
                                 <li class="header-dropdown-item header-dropdown-footer">
-                                    <a class="header-navbar-link" href="#">Log Out</a>
+                                    <a class="header-navbar-link" href="#">{{ header.menu.account.footer.title }}</a>
                                 </li>
                             </ul>
                         </div>
