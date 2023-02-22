@@ -9,6 +9,7 @@
 <body>
     <div class="wrapper">
         {% block header %}
+        {% set header_layout = "account" %}
             {% include "../_includes/header.njk" %}
         {% endblock %}
         <main class="content">{{content | safe}}</main>
