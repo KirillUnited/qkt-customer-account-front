@@ -12,7 +12,8 @@
 <body class="page-account page-invoice">
 <div class="wrapper">
     {% block header %}
-        {% include "../_includes/header.html" %}
+        {% set header_layout = "account" %}
+        {% include "../_includes/header.njk" %}
     {% endblock %}
 
     <main class="content">

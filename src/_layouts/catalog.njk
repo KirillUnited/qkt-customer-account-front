@@ -2,8 +2,10 @@
 {% import "../_includes/_macros/_filters.njk" as filters %}
 {% set products = events.data %}
 {% block header %}
-    {{ super() }}
+    {% set header_layout = "logout" %}
+    {% include "../_includes/header.njk" %}
 {% endblock %}
+
 {% block section_content %}
     <div class="section-content">
         <div class="catalog">

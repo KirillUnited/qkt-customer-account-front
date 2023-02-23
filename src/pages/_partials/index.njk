@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% include "../../_includes/head.njk" %}
+    {% block head %}
+        <link rel="stylesheet" href="/assets/styles/index.css"/>
+    {% endblock %}
+</head>
+
+<body>
+<div class="wrapper">
+    <div class="section">
+        <div class="container">
+            <div class="section-inner">
+                <div class="section-header">
+                    <h1>Header</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section">
+        <div class="container">
+            <div class="section-inner">
+                <div class="section-content">
+                    <h2>Homepage - Not Logged In</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% set header_layout = "logout" %}
+    {% include "../../_includes/header.njk" %}
+    <div class="section">
+        <div class="container">
+            <div class="section-inner">
+                <div class="section-content">
+                    <h2>Homepage - Customer Logged In</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% set header_layout = "login" %}
+    {% include "../../_includes/header.njk" %}
+    <div class="section">
+        <div class="container">
+            <div class="section-inner">
+                <div class="section-content">
+                    <h2>My Account - Organiser Portal</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% set header_layout = "account" %}
+    {% include "../../_includes/header.njk" %}
+</div>
+
+{% block scripts %}
+    {% include "../../_includes/scripts.html" %}
+{% endblock %}
+</body>
+
+</html>
