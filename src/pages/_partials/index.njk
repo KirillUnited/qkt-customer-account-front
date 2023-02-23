@@ -19,7 +19,7 @@
             </div>
         </div>
     </div>
-    <div class="section">
+    <div class="section hidden-less-sm">
         <div class="container">
             <div class="section-inner">
                 <div class="section-content">
@@ -29,8 +29,9 @@
         </div>
     </div>
     {% set header_layout = "logout" %}
+    {% set title = "Homepage - Not Logged In" %}
     {% include "../../_includes/header.njk" %}
-    <div class="section">
+    <div class="section hidden-less-sm">
         <div class="container">
             <div class="section-inner">
                 <div class="section-content">
@@ -40,8 +41,9 @@
         </div>
     </div>
     {% set header_layout = "login" %}
+    {% set title = "Homepage - Customer Logged In" %}
     {% include "../../_includes/header.njk" %}
-    <div class="section">
+    <div class="section hidden-less-sm">
         <div class="container">
             <div class="section-inner">
                 <div class="section-content">
@@ -51,6 +53,7 @@
         </div>
     </div>
     {% set header_layout = "account" %}
+    {% set title = "My Account - Organiser Portal" %}
     {% include "../../_includes/header.njk" %}
 </div>
 
