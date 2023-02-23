@@ -1,0 +1,29 @@
+{% macro menu_item(item) %}
+    <li class="header-navbar-item header-dropdown">
+        <a type="button"
+           class="header-navbar-link {{ 'header-dropdown-btn' if item.list.length }}">
+            <span class="text-truncate">{{ item.title }}</span>
+        </a>
+        {% if item.list.length %}
+            <ul class="header-dropdown-list list-style-reset">
+                {% if item.header %}
+                    <li class="header-dropdown-item header-dropdown-header">
+                        <a class="header-navbar-link"
+                           href="{{ tickets.path }}">{{ item.header.title }}</a>
+                    </li>
+                {% endif %}
+                {%- for el in item.list -%}
+                    <li class="header-dropdown-item">
+                        <a class="header-navbar-link" href="#">{{ el.title }}</a>
+                    </li>
+                {% endfor %}
+                {% if item.footer %}
+                    <li class="header-dropdown-item header-dropdown-footer">
+                        <a class="header-navbar-link"
+                           href="#">{{ item.footer.title }}</a>
+                    </li>
+                {% endif %}
+            </ul>
+        {% endif %}
+    </li>
+{% endmacro %}

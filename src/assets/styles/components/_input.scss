@@ -29,18 +29,31 @@
 
             @include input-placeholder {
                 color: var(--color-text-body);
+                font-weight: 400;
             }
 
 
             &:focus:invalid {
                 border-color: var(--color-error);
 
-                &~.error-msg {
+                & ~ .error-msg {
                     display: block;
                 }
 
-                &~.form-input-icon path {
+                & ~ .form-input-icon path {
                     fill: var(--color-error);
+                }
+            }
+
+            &[type="search"] {
+                --bg-color: var(--color-grey);
+                font-weight: 400;
+                border: 1px solid rgba(255, 255, 255, 0.5);
+                padding-left: 40px;
+
+                & + .form-input-icon {
+                    right: auto;
+                    left: getMinMax(14px, 14px);
                 }
             }
         }
@@ -55,7 +68,7 @@
         font-family: var(--font-main);
         font-style: normal;
         font-weight: 400;
-        font-size: getMinMax(16px,$font-size);
+        font-size: getMinMax(16px, $font-size);
         line-height: calc(18px/$font-size)*1em;
         letter-spacing: 0.0015em;
         color: var(--color-text-body);
@@ -80,7 +93,7 @@
             height: 1em;
             opacity: 0.00001;
 
-            &:checked+svg {
+            &:checked + svg {
                 .checkbox__background {
                     fill: var(--color-green);
                     stroke: var(--color-green);
@@ -125,11 +138,11 @@
                     content: "";
                     border-radius: 100%;
                     transition: background-color 200ms linear,
-                        transform 200ms ease-in-out 100ms;
+                    transform 200ms ease-in-out 100ms;
                 }
             }
 
-            input:checked~label {
+            input:checked ~ label {
                 --bg-color: rgba(94, 183, 0, 0.2);
                 --bg-color-a: var(--color-green);
 
@@ -147,11 +160,11 @@
         --border-color-active: var(--color-green);
         --bg-color-active: var(--color-green);
         --size: 20;
-        line-height: calc(calc(var(--size)/var(--font-size-unit))*1em);
+        line-height: calc(calc(var(--size) / var(--font-size-unit)) * 1em);
 
         input[type="radio"] {
             @include input-radio(var(--font-size-unit));
-            flex: 0 0 calc(calc(var(--size)/var(--font-size-unit))*1em);
+            flex: 0 0 calc(calc(var(--size) / var(--font-size-unit)) * 1em);
         }
     }
 

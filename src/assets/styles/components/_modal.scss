@@ -15,6 +15,10 @@
     transition: all 300ms;
     pointer-events: none;
 
+    &-open {
+        overflow: hidden!important;
+    }
+
     &-show {
         opacity: 1;
         visibility: visible;

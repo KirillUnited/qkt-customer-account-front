@@ -1,10 +1,9 @@
 {% extends "./default.njk" %}
-{% set products_filters = events.filters %}
+{% import "../_includes/_macros/_filters.njk" as filters %}
 {% set products = events.data %}
-{% import "../_includes/macros/filters.njk" as filters %}
-
 {% block header %}
-    {{ super() }}
+    {% set header_layout = "logout" %}
+    {% include "../_includes/header.njk" %}
 {% endblock %}
 
 {% block section_content %}
@@ -12,7 +11,7 @@
         <div class="catalog">
             <div class="catalog-sidebar">
                 <div class="products">
-                    {{ filters.catalog(title=events.catalog.title, config=products_filters) }}
+                    {{ filters.products(title=events.catalog.title, config=events.filters) }}
                 </div>
             </div>
             <div class="catalog-content">
@@ -22,7 +21,8 @@
         </div>
     </div>
 {% endblock %}
-
-{% block footer %}
-
+{% block footer %}{% endblock %}
+{% block scripts %}
+    {{ super() }}
+    <script src="/assets/js/products.bundle.js"></script>
 {% endblock %}
