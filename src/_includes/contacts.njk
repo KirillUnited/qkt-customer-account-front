@@ -1,11 +1,13 @@
 <ul class="footer-contacts list-style-reset">
     <li class="text-truncate">
         <a href="tel:{{ contacts.tel }}">
+            {% callIcon className="icon" %}
             <span>{{ contacts.tel }}</span>
         </a>
     </li>
     <li class="text-truncate">
         <a href="mailto:{{ contacts.email }}">
+            {% emailIcon className="icon" %}
             <span>{{ contacts.email }}</span>
         </a>
     </li>

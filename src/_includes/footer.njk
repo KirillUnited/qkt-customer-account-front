@@ -6,7 +6,7 @@
                      alt="Quicket"/>
                 <h2 class="footer-title hidden-less-sm">Ready to create an event?</h2>
                 <div class="hidden-less-sm">
-                    {% Button children="Get Started", state="secondary", type="button" %}
+                    {% Button children="Get Started", state="secondary" %}
                 </div>
                 <div class="hidden-more-sm">
                     {% include "./contacts.njk" %}
@@ -37,7 +37,7 @@
                 {%- for key, value in contacts.socials -%}
                     <li>
                         <a href="{{ value.link }}">
-                            <img src="/assets/images/icons/{{ value.icon }}" alt="{{ key }}"/>
+                            {{ value.icon|safe }}
                         </a>
                     </li>
                 {% endfor %}
