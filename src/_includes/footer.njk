@@ -1,14 +1,29 @@
-<footer class="footer">
+<footer class="footer footer-top">
     <div class="container">
         <div class="footer-inner">
-            <img src="/assets/images/icons/logo.svg" class="logo hidden-less-sm" width="169" height="48"
-                 alt="Quicket"/>
-            <h3>Ready to create an event?</h3>
-            {% Button children="Get Started", state="secondary", type="button" %}
-            <div class="footer-menu">
+            <div class="footer-item">
+                <img src="/assets/images/icons/logo.svg" class="logo" width="169" height="48"
+                     alt="Quicket"/>
+                <h2 class="footer-title hidden-less-sm">Ready to create an event?</h2>
+                <div class="hidden-less-sm">
+                    {% Button children="Get Started", state="secondary", type="button" %}
+                </div>
+                <ul class="footer-contacts list-style-reset hidden-more-sm">
+                    <li class="text-truncate">
+                        <a href="tel:{{ contacts.tel }}">{{ contacts.tel }}</a>
+                    </li>
+                    <li class="text-truncate">
+                        <a href="mailto:{{ contacts.email }}">{{ contacts.email }}</a>
+                    </li>
+                    <li>
+                        © Copyright 2023 Quicket
+                    </li>
+                </ul>
+            </div>
+            <div class="footer-item footer-menu hidden-less-sm">
                 {%- for key, value in footer.menu -%}
-                    <ul>
-                        <p class="h1">{{ value.title }}</p>
+                    <ul class="list-style-reset">
+                        <p class="vw-h1">{{ value.title }}</p>
                         {%- for item in value.list -%}
                             <li>
                                 <a href="{{ item.link }}">{{ item.title }}</a>
@@ -23,15 +38,22 @@
 <footer class="footer footer-bottom">
     <div class="container">
         <div class="footer-inner">
-            <ul>
-                <li>
-                    <a href="tel:{{ contacts.tel }}">{{ contacts.tel }}</a>
+            <ul class="footer-contacts list-style-reset hidden-less-sm">
+                <li class="text-truncate">
+                    <a href="tel:{{ contacts.tel }}">
+                        <span>{{ contacts.tel }}</span>
+                    </a>
+                </li>
+                <li class="text-truncate">
+                    <a href="mailto:{{ contacts.email }}">
+                        <span>{{ contacts.email }}</span>
+                    </a>
                 </li>
                 <li>
-                    <a href="mailto:{{ contacts.email }}">{{ contacts.email }}</a>
+                    © Copyright 2023 Quicket
                 </li>
             </ul>
-            <ul>
+            <ul class="footer-contacts footer-socials list-style-reset">
                 {%- for key, value in contacts.socials -%}
                     <li>
                         <a href="{{ value.link }}">
