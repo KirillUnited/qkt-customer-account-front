@@ -1,15 +1,15 @@
-const {email} = require("./email");
-const {call} = require("./call");
-const {linkedin} = require("./linkedin");
-const {twitter} = require("./twitter");
-const {instagram} = require("./instagram");
-const {facebook} = require("./facebook");
+const emailIcon = require("./email");
+const callIcon = require("./call");
+const linkedinIcon = require("./linkedin");
+const twitterIcon = require("./twitter");
+const instagramIcon = require("./instagram");
+const facebookIcon = require("./facebook");
 
 module.exports = {
-    email,
-    call,
-    linkedin,
-    twitter,
-    instagram,
-    facebook
+    emailIcon,
+    callIcon,
+    linkedinIcon,
+    twitterIcon,
+    instagramIcon,
+    facebookIcon
 };

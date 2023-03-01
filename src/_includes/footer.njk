@@ -8,17 +8,9 @@
                 <div class="hidden-less-sm">
                     {% Button children="Get Started", state="secondary", type="button" %}
                 </div>
-                <ul class="footer-contacts list-style-reset hidden-more-sm">
-                    <li class="text-truncate">
-                        <a href="tel:{{ contacts.tel }}">{{ contacts.tel }}</a>
-                    </li>
-                    <li class="text-truncate">
-                        <a href="mailto:{{ contacts.email }}">{{ contacts.email }}</a>
-                    </li>
-                    <li>
-                        © Copyright 2023 Quicket
-                    </li>
-                </ul>
+                <div class="hidden-more-sm">
+                    {% include "./contacts.njk" %}
+                </div>
             </div>
             <div class="footer-item footer-menu hidden-less-sm">
                 {%- for key, value in footer.menu -%}
@@ -38,21 +30,9 @@
 <footer class="footer footer-bottom">
     <div class="container">
         <div class="footer-inner">
-            <ul class="footer-contacts list-style-reset hidden-less-sm">
-                <li class="text-truncate">
-                    <a href="tel:{{ contacts.tel }}">
-                        <span>{{ contacts.tel }}</span>
-                    </a>
-                </li>
-                <li class="text-truncate">
-                    <a href="mailto:{{ contacts.email }}">
-                        <span>{{ contacts.email }}</span>
-                    </a>
-                </li>
-                <li>
-                    © Copyright 2023 Quicket
-                </li>
-            </ul>
+            <div class="hidden-less-sm">
+                {% include "./contacts.njk" %}
+            </div>
             <ul class="footer-contacts footer-socials list-style-reset">
                 {%- for key, value in contacts.socials -%}
                     <li>
