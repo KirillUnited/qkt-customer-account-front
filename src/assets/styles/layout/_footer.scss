@@ -33,12 +33,16 @@
         @extend %footer-menu;
         align-items: center;
 
+        .icon {
+            --color: #ffffff;
+        }
+
         & > li {
             font-size: getMinMax(16px, 16px);
-            color: rgba(255, 255, 255, 0.87);
+            color: var(--color, rgba(255, 255, 255, 0.87));
 
             & > a {
-                color: #FFFFFF;
+                color: var(--color, #FFFFFF);
 
                 * {
                     vertical-align: middle;
@@ -49,6 +53,11 @@
                 }
             }
         }
+    }
+
+    &-socials {
+        @extend %footer-menu;
+        align-items: center;
     }
 
     &-title {
@@ -84,6 +93,28 @@
 
         .footer-inner {
             padding: getMinMax(30px, 46px) 0;
+        }
+    }
+
+    @include less-sm() {
+        .container {
+            --margin-x: 80px;
+        }
+        .logo {
+            margin-bottom: 38px;
+        }
+        &-socials {
+            width: 100%;
+            justify-content: center;
+        }
+        &-top {
+            .footer-contacts {
+                --color: var(--color-text-body);
+
+                .icon {
+                    --color: var(--color-green);
+                }
+            }
         }
     }
 }
