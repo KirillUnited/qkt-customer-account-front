@@ -9,12 +9,12 @@
                 {% if item.header %}
                     <li class="header-dropdown-item header-dropdown-header">
                         <a class="header-navbar-link"
-                           href="{{ tickets.path }}">{{ item.header.title }}</a>
+                           href="{{ item.header.link }}">{{ item.header.title }}</a>
                     </li>
                 {% endif %}
                 {%- for el in item.list -%}
                     <li class="header-dropdown-item">
-                        <a class="header-navbar-link" href="#">{{ el.title }}</a>
+                        <a class="header-navbar-link" href="{{ el.link }}">{{ el.title }}</a>
                     </li>
                 {% endfor %}
                 {% if item.footer %}

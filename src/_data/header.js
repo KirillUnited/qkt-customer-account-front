@@ -1,3 +1,6 @@
+const commission = require("./commission");
+const events = require("./commission");
+
 module.exports = {
     "menu": {
         "products": {
@@ -54,11 +57,11 @@ module.exports = {
                 },
                 {
                     "title": "saved events",
-                    "link": ""
+                    "link": events.path
                 },
                 {
                     "title": "EARN COmission",
-                    "link": ""
+                    "link": commission.path
                 },
                 {
                     "title": "My Account",

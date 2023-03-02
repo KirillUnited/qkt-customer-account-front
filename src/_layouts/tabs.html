@@ -22,11 +22,9 @@
             </main>
             {% block footer %}
             {% if footer %}
-            <footer class="footer">
+            <footer>
                 <div class="container">
-                    <div class="footer-inner">
-                        {{ footer|safe }}
-                    </div>
+                    {{ footer|safe }}
                 </div>
             </footer>
             {% endif %}
