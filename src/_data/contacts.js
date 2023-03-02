@@ -7,9 +7,21 @@ module.exports = {
     "email": "support@quicket.co.za",
     "tel": "+27 21 424 9308",
     "socials": {
-        "linkedin": {icon: linkedinIcon({className: "icon"}), link: ""},
-        "twitter": {icon: twitterIcon({className: "icon"}), link: ""},
-        "insta": {icon: instagramIcon({className: "icon"}), link: ""},
-        "facebook": {icon: facebookIcon({className: "icon"}), link: ""},
+        "linkedin": {
+            icon: linkedinIcon({className: "icon"}),
+            link: ""
+        },
+        "twitter": {
+            icon: twitterIcon({className: "icon"}),
+            link: ""
+        },
+        "insta": {
+            icon: instagramIcon({className: "icon"}),
+            link: ""
+        },
+        "facebook": {
+            icon: facebookIcon({className: "icon"}),
+            link: ""
+        },
     }
 };
