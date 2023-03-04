@@ -4,6 +4,7 @@ const linkedinIcon = require("./linkedin");
 const twitterIcon = require("./twitter");
 const instagramIcon = require("./instagram");
 const facebookIcon = require("./facebook");
+const MenuIcon = require("./menu");
 
 module.exports = {
     emailIcon,
@@ -11,5 +12,6 @@ module.exports = {
     linkedinIcon,
     twitterIcon,
     instagramIcon,
-    facebookIcon
+    facebookIcon,
+    MenuIcon
 };
