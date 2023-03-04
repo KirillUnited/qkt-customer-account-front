@@ -1,20 +1,22 @@
 {% macro menu_item(item) %}
+    {% set has_dropdown = item.list.length %}
+
     <li class="header-navbar-item header-dropdown">
         <a type="button"
-           class="header-navbar-link {{ 'header-dropdown-btn' if item.list.length }}">
+           class="header-navbar-link {{ 'header-dropdown-btn' if has_dropdown }}">
             <span class="text-truncate">{{ item.title }}</span>
         </a>
-        {% if item.list.length %}
+        {% if has_dropdown %}
             <ul class="header-dropdown-list list-style-reset">
                 {% if item.header %}
                     <li class="header-dropdown-item header-dropdown-header">
                         <a class="header-navbar-link"
-                           href="{{ tickets.path }}">{{ item.header.title }}</a>
+                           href="{{ item.header.link }}">{{ item.header.title }}</a>
                     </li>
                 {% endif %}
                 {%- for el in item.list -%}
                     <li class="header-dropdown-item">
-                        <a class="header-navbar-link" href="#">{{ el.title }}</a>
+                        <a class="header-navbar-link" href="{{ el.link }}">{{ el.title }}</a>
                     </li>
                 {% endfor %}
                 {% if item.footer %}

@@ -4,16 +4,18 @@
     <div class="container">
         <div class="header-inner">
             <a href="/" class="back">
-                <svg class="hidden-more-sm" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                     xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd" clip-rule="evenodd"
-                          d="M11.7955 5.2045C12.2348 5.64384 12.2348 6.35616 11.7955 6.7955L7.71599 10.875H19C19.6213 10.875 20.125 11.3787 20.125 12C20.125 12.6213 19.6213 13.125 19 13.125H7.71599L11.7955 17.2045C12.2348 17.6438 12.2348 18.3562 11.7955 18.7955C11.3562 19.2348 10.6438 19.2348 10.2045 18.7955L4.2045 12.7955C3.99353 12.5845 3.875 12.2984 3.875 12C3.875 11.7016 3.99353 11.4155 4.2045 11.2045L10.2045 5.2045C10.6438 4.76516 11.3562 4.76517 11.7955 5.2045Z"
-                          fill="#485868"/>
-                </svg>
+                {% BackIcon className="hidden-more-sm" %}
                 <img src="/assets/images/icons/logo.svg" class="logo hidden-less-sm" width="169" height="48"
                      alt="Quicket"/>
             </a>
-            <h2 class="header-title text-truncate hidden-more-sm">{{ title }}</h2>
+            <h2 class="header-title text-truncate hidden-more-sm">
+                {% if header_layout === "account" %}
+                    {{ title }}
+                {% else %}
+                    <img src="/assets/images/icons/logo.svg" class="logo hidden-more-sm" width="169" height="48"
+                         alt="Quicket"/>
+                {% endif %}
+            </h2>
             <nav class="header-navbar hidden-less-sm">
                 <ul class="header-navbar-list list-style-reset">
                     {% if header_layout === "account" %}

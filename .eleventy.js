@@ -10,6 +10,16 @@ const Tag = require("./src/_includes/components/Tag");
 const {EleventyRenderPlugin} = require("@11ty/eleventy");
 const Dropdown = require("./src/_includes/components/Dropdown");
 const Picture = require("./src/_includes/components/Picture");
+const {
+    emailIcon,
+    callIcon,
+    linkedinIcon,
+    twitterIcon,
+    instagramIcon,
+    facebookIcon,
+    MenuIcon,
+    BackIcon
+} = require("./src/_includes/icons");
 
 module.exports = function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy("src/assets/images/");
@@ -33,6 +43,14 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addShortcode("Tag", Tag);
     eleventyConfig.addShortcode("Dropdown", Dropdown);
     eleventyConfig.addShortcode("Picture", Picture);
+    eleventyConfig.addShortcode("emailIcon", emailIcon);
+    eleventyConfig.addShortcode("callIcon", callIcon);
+    eleventyConfig.addShortcode("linkedinIcon", linkedinIcon);
+    eleventyConfig.addShortcode("twitterIcon", twitterIcon);
+    eleventyConfig.addShortcode("instagramIcon", instagramIcon);
+    eleventyConfig.addShortcode("facebookIcon", facebookIcon);
+    eleventyConfig.addShortcode("MenuIcon", MenuIcon);
+    eleventyConfig.addShortcode("BackIcon", BackIcon);
 
     return {
         dir: {

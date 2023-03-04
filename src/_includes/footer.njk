@@ -1,0 +1,47 @@
+<footer class="footer footer-top">
+    <div class="container">
+        <div class="footer-inner">
+            <div class="footer-item">
+                <img src="/assets/images/icons/logo.svg" class="logo" width="169" height="48"
+                     alt="Quicket"/>
+                <h2 class="footer-title hidden-less-sm">Ready to create an event?</h2>
+                <div class="hidden-less-sm">
+                    {% Button children="Get Started", state="secondary" %}
+                </div>
+                <div class="hidden-more-sm">
+                    {% include "./contacts.njk" %}
+                </div>
+            </div>
+            <div class="footer-item footer-menu hidden-less-sm">
+                {%- for key, value in footerdata.menu -%}
+                    <ul class="list-style-reset">
+                        <p class="vw-h1">{{ value.title }}</p>
+                        {%- for item in value.list -%}
+                            <li>
+                                <a href="{{ item.link }}">{{ item.title }}</a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</footer>
+<footer class="footer footer-bottom">
+    <div class="container">
+        <div class="footer-inner">
+            <div class="hidden-less-sm">
+                {% include "./contacts.njk" %}
+            </div>
+            <ul class="footer-socials list-style-reset">
+                {%- for key, value in contacts.socials -%}
+                    <li>
+                        <a href="{{ value.link }}">
+                            {{ value.icon|safe }}
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</footer>
