@@ -13,7 +13,14 @@
                 <img src="/assets/images/icons/logo.svg" class="logo hidden-less-sm" width="169" height="48"
                      alt="Quicket"/>
             </a>
-            <h2 class="header-title text-truncate hidden-more-sm">{{ title }}</h2>
+            <h2 class="header-title text-truncate hidden-more-sm">
+                {% if header_layout === "account" %}
+                    {{ title }}
+                {% else %}
+                    <img src="/assets/images/icons/logo.svg" class="logo hidden-more-sm" width="169" height="48"
+                         alt="Quicket"/>
+                {% endif %}
+            </h2>
             <nav class="header-navbar hidden-less-sm">
                 <ul class="header-navbar-list list-style-reset">
                     {% if header_layout === "account" %}
