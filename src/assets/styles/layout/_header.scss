@@ -123,5 +123,9 @@
             display: grid;
             grid-template-columns: 30px 1fr 30px;
         }
+        .logo {
+            Width: getMinMax(134px, 134px);
+            Height: getMinMax(38px, 38px);
+        }
     }
 }
