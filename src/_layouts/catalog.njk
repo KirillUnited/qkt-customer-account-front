@@ -1,6 +1,6 @@
 {% extends "./default.njk" %}
 {% import "../_includes/_macros/_filters.njk" as filters %}
-{% set products = events.data %}
+{% set products = events.data.data %}
 {% block header %}
     {% set header_layout = "logout" %}
     {% include "../_includes/header.njk" %}
@@ -11,7 +11,7 @@
         <div class="catalog">
             <div class="catalog-sidebar">
                 <div class="products">
-                    {{ filters.products(title=events.catalog.title, config=events.filters) }}
+                    {{ filters.products(title=events.data.catalog.title, config=events.data.filters) }}
                 </div>
             </div>
             <div class="catalog-content">

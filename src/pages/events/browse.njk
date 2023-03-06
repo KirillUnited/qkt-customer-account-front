@@ -2,7 +2,7 @@
 layout: catalog.njk
 body_class: ''
 ---
-{% set products = events.data %}
+{% set products = events.data.data %}
 
 <div class="products">
     {% include "../../_includes/products/products-list.njk" %}
