@@ -1,5 +1,5 @@
 const commission = require("./commission.data");
-const events = require("./commission.data");
+const events = require("./events.data");
 const account = require("./account.data");
 const tickets = require("./tickets.data");
 
@@ -66,7 +66,7 @@ module.exports = {
                     "link": commission.path
                 },
                 {
-                    "title": "My Account",
+                    "title": account.title,
                     "link": account.path
                 }
             ],
