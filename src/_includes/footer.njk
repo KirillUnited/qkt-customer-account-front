@@ -34,7 +34,7 @@
                 {% include "./contacts.njk" %}
             </div>
             <ul class="footer-socials list-style-reset">
-                {%- for key, value in contacts.socials -%}
+                {%- for key, value in contacts.data.socials -%}
                     <li>
                         <a href="{{ value.link }}">
                             {{ value.icon|safe }}
