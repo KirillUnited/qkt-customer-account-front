@@ -5,7 +5,7 @@ title: "Ticket/Booking Details"
 
 <div class="section-title vw-h1">Actions</div>
 <div class="actions grid grid-col-2">
-    {%- for item in ticketdetails.actions -%}
+    {%- for item in ticketdetails.data.actions -%}
         <a href="{{ item.link }}" {{ item.attrs | safe }}>
             {% Card img=item.icon, title=item.title, type="card-minimal" %}
         </a>

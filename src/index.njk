@@ -41,9 +41,9 @@ title: Customer Account
                         <a href="/pages/registration">Edit Registration Information</a>
                     </li>
                     <li>
-                        <a href="{{ ticketdetails.path }}">Ticket/Booking Details</a>
+                        <a href="{{ ticketdetails.data.path }}">Ticket/Booking Details</a>
                         <ul>
-                            {% for action in ticketdetails.actions %}
+                            {% for action in ticketdetails.data.actions %}
                                 <li>
                                     <a href="{{ action.link }}">{{ action.title }}</a>
                                 </li>
