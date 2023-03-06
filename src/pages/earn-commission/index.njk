@@ -11,7 +11,7 @@ footer_desc: '
 ---
 
 <div class="actions grid grid-col-2">
-    {%- for key, value in commission.actions -%}
+    {%- for key, value in commission.data.actions -%}
         <a href="{{ value.link }}">{% Card img=value.img, title=value.title, desc=value.desc, type="card-minimal" %}</a>
     {%- endfor -%}
 </div>

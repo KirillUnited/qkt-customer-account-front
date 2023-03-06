@@ -1,5 +1,5 @@
-const commission = require("./commission");
-const events = require("./commission");
+const commission = require("./commission.data");
+const events = require("./commission.data");
 
 module.exports = {
     "menu": {

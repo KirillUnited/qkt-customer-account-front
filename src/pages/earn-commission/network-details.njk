@@ -8,8 +8,8 @@ subdesc: "View payments below. Payment will happen every month only for revenue<
         class='hidden-less-sm'> generated for events which have successfully finished."
 ---
 
-{% set data = commission.actions.networks.details.content %}
-{% set tableType = commission.actions.networks.details.tableType %}
+{% set data = commission.data.actions.networks.details.content %}
+{% set tableType = commission.data.actions.networks.details.tableType %}
 
 <div class="section-content">
     {% include "../../_includes/table.njk" %}

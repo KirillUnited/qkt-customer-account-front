@@ -57,22 +57,22 @@ title: Customer Account
                         <a href="{{ events.catalog.path }}">{{ events.catalog.title }}</a>
                     </li>
                     <li>
-                        <a href="{{ commission.path }}">{{ commission.title }}</a>
+                        <a href="{{ commission.data.path }}">{{ commission.data.title }}</a>
                         <ul>
-                            {% for key, value in commission.actions %}
+                            {% for key, value in commission.data.actions %}
                                 <li>
                                     <a href="{{ value.link }}">{{ value.title }}</a>
                                 </li>
                             {% endfor %}
                             <li>
-                                <a href="{{ commission.actions.networks.details.path }}">{{ commission.actions.networks.details.title }}</a>
+                                <a href="{{ commission.data.actions.networks.details.path }}">{{ commission.data.actions.networks.details.title }}</a>
                             </li>
                             <li>
-                                <a href="{{ commission.actions.networks.placeholder.link }}">{{ commission.actions.networks.title }}
+                                <a href="{{ commission.data.actions.networks.placeholder.link }}">{{ commission.data.actions.networks.title }}
                                     - empty</a>
                             </li>
                             <li>
-                                <a href="{{ commission.actions.referrals.placeholder.link }}">{{ commission.actions.referrals.title }}
+                                <a href="{{ commission.data.actions.referrals.placeholder.link }}">{{ commission.data.actions.referrals.title }}
                                     - empty</a>
                             </li>
                         </ul>

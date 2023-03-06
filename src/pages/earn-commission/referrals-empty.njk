@@ -23,7 +23,7 @@ breadcrumbs: true
 
 {% import "../../_includes/_macros/_contentholder.html" as macros %}
 {% import "../../_includes/_macros/_forms.njk" as forms %}
-{% set placeholder=commission.actions.referrals.placeholder %}
+{% set placeholder=commission.data.actions.referrals.placeholder %}
 
 {{ forms.form_api(id='affiliate', label='Customise your affiliate link below:', type='edit_link') }}
 
@@ -42,4 +42,4 @@ breadcrumbs: true
     {{ macros.contentholder(placeholder.img, placeholder.title, placeholder.desc, placeholder.button, placeholder.footer) }}
 </div>
 
-{% ModalTabs id="add_bank_account_modal", className="modal-tabs", config=commission.actions.referrals.tabs %}
+{% ModalTabs id="add_bank_account_modal", className="modal-tabs", config=commission.data.actions.referrals.tabs %}
