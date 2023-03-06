@@ -1,5 +1,6 @@
 const commission = require("./commission.data");
 const events = require("./commission.data");
+const account = require("./account.data");
 
 module.exports = {
     "menu": {
@@ -65,7 +66,7 @@ module.exports = {
                 },
                 {
                     "title": "My Account",
-                    "link": ""
+                    "link": account.path
                 }
             ],
             "footer": {"title": "Log Out", "link": ""}

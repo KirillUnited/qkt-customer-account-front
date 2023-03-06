@@ -6,7 +6,7 @@ title: 'Payments & Payouts'
 {% import "../../_includes/_macros/_contentholder.html" as macros %}
 <nav class="tabs-navbar">
     <ul class="tabs-list list-style-reset" data-tablist>
-        {%- for tab in account.actions[4].tabs -%}
+        {%- for tab in account.data.actions[4].tabs -%}
             <li class="tabs-item">
                 <a href="#" class="tabs-link {{ 'tabs-link-active' if loop.index === 1 }}"
                    data-tab="{{ tab.panel.title|replace(' ', '_') }}">
@@ -17,7 +17,7 @@ title: 'Payments & Payouts'
     </ul>
 </nav>
 <div class="tabs-content">
-    {%- for tab in account.actions[4].tabs -%}
+    {%- for tab in account.data.actions[4].tabs -%}
         <div id="{{ tab.panel.title|replace(' ', '_') }}" class="tabs-panel"
              data-panel="{{ tab.panel.title|replace(' ', '_') }}" {{ "hidden" if loop.index > 1 }}>
             <div class="section-header">

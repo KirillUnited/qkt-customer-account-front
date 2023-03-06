@@ -22,9 +22,9 @@ title: Customer Account
                         <a href="https://aesthetic-lebkuchen-e8538c.netlify.app/login/signin">Sign In</a>
                     </li>
                     <li>
-                        <a href="{{ account.path }}">{{ account.title }}</a>
+                        <a href="{{ account.data.path }}">{{ account.data.title }}</a>
                         <ul>
-                            {% for action in account.actions %}
+                            {% for action in account.data.actions %}
                                 <li>
                                     <a href="{{ action.link }}">{{ action.name }}</a>
                                 </li>
