@@ -1,6 +1,7 @@
 const commission = require("./commission.data");
 const events = require("./commission.data");
 const account = require("./account.data");
+const tickets = require("./tickets.data");
 
 module.exports = {
     "menu": {
@@ -50,7 +51,7 @@ module.exports = {
         },
         "account": {
             "title": "CUSTOMER@gmail.com",
-            "header": {"title": "My Tickets", "link": ""},
+            "header": {"title": tickets.title, "link": tickets.path},
             "list": [
                 {
                     "title": "Create Event",
