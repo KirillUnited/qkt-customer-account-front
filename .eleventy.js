@@ -18,7 +18,8 @@ const {
     instagramIcon,
     facebookIcon,
     MenuIcon,
-    BackIcon
+    BackIcon,
+    EyeIcon
 } = require("./src/_includes/icons");
 
 module.exports = function (eleventyConfig) {
@@ -51,6 +52,7 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addShortcode("facebookIcon", facebookIcon);
     eleventyConfig.addShortcode("MenuIcon", MenuIcon);
     eleventyConfig.addShortcode("BackIcon", BackIcon);
+    eleventyConfig.addShortcode("EyeIcon", EyeIcon);
 
     return {
         dir: {

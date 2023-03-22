@@ -6,6 +6,7 @@ const instagramIcon = require("./instagram");
 const facebookIcon = require("./facebook");
 const MenuIcon = require("./menu");
 const BackIcon = require("./back");
+const EyeIcon = require("./eye");
 
 module.exports = {
     emailIcon,
@@ -15,5 +16,6 @@ module.exports = {
     instagramIcon,
     facebookIcon,
     MenuIcon,
-    BackIcon
+    BackIcon,
+    EyeIcon
 };
