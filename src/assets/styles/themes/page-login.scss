@@ -27,6 +27,26 @@
         z-index: 10;
     }
 
+    .socials {
+        --gap: 16px;
+        margin-top: 25px;
+
+        &-item {
+            flex: 1;
+        }
+
+        &-link {
+            min-height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #FFFFFF;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            border-radius: 8px;
+            padding: 6px;
+        }
+    }
+
     .form {
         $font-size: 16px;
         @extend %flex-col;
