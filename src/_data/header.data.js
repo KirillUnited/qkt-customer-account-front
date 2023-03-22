@@ -1,5 +1,7 @@
-const commission = require("./commission");
-const events = require("./commission");
+const commission = require("./commission.data");
+const events = require("./events.data");
+const account = require("./account.data");
+const tickets = require("./tickets.data");
 
 module.exports = {
     "menu": {
@@ -49,7 +51,7 @@ module.exports = {
         },
         "account": {
             "title": "CUSTOMER@gmail.com",
-            "header": {"title": "My Tickets", "link": ""},
+            "header": {"title": tickets.title, "link": tickets.path},
             "list": [
                 {
                     "title": "Create Event",
@@ -64,8 +66,8 @@ module.exports = {
                     "link": commission.path
                 },
                 {
-                    "title": "My Account",
-                    "link": ""
+                    "title": account.title,
+                    "link": account.path
                 }
             ],
             "footer": {"title": "Log Out", "link": ""}

@@ -5,7 +5,7 @@ description: 'Promoter networks are created by event organisers to help spread t
 breadcrumbs: true
 ---
 <div class="grid grid-col-2 grid-col-fixed">
-    {%- for item in commission.actions.networks.content -%}
+    {%- for item in commission.data.actions.networks.content -%}
         {% Card img=item.img, title=item.title, desc=item.desc, tag=item.tag, status=item.status, linkTitle="VIEW DETAILS", type="card-ticket" %}
     {%- endfor -%}
 </div>

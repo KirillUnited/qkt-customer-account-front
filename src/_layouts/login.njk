@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% include "../_includes/head.njk" %}
+    {% block head %}
+        <link rel="stylesheet" href="/assets/styles/styles.css"/>
+        <link rel="stylesheet" href="/assets/styles/themes/page-login.css"/>
+    {% endblock %}
+</head>
+
+<body class="page-login">
+<div class="wrapper">
+    {% block header %}
+    {% endblock %}
+
+    <main class="content">
+        {% block content %}
+            <section class="section">
+                <div class="container">
+                    <div class="section-inner">
+                        <div class="inner">
+                            <a href="/" class="back qkt-logo">
+                                <img src="/assets/images/icons/logo.svg" class="logo" width="169" height="48"
+                                     alt="Quicket"/>
+                            </a>
+                            <form class="form" id="register_form" method="POST" action="">
+                                <legend class="form-legend">
+                                    <h1>{{ title }}</h1>
+                                    <h2>{{ subtitle }}</h2>
+                                    {% if signin %}
+                                        <ul class="footer-socials socials list-style-reset">
+                                            <li class="socials-item">
+                                                <a href="" class="socials-link">
+                                                    <img src="/assets/images/icons/facebook-default.svg" alt="Facebook">
+                                                </a>
+                                            </li>
+                                            <li class="socials-item">
+                                                <a href="" class="socials-link">
+                                                    <img src="/assets/images/icons/Google.svg" alt="Google">
+                                                </a>
+                                            </li>
+                                            <li class="socials-item">
+                                                <a href="" class="socials-link">
+                                                    <img src="/assets/images/icons/Apple.svg" alt="Apple">
+                                                </a>
+                                            </li>
+                                        </ul>
+                                        <p class="text-line-through" style="margin-top: 25px">Or Sign In with</p>
+                                    {% else %}
+                                        <p class="text-line-through" style="margin-top: 25px">Or Register with</p>
+                                    {% endif %}
+                                </legend>
+                                <fieldset class="form-fieldset">
+                                    {% Input type="email", id="register_form_Email", label="Email", rest={required: true} %}
+                                    {% Input type="password", id="register_form_password", children='<img alt="" src="/assets/images/icons/Eye.svg" class="form-input-icon" width="20" height="20">', label="Password", rest={required: true} %}
+                                </fieldset>
+                                {% if signin %}
+                                    {% Button children="SIGN IN", state="primary", type="submit" %}
+                                    <p>Don’t have an account? <a href="/pages/signup">Register Here</a></p>
+                                {% else %}
+                                    {% Button children="REGISTER", state="primary", type="submit" %}
+                                    <p>Already have an account? <a href="/pages/signin">Sign In</a></p>
+                                {% endif %}
+                            </form>
+                            {% Picture src="/assets/images/login/login-bg.png",
+                                srcSet="/assets/images/login/login-bg.png",
+                                className="inner-img",
+                                text="Login" %}
+                        </div>
+                    </div>
+                </div>
+            </section>
+        {% endblock %}
+    </main>
+
+    {% block footer %}
+    {% endblock %}
+</div>
+
+{% block scripts %}
+{% endblock %}
+</body>
+
+</html>
+

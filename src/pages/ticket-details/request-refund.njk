@@ -3,7 +3,7 @@ layout: tabs.html
 title: Request A Refund
 description: "Please select the tickets below you wish to cancel and refund."
 breadcrumbs: true,
-footer: '
+footer_desc: '
 <p class="deactivate"
    style="display: block; font-size: 16px; color: #94A3B8;text-align: center; margin-top: 60px;margin-bottom: 120px;">
     Note: All refunds are subject to a 4.9% cancellation fee (ex VAT) on the value of the tickets being<br
@@ -18,7 +18,7 @@ footer: '
     }
 </style>
 <form id="refund_request" method="POST" action="">
-    {% set tabs = ticketdetails.actions[4].tabs %}
+    {% set tabs = ticketdetails.data.actions[4].tabs %}
     {% include "../../_includes/tabs.njk" %}
     <div class="tabs-content">
         {% Checkbox id="refund_request_confirm", label="I confirm that I want to be refunded for these tickets and that the refund<br /> is irreversible. I am aware of the fees involved as described above." %}

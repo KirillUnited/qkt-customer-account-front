@@ -13,7 +13,7 @@
                 </div>
             </div>
             <div class="footer-item footer-menu hidden-less-sm">
-                {%- for key, value in footerdata.menu -%}
+                {%- for key, value in footer.data.menu -%}
                     <ul class="list-style-reset">
                         <p class="vw-h1">{{ value.title }}</p>
                         {%- for item in value.list -%}
@@ -34,7 +34,7 @@
                 {% include "./contacts.njk" %}
             </div>
             <ul class="footer-socials list-style-reset">
-                {%- for key, value in contacts.socials -%}
+                {%- for key, value in contacts.data.socials -%}
                     <li>
                         <a href="{{ value.link }}">
                             {{ value.icon|safe }}

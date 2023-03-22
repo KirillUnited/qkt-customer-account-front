@@ -19,13 +19,13 @@
             <nav class="header-navbar hidden-less-sm">
                 <ul class="header-navbar-list list-style-reset">
                     {% if header_layout === "account" %}
-                        {{ header_macro.menu_item(header.menu.account) }}
+                        {{ header_macro.menu_item(header.data.menu.account) }}
                     {% else %}
                         {% Input type="search", id="filter_search", children='<img alt="" src="/assets/images/icons/Search.svg"
                                                                         width="20" height="20"
                                                                         class="form-input-icon">',
                             rest={placeholder: "Rock Event"} %}
-                        {%- for key, value in header.menu -%}
+                        {%- for key, value in header.data.menu -%}
                             {% if key !== "account" %}
                                 {{ header_macro.menu_item(value) }}
                             {% endif %}
@@ -34,7 +34,7 @@
                             <li class="header-navbar-item">
                                 {% Button children="CREATE EVENT", state="primary", type="button" %}
                             </li>
-                            {{ header_macro.menu_item(header.menu.account) }}
+                            {{ header_macro.menu_item(header.data.menu.account) }}
                         {% else %}
                             <li class="header-navbar-item">
                                 {% Button children="Login", state="primary", type="button" %}

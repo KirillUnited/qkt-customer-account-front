@@ -10,8 +10,8 @@ subdesc: "View payments below. Payment will happen every month only for revenue<
         class='hidden-less-sm'> generated for events which have successfully finished."
 ---
 
-{% set data = commission.actions.referrals.content %}
-{% set tableType = commission.actions.referrals.tableType %}
+{% set data = commission.data.actions.referrals.content %}
+{% set tableType = commission.data.actions.referrals.tableType %}
 
 {% include "../../_includes/link-account-alert.njk" %}
 <div class="section-content">

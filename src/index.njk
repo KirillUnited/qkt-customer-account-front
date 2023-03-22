@@ -15,16 +15,16 @@ title: Customer Account
                 </ul>
                 <ul>
                     <h2>pages:</h2>
-{#                    <li>#}
-{#                        <a href="https://aesthetic-lebkuchen-e8538c.netlify.app/login/signup">Sign Up</a>#}
-{#                    </li>#}
-{#                    <li>#}
-{#                        <a href="https://aesthetic-lebkuchen-e8538c.netlify.app/login/signin">Sign In</a>#}
-{#                    </li>#}
                     <li>
-                        <a href="{{ account.path }}">{{ account.title }}</a>
+                        <a href="/pages/signup">Sign Up</a>
+                    </li>
+                    <li>
+                        <a href="/pages/signin">Sign In</a>
+                    </li>
+                    <li>
+                        <a href="{{ account.data.path }}">{{ account.data.title }}</a>
                         <ul>
-                            {% for action in account.actions %}
+                            {% for action in account.data.actions %}
                                 <li>
                                     <a href="{{ action.link }}">{{ action.name }}</a>
                                 </li>
@@ -35,15 +35,15 @@ title: Customer Account
                         </ul>
                     </li>
                     <li>
-                        <a href="{{ tickets.path }}">{{ tickets.title }}</a>
+                        <a href="{{ tickets.data.path }}">{{ tickets.data.title }}</a>
                     </li>
                     <li>
                         <a href="/pages/registration">Edit Registration Information</a>
                     </li>
                     <li>
-                        <a href="{{ ticketdetails.path }}">Ticket/Booking Details</a>
+                        <a href="{{ ticketdetails.data.path }}">Ticket/Booking Details</a>
                         <ul>
-                            {% for action in ticketdetails.actions %}
+                            {% for action in ticketdetails.data.actions %}
                                 <li>
                                     <a href="{{ action.link }}">{{ action.title }}</a>
                                 </li>
@@ -51,28 +51,28 @@ title: Customer Account
                         </ul>
                     </li>
                     <li>
-                        <a href="{{ events.path }}">{{ events.title }}</a>
+                        <a href="{{ events.data.path }}">{{ events.data.title }}</a>
                     </li>
                     <li>
-                        <a href="{{ events.catalog.path }}">{{ events.catalog.title }}</a>
+                        <a href="{{ events.data.catalog.path }}">{{ events.data.catalog.title }}</a>
                     </li>
                     <li>
-                        <a href="{{ commission.path }}">{{ commission.title }}</a>
+                        <a href="{{ commission.data.path }}">{{ commission.data.title }}</a>
                         <ul>
-                            {% for key, value in commission.actions %}
+                            {% for key, value in commission.data.actions %}
                                 <li>
                                     <a href="{{ value.link }}">{{ value.title }}</a>
                                 </li>
                             {% endfor %}
                             <li>
-                                <a href="{{ commission.actions.networks.details.path }}">{{ commission.actions.networks.details.title }}</a>
+                                <a href="{{ commission.data.actions.networks.details.path }}">{{ commission.data.actions.networks.details.title }}</a>
                             </li>
                             <li>
-                                <a href="{{ commission.actions.networks.placeholder.link }}">{{ commission.actions.networks.title }}
+                                <a href="{{ commission.data.actions.networks.placeholder.link }}">{{ commission.data.actions.networks.title }}
                                     - empty</a>
                             </li>
                             <li>
-                                <a href="{{ commission.actions.referrals.placeholder.link }}">{{ commission.actions.referrals.title }}
+                                <a href="{{ commission.data.actions.referrals.placeholder.link }}">{{ commission.data.actions.referrals.title }}
                                     - empty</a>
                             </li>
                         </ul>
