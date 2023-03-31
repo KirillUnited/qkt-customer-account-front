@@ -1,9 +1,9 @@
 ---
-layout: tabs.html
+layout: tabs.njk
 title: 'Payments & Payouts'
 ---
 
-{% import "../../_includes/_macros/_contentholder.html" as macros %}
+{% import "../../_includes/_macros/_contentholder.njk" as macros %}
 <nav class="tabs-navbar">
     <ul class="tabs-list list-style-reset" data-tablist>
         {%- for tab in account.data.actions[4].tabs -%}

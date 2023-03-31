@@ -1,5 +1,5 @@
 ---
-layout: api.html
+layout: api.njk
 title: API Keys
 description: 'In order to access the Quicket API you will need an API subscriber key. To get a subscriber key you <br
         class="hidden-less-sm"/> must
@@ -15,7 +15,7 @@ breadcrumbs: true
             {% if title %}
                 <div class="section-header">
                     {% if breadcrumbs %}
-                        {% Breadcrumbs parent=account, current=title %}
+                        {% Breadcrumbs parent=account.data, current=title %}
                     {% endif %}
                     <h1 class="section-title">{{ title }}</h1>
                     <p class="section-desc">{{ description | safe }}</p>

@@ -18,7 +18,7 @@
              data-panel="{{ tab.panel.title|replace(' ', '_') }}" {{ "hidden" if loop.index > 1 }}>
             <div class="section-header">
                 {% if breadcrumbs %}
-                    {% Breadcrumbs parent=account, current=title %}
+                    {% Breadcrumbs parent=account.data, current=title %}
                 {% endif %}
                 <h1 class="section-title">{{ tab.panel.title }}</h1>
                 {% if tab.panel.desc %}
