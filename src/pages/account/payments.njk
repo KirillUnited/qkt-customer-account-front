@@ -1,9 +1,9 @@
 ---
-layout: tabs.html
+layout: tabs.njk
 title: 'Payments & Payouts'
 ---
 
-{% import "../../_includes/_macros/_contentholder.html" as macros %}
+{% import "../../_includes/_macros/_contentholder.njk" as macros %}
 <nav class="tabs-navbar">
     <ul class="tabs-list list-style-reset" data-tablist>
         {%- for tab in account.data.actions[4].tabs -%}
@@ -21,7 +21,7 @@ title: 'Payments & Payouts'
         <div id="{{ tab.panel.title|replace(' ', '_') }}" class="tabs-panel"
              data-panel="{{ tab.panel.title|replace(' ', '_') }}" {{ "hidden" if loop.index > 1 }}>
             <div class="section-header">
-                {% Breadcrumbs parent=account, current=title %}
+                {% Breadcrumbs parent=account.data, current=title %}
                 <h1 class="section-title">{{ tab.panel.title }}</h1>
                 <p class="section-desc">
                     {{ tab.panel.desc | safe }}

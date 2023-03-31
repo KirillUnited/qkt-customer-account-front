@@ -2,11 +2,11 @@ const path = require("path");
 
 module.exports = {
     entry: {
-        main: path.resolve(__dirname, "src/assets/js", "index.js"),
-        products: path.resolve(__dirname, "src/assets/js", "products.js")
+        "qkt-customer": path.resolve(__dirname, "src/assets/js", "index.js"),
+        "qkt-products": path.resolve(__dirname, "src/assets/js", "products.js")
     },
     output: {
-        filename: "[name].bundle.js",
+        filename: "[name].min.js",
         path: path.resolve(__dirname, "_site", "assets/js")
     },
     module: {
