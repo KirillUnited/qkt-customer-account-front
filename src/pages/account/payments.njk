@@ -21,7 +21,7 @@ title: 'Payments & Payouts'
         <div id="{{ tab.panel.title|replace(' ', '_') }}" class="tabs-panel"
              data-panel="{{ tab.panel.title|replace(' ', '_') }}" {{ "hidden" if loop.index > 1 }}>
             <div class="section-header">
-                {% Breadcrumbs parent=account, current=title %}
+                {% Breadcrumbs parent=account.data, current=title %}
                 <h1 class="section-title">{{ tab.panel.title }}</h1>
                 <p class="section-desc">
                     {{ tab.panel.desc | safe }}
