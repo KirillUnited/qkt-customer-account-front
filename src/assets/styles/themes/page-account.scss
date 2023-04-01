@@ -1,12 +1,12 @@
 @import "../utilities";
 
-body {
+.page-account {
+    footer {
+        padding-bottom: getMinMax(25px, 80px);
+        padding-top: getMinMax(25px, 80px);
+    }
+
     @include less-sm() {
         --body-bg-color: #ffffff;
     }
-}
-
-footer {
-    padding-bottom: getMinMax(25px, 80px);
-    padding-top: getMinMax(25px, 80px);
 }
