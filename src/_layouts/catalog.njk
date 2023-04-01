@@ -1,7 +1,7 @@
 {% extends "./default.njk" %}
 {% import "../_includes/_macros/_filters.njk" as filters %}
 {% block head %}
-    <link rel="stylesheet" href="/assets/styles/qkt-products.min.css"/>
+    <link rel="stylesheet" href="/assets/styles/qkt-events-catalog.min.css"/>
 {% endblock %}
 {% set products = events.data.data %}
 {% block header %}
@@ -29,5 +29,5 @@
 {% endblock %}
 {% block scripts %}
     {{ super() }}
-    <script src="/assets/js/qkt-products.min.js"></script>
+    <script src="/assets/js/qkt-events-catalog.min.js"></script>
 {% endblock %}

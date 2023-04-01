@@ -4,7 +4,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 module.exports = {
     entry: {
         "qkt-customer": path.resolve(__dirname, "src/assets/js", "index.js"),
-        "qkt-products": path.resolve(__dirname, "src/assets/js", "products.js"),
+        "qkt-events-catalog": path.resolve(__dirname, "src/assets/js", "products.js"),
     },
     output: {
         filename: "[name].min.js",
