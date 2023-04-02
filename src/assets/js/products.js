@@ -1,4 +1,3 @@
-import "../styles/products.scss";
 import ProductsFilter from "./products/ProductsFilter";
 
 const productsFilter = new ProductsFilter("products_filter", {
