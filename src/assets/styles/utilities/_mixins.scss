@@ -260,48 +260,21 @@
     }
 }
 
-@mixin tab($fontSize: 24px) {
-    --fontSize: #{$fontSize};
-    --minFontSize: 12px;
-    --fontFamily: 'CircularAirPro Light';
-    --fontFamilyActive: "Circular Std Book";
-    --color: #999999;
-    --colorActive: #333333;
-
+@mixin tab($font-size: 14px) {
+    min-height: calc(37px/$font-size)*1em;
     display: flex;
     align-items: center;
-    align-self: start;
     justify-content: center;
-    max-width: 100%;
-    min-width: 5ch;
     color: var(--color);
-    font-family: var(--fontFamily);
-    font-size: Max(var(--minFontSize), Min($fontSize, #{getvmin($fontSize)}));
-    font-weight: 300;
-    font-stretch: normal;
-    font-style: normal;
-    letter-spacing: normal;
-    line-height: 1.1;
-    text-align: center;
-    text-decoration: none;
-    padding: 0.25em (20px / $fontSize * 1em);
-    transition: 180ms ease-in-out;
-    transition-property: background, border, font-weight;
-    cursor: pointer;
-    min-height: #{Min(Max(48px, getvmin(67px)), 67px)};
-    border-bottom: 2px solid transparent;
-
-    &.active,
-    &.current,
-    &:hover {
-        font-family: var(--fontFamilyActive);
-        font-weight: normal;
-        color: var(--colorActive);
-        text-decoration: none;
-        outline-color: transparent;
-        outline-style: solid;
-        border-bottom: 2px solid var(--colorPrimary);
-    }
+    font-family: var(--font-main);
+    font-weight: 500;
+    font-size: getMinMax(14px, $font-size);
+    line-height: 1;
+    letter-spacing: 0.0125em;
+    text-transform: uppercase;
+    padding: calc(8px/$font-size)*1em;
+    border-bottom: 2px solid var(--color);
+    transition: all 180ms ease-in-out;
 }
 
 @mixin tag($fontSize: 21px) {
