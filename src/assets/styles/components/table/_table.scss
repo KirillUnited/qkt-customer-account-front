@@ -78,17 +78,3 @@
         }
     }
 }
-
-.table-commission {
-    .table-row {
-        &:nth-child(1),
-        &:nth-child(2) {
-            font-weight: 600;
-        }
-
-        &:nth-child(2) {
-            color: var(--color-green);
-            background-color: rgba(94, 183, 0, 0.2);
-        }
-    }
-}

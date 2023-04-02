@@ -1,5 +1,3 @@
-@import "./input";
-
 .form {
     $font-size: 16px;
     --gap: 24px;
@@ -93,5 +91,3 @@
         }
     }
 }
-
-@import "form-api";

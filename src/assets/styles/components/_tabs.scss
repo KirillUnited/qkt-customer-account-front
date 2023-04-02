@@ -30,22 +30,7 @@
 
     &-link {
         --color: #CBD5E1;
-        $font-size: 14px;
-
-        min-height: calc(37px/$font-size)*1em;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: var(--color);
-        font-family: var(--font-main);
-        font-weight: 500;
-        font-size: getMinMax(14px, $font-size);
-        line-height: 1;
-        letter-spacing: 0.0125em;
-        text-transform: uppercase;
-        padding: calc(8px/$font-size)*1em;
-        border-bottom: 2px solid var(--color);
-        transition: all 180ms ease-in-out;
+        @include tab();
 
         &-active,
         &:active,
