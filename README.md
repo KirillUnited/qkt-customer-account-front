@@ -1,5 +1,5 @@
 ## Getting started
-1. Clone this repo `git clone https://github.com/KirillUnited/qkt-customer-account-front.git`
+1. Clone this repo: `git clone https://github.com/KirillUnited/qkt-customer-account-front.git`
 2. `cd` into the project directory and run `npm install`
 ## Running and serving a dev build
 <pre>npm run dev</pre>
