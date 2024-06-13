@@ -1,5 +1,5 @@
 > Customer Account
-## [https://customer-account.netlify.app/](Live demo link)
+## [Live preview](https://customer-account.netlify.app/)
 ## Getting started
 1. Clone this repo: `git clone https://github.com/KirillUnited/qkt-customer-account-front.git`
 2. `cd` into the project directory and run `npm install`
