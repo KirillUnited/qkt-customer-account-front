@@ -1,5 +1,5 @@
 > Customer Account
-## <a href="https://wondrous-hotteok-cf0ad2.netlify.app/" rel="nofollow" target="_blank">Live demo link</a>
+## [https://customer-account.netlify.app/](Live demo link)
 ## Getting started
 1. Clone this repo: `git clone https://github.com/KirillUnited/qkt-customer-account-front.git`
 2. `cd` into the project directory and run `npm install`
